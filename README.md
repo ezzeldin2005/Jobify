@@ -33,9 +33,9 @@ are displayed accordingly.
 logged in user. - The navigation bar should be accessible from all web pages
 --------------------------------------------------------------------------------
 # Tasks:
-1) sign up or Login **ezz**
+1) sign up or Login **ezz** html done
 2) sign Up page
-3) Login page
+3) Login page **ezz** html done
 4) admin home page (nav:add new job , edit , home , Log out)
 5) add new job page
 6) edit page
