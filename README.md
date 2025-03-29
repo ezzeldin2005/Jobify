@@ -33,7 +33,7 @@ are displayed accordingly.
 logged in user. - The navigation bar should be accessible from all web pages
 --------------------------------------------------------------------------------
 # Tasks:
-1) sign up or Login
+1) sign up or Login **ezz**
 2) sign Up page
 3) Login page
 4) admin home page (nav:add new job , edit , home , Log out)
@@ -43,5 +43,7 @@ logged in user. - The navigation bar should be accessible from all web pages
 8) usr home page (nav: search , profile , Home , log out)
 9) search page
 10) profile page
+    
 **See the mock up for more detailes**
+
 **the nav bar should be displayed in every page**
