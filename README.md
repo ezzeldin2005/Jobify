@@ -31,3 +31,17 @@ are displayed accordingly.
 7. View list of applied jobs for that user. 
  - Job search website should have a navigation bar. - The navigation bar should be adjusted dynamically based on the 
 logged in user. - The navigation bar should be accessible from all web pages
+--------------------------------------------------------------------------------
+# Tasks:
+1) sign up or Login
+2) sign Up page
+3) Login page
+4) admin home page (nav:add new job , edit , home , Log out)
+5) add new job page
+6) edit page
+7) Log out is a link to page **1**
+8) usr home page (nav: search , profile , Home , log out)
+9) search page
+10) profile page
+**See the mock up for more detailes**
+**the nav bar should be displayed in every page**
