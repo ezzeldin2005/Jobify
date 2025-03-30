@@ -40,9 +40,9 @@ logged in user. - The navigation bar should be accessible from all web pages
 5) add new job page
 6) edit page
 7) Log out is a link to page **1**
-8) usr home page (nav: search , profile , Home , log out)
+8) usr home page (nav: search , profile , Home , log out) --> **Samir is working on it**
 9) search page
-10) profile page
+10) profile page --> **Samir is working on it**
     
 **See the mock up for more detailes**
 
