@@ -16,7 +16,7 @@ body{
 }
 
 #header2{
-    width: 78%;
+    width: 350px;
     padding-left: 14px;
     white-space: 2px;
     letter-spacing: 0.5px;
@@ -24,52 +24,42 @@ body{
 }
 
 
-.Emailbox input, .passwordbox input{
-    display: block; 
-    border: solid 1px dimgrey ;
-    border-radius: 5px; 
-    height: 50px;
-    width: 100%;
+#emailBox input, #passwordBox input, #usernameBox input, #companyNameBox input, #cPasswordBox input{
+            width: 250px;
+            display: block; 
+            border: solid 1px ;
+            border-radius: 10px; 
+            height: 40px;
+        }
+        #emailBox label, #passwordBox label, #usernameBox label, #companyNameBox label, #cPasswordBox label {
+            display: none;
+            font-size: 14px;
+            color: #333;
+        }
+        input:focus::placeholder {
+            color: transparent; 
+        }
+        #emailBox , #passwordBox, #usernameBox, #cPasswordBox, #companyNameBox{
+            padding-bottom: 25px;
+            position: relative;
+        }
+        #emailBox input:focus + label, #passwordBox input:focus + label, #cPasswordBox input:focus + label, #companyNameBox input:focus + label, #usernameBox input:focus + label{
+            display: block;
+            position: absolute;
+            bottom: 70px;
+        }
 
-}
+        #formSection #inputs #formInputs #firstLine{
+            display: inline;
+            background-color: aqua;
+            
+        }
+        input{
+            padding-left: 10px;
+        }
 
-.Emailbox label,.passwordbox label {
-display: none;
-font-size: 14px;
-color:dimgray;
-}
-
-input:focus::placeholder {
-    color: transparent; 
-}
-
-.Emailbox{
-    padding-bottom: 20px;
-    position: relative;
-    width: 96%;
-}
-
-.passwordbox{
-    padding-bottom: 7px;
-    position: relative;
-    width: 96%;
-}
-input{
-    padding-left: 10px;
-}
-.Emailbox input:focus + label,.passwordbox input:focus + label {
-    display: block;
-    position: absolute;
-    bottom: 80px;
-
-}
-
-.Emailbox input:focus ,.passwordbox input:focus {
-    outline-color: dimgrey;
-}
-
-#Login{
-    width: 100%;
+#sub{
+    width: 343px;
     height: 50px;
     color: white;
     font-size: large;
@@ -77,14 +67,8 @@ input{
     border: none;
     background-color: rgb(13, 138, 176);
     margin-bottom: 10px;
-    margin-top: 12px;
 }
 
-.Loginbox{
-    display: flex;
-    justify-content: center;
-    align-content: center;
-}
 .signup p{
     display: inline;
 }
@@ -144,11 +128,11 @@ input{
     flex-direction: column;
     flex-wrap: wrap;
     height: 100%;
-    padding-left: 10%;
 }
 
 .intro P , .intro h3{
     width: 80%;
+    margin-left: 30px;
 }
 #Logo{
     margin-bottom: 30%;
@@ -163,6 +147,9 @@ input{
     justify-content: center;
     align-items: center;
 }
+input{
+    padding-left: 10px;
+}
 #inputcontainer form{
 width: 100%;
 }
@@ -174,5 +161,5 @@ width: 100%;
 
 .intro .IntroText #text{
     color: rgb(232, 224, 209); 
-    margin-bottom: 35%;
+    margin-bottom: 45%;
 }
