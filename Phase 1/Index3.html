@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang = "eng">
+    <head>
+        <meta charset = "UTF-8">
+        <title>Admin Homepage</title>
+        <style>
+            .header{
+                text-align: center;
+            }
+
+            .navBar{
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                background-color: darkgrey;
+            }
+
+            .navBar li{
+                display: inline-block;
+                padding: 8px;
+                border-right: 2px solid #FFD700;
+            }
+
+            .navBar li a{
+                font-size: 18px;
+                color: #003366;
+            }
+
+            #logout{
+                float: right;
+                border-right: none;
+            }
+
+            
+        </style>
+    </head>
+
+    <body>
+        <div class = "container">
+            <div class = "header">
+                <h1>Admin Homepage</h1>
+                <hr>
+            </div>
+
+            <div class = "navBarContainer">
+                <ul class = navBar>
+                    <li><a>Homepage</a></li>
+                    <li><a>Add New Job</a></li>
+                    <li><a>Edit Job</a></li>
+                    <li id = "logout"><a href = "./Index.1.html">Logout</a></li>
+                </ul>
+                <br>
+            </div>
+
+            <div class = "jobListContainer">
+                <h2>Available Jobs:</h2>
+                <ul class = "jobList">
+                    
+                </ul>
+            </div>
+        </div>
+    </body>
+</html>
