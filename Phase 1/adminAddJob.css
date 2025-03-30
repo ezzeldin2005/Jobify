@@ -1,3 +1,6 @@
+body{
+    background-image: linear-gradient(to bottom right,rgba(5, 49, 74, 0.822) ,rgb(14, 127, 172) ,transparent);
+}
 label{
     text-align: center;
 }
