@@ -36,8 +36,8 @@ logged in user. - The navigation bar should be accessible from all web pages
 1) sign up or Login **ezz** html done
 2) sign Up page **Ibrahim** in progress
 3) Login page **ezz** html done
-4) admin home page (nav:add new job , edit , home , Log out) **Ziad** in progress
-5) add new job page
+4) admin home page (nav:add new job , edit , home , Log out) **Ziad** html done
+5) add new job page **ziad** in progress
 6) edit page
 7) Log out is a link to page **1**
 8) usr home page (nav: search , profile , Home , log out) --> **Samir is working on it**
