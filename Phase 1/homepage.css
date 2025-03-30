@@ -57,11 +57,17 @@ input:focus::placeholder {
 input{
     padding-left: 10px;
 }
-.Emailbox input:focus + label,.passwordbox input:focus + label {
+.Emailbox input:focus + label {
     display: block;
     position: absolute;
     bottom: 80px;
 
+}
+
+.passwordbox input:focus + label{
+    display: block;
+    position: absolute;
+    bottom: 66px;
 }
 
 .Emailbox input:focus ,.passwordbox input:focus {

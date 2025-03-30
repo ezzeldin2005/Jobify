@@ -1,6 +1,7 @@
 body{
     background-image: linear-gradient(to right,rgba(5, 49, 74, 0.822) ,rgb(14, 127, 172) , rgb(14, 153, 207),transparent);
     height: 100vh;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -8,58 +9,115 @@ body{
 }
 
 .Container{
+    background-color: red;
     width: 90%;
     height: 90%;
-    align-items: center;
+    border-radius: 50px 50px;
     display: flex;
     flex-direction: row;
 }
-
-#header2{
-    width: 350px;
-    padding-left: 14px;
-    white-space: 2px;
-    letter-spacing: 0.5px;
-    margin-bottom: 15px;
+#contentSection{
+    width: 60%;
+    height: 100%;
+}
+#imageSection{
+    width: 40%;
+    margin: 0 auto;
 }
 
+#imageSection img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0 50px 50px 0;
+}
+#formSection{
+    height: 90%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#pageH{
+    padding: 20px 0 0 30px;
+    display: flex;
+    flex-direction: row;
+}
+#pageH a{
+    text-decoration: none;
+    color: black;
+    font-size: 28px;
+}
+
+#pageH #logo{
+    height: 20px;
+    width: 20px;
+    background-color: blue;
+}
+#inputs{
+    height: 90%;
+    background-color: yellow;
+    width: 60%;
+    border-radius: 20px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 #emailBox input, #passwordBox input, #usernameBox input, #companyNameBox input, #cPasswordBox input{
-            width: 250px;
-            display: block; 
-            border: solid 1px ;
-            border-radius: 10px; 
-            height: 40px;
-        }
-        #emailBox label, #passwordBox label, #usernameBox label, #companyNameBox label, #cPasswordBox label {
-            display: none;
-            font-size: 14px;
-            color: #333;
-        }
-        input:focus::placeholder {
-            color: transparent; 
-        }
-        #emailBox , #passwordBox, #usernameBox, #cPasswordBox, #companyNameBox{
-            padding-bottom: 25px;
-            position: relative;
-        }
-        #emailBox input:focus + label, #passwordBox input:focus + label, #cPasswordBox input:focus + label, #companyNameBox input:focus + label, #usernameBox input:focus + label{
-            display: block;
-            position: absolute;
-            bottom: 70px;
-        }
+    width: 250px;
+    display: block; 
+    border: solid 1px ;
+    border-radius: 5px; 
+    height: 50px;
+    outline: none;
+}
+#emailBox label, #passwordBox label, #usernameBox label, #companyNameBox label, #cPasswordBox label {
+    display: none;
+    font-size: 14px;
+    color: #333;
+}
+input:focus::placeholder {
+    color: transparent; 
+}
+#emailBox , #passwordBox, #usernameBox, #cPasswordBox{
+    padding-bottom: 30px;
+    position: relative;
+}
+#companyNameBox{
+    padding-bottom: 18px;
+    position: relative;
 
-        #formSection #inputs #formInputs #firstLine{
-            display: inline;
-            background-color: aqua;
-            
-        }
-        input{
-            padding-left: 10px;
-        }
+}
+#emailBox input:focus + label, #passwordBox input:focus + label, #cPasswordBox input:focus + label, #usernameBox input:focus + label{
+    display: block;
+    position: absolute;
+    bottom: 86px;
+    color: dimgray;
+}
+#companyNameBox input:focus + label{
+    display: block;
+    position: absolute;
+    bottom: 77px;
+    color: dimgray;
+}
 
-#sub{
-    width: 343px;
+#emailBox input:focus , #passwordBox input:focus , #cPasswordBox input:focus , #usernameBox input:focus{
+   border-color: dimgray;
+}
+#companyNameBox input:focus {
+    border-color: dimgray;
+}
+
+#header2{
+    margin-bottom: 4%;
+    width: 80%;
+}
+
+input{
+    padding-left: 10px;
+}
+.buttonsub #Sub{
+    width: 83%;
     height: 50px;
     color: white;
     font-size: large;
@@ -67,99 +125,73 @@ body{
     border: none;
     background-color: rgb(13, 138, 176);
     margin-bottom: 10px;
+    margin-top: 12px;
 }
-
-.signup p{
-    display: inline;
-}
-.signup a{
-    text-decoration: none;
-   
-}
-
-
 #inputBox{
-    width: 50%;
-    height: 100%;
-    margin-left: auto;
-    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: white;
-    border-radius: 0 25px 25px 0;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-}
-
-
-#inputcontainer{
-    width: 80%; 
-    max-width: 400px; 
-    height: auto;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.signup a:hover{
-    color: blue;
-}
-
-.intro {
-    height: 100%;
     width: 50%;
-    max-width: 50%;
+    border-radius: 0 25px 25px 0;
+}
+.imgbox{
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 50%;
+    height: 100%;
+    border-radius: 25px 0px 0px 25px;
+    background-image: url(logimg.png);
 }
-
-.intro {
-   width: 100%;
-   height: 100%;
-   border-radius: 25px 0px 0px 25px;
-   background-image: url(logimg.png);
-}
-
-.intro .IntroText{
+.imgbox .IntroText{
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     height: 100%;
+    padding-left: 10%;
 }
-
-.intro P , .intro h3{
+.imgbox P , .imgbox h3{
     width: 80%;
-    margin-left: 30px;
 }
 #Logo{
     margin-bottom: 30%;
     font-size: xx-large;
     color: whitesmoke;
 }
-#inp{
-    height: 70%;
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-input{
-    padding-left: 10px;
-}
-#inputcontainer form{
-width: 100%;
-}
-.intro .IntroText #Welcome{
+
+.imgbox .IntroText #Welcome{
     font-size:xx-large;
     color: whitesmoke; 
     margin-bottom: 0%;
 }
 
-.intro .IntroText #text{
+.imgbox .IntroText #text{
     color: rgb(232, 224, 209); 
-    margin-bottom: 45%;
+    margin-bottom: 30%;
+}
+
+#inp{
+    height: 100%;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: 10%;
+}
+
+#inputcontainer form{
+    width: 100%;
+    }
+
+#inputcontainer {
+    width: 80%;
+}
+#inputcontainer input{
+    width: 80%;
+}
+
+#inputcontainer form input[type="checkbox"]{
+    width: 3%;
 }

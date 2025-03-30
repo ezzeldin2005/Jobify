@@ -7,13 +7,25 @@
 </head>
 <body>
     <div class="Container">
+
+            <div class="imgbox">
+                <div class="IntroText">
+                    <h3 id="Logo">Logo</h3>
+                    <p id="Welcome">Welcome to website name</p>
+                    <P id="text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad iure temporibus sed sapiente! Eligendi minus dolor ullam voluptatem modi maxime, cupiditate exercitationem doloribus sed? Natus?</P>
+                    <p id="last"style="color:white;"><small>Lorem ipsum dolor sit amet consectetur</small></p>
+                </div>
+            </div>
+
+
+
         <div id="inputBox">
             <div id="inp">
 
                 
                 <div id="header2">
                     <h1 style="color: rgb(13, 138, 176);">Sign-up</h1>
-                    <P style="color: dimgray;">Welcome! Login to find amazing opportunities in our website</P>
+                    <P style="color: dimgray;">Please fill this form to create an account</P>
                 </div>
 
             
@@ -22,45 +34,53 @@
 
                         <form action="post" id="formInputs">
 
-                            <div id="firstLine">
-                                <div id="usernameBox">
-                                    
-                                    <input type="text" id="userName" name="username" placeholder="User name" required>
-                                    <label for="userName">Username</label>
-                                    
-                                </div>
-                                <div id="emailBox">
-                                    
-                                    <input type="email" id="email" name="email" placeholder="Email" required>
-                                    <label for="email">Email</label>
-                                    
-                                </div>
+                           
+                            <div id="usernameBox">
+                                
+                                <input type="text" id="userName" name="username" placeholder="User name" required>
+                                <label for="userName">Username</label>
+                                
                             </div>
-                            <div id="secondLine">
-                                <div id="passwordBox">
-                                    
-                                    <input type="password" id="password" name="password" placeholder="Password" required minlength="8" maxlength="20">
-                                    <label for="password">Password</label>
-                                    
-                                </div>
-                                <div id="cPasswordBox">
-                                    
-                                    <input type="password" id="cPassword" name="cPassword" placeholder="Confirm Password" minlength="8" maxlength="20">
-                                    <label for="cPassword">Confirm password</label>
-                                    
-                                </div>
+                            <div id="emailBox">
+                                
+                                <input type="email" id="email" name="email" placeholder="Email" required>
+                                <label for="email">Email</label>
+                                
                             </div>
+                        
+                        
+                            <div id="passwordBox">
+                                
+                                <input type="password" id="password" name="password" placeholder="Password" required minlength="8" maxlength="20" >
+                                <label for="password">Password</label>
+                                
+                            </div>
+
+                            <div id="cPasswordBox">
+                                
+                                <input type="password" id="cPassword" name="cPassword" placeholder="Confirm Password" minlength="8" maxlength="20" required>
+                                <label for="cPassword">Confirm password</label>
+                                
+                            </div>
+
+
                             <div id="companyNameBox">
     
-                                <input type="text" id="companyName" name="companyName" placeholder="Company name">
-                                <label for="companyName">company name</label>
+                                <input type="text" id="companyName" name="companyName" placeholder="Company name" disabled required style="background-color: rgb(232, 225, 225);">
+                                <label for="companyName">Company name</label>
     
                             </div>
-                            <br>
-                            <br>
 
-                            <button id="Sub" type="submit">Submit</button>
 
+                                <div class="adminop">
+                                    <input id="cbox" type="checkbox">
+                                    <label for="cbox" style="color: dimgray;">as Admin</label>
+                                </div>
+
+
+                            <div class="buttonsub">
+                                <button id="Sub" type="submit">Submit</button>
+                            </div>
                         </form>
                     
                     </div>
