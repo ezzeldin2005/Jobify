@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <meta charset="UTF-8">
+        <title>Add Job</title>
+    </head>
+    <body>
+        <div class = "container">
+            <div class = "header">
+                <h1>Add Job</h1>
+                <hr>
+            </div>
+
+            <div class = "navBarContainer">
+                <ul class = navBar>
+                    <li><a>Homepage</a></li>
+                    <li><a>Add New Job</a></li>
+                    <li><a>Edit Job</a></li>
+                    <li id = "logout"><a href = "./Index.1.html">Logout</a></li>
+                </ul>
+                <br>
+                <br>
+            </div>
+
+            <div class = "jobFormContainer">
+                <form method="post">
+                    <div id = "jobIDContainer">
+                        <label for="jobID">Job ID</label>
+                        <input type="text" required name="jobID" id = "jobID">
+                    </div>
+
+                    <div id = "jobTitleContainer">
+                        <label for="jobTitle">Job Title</label>
+                        <input type="text" required name="jobTitle" id = "jobTitle">
+                    </div>
+
+                    <div id = "jobSalaryContainer">
+                        <label for="jobSalary">Salary</label>
+                        <input type = "number" required min = "0" name = "jobSalary" id = "jobSalary">
+                    </div>
+
+                    <div id = "jobCompanyContainer">
+                        <label for="jobCompany">Company Name</label>
+                        <input type="text" required name = "jobCompany" id="jobCompany">
+                    </div>
+
+                    <div id = "jobStatusContainer">
+                        <label for="jobStatusOpen">Open</label>
+                        <input type="radio" required name="jobStatus" id = "jobStatusOpen" value="Open">
+
+                        <label for="jobStatusClosed">Closed</label>
+                        <input type="radio" required name="jobStatus" id = "jobStatusClosed" value="Closed">
+                    </div>
+
+                    <div id = "jobExperianceContainer">
+                        <label for="jobExperiance">Years of Experiance</label>
+                        <input type="number" required min="0" name="jobExperiance" id = "jobExperiance">
+                    </div>
+
+                    <div id = "jobDescriptionContainer">
+                        <label for="jobDescription">Job Description</label>
+                        <textarea rows="5" cols="30" name="jobDescription" id="jobDescription"></textarea>
+                    </div>
+
+                    <input type="submit" value="Add Job" id="submit">
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

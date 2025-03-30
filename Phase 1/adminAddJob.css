@@ -1,0 +1,74 @@
+label{
+    text-align: center;
+}
+
+.header{
+    text-align: center;
+}
+
+.navBar{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: darkgrey;
+}
+
+.navBar li{
+    display: inline-block;
+    padding: 8px;
+    border-right: 2px solid #FFD700;
+}
+
+.navBar li a{
+    font-size: 18px;
+    color: #003366;
+}
+
+#logout{
+    float: right;
+    border-right: none;
+}
+
+.jobFormContainer{
+    width: 725px;
+    height: 700px;
+    margin: auto;
+}
+
+.jobFormContainer div{
+    margin-bottom: 30px;
+    display: inline-flex;
+    flex-direction: column;
+    width: 40%;
+    align-items: center;
+    border: 3px solid #A7C7E7;
+    padding: 10px;
+    justify-content: center;
+    border-radius: 15px;
+
+}
+
+#jobStatusContainer{
+    flex-direction: row;
+}
+
+#jobTitleContainer, #jobCompanyContainer, #jobExperianceContainer{
+    margin-right: 0;
+    float: right;
+}
+
+#jobDescriptionContainer{
+    display: block;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+#submit{
+    display: block;
+    width: 80px;
+    height: 30px;
+    border-radius: 10px;
+    background-color: palevioletred;
+    margin: auto;
+}
