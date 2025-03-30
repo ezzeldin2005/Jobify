@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: sans-serif;
+        }
+        .header{
+            text-align: center;
+            background-color: rgb(151, 134, 134);
+        }
+        .navBar{
+
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-color: darkgrey;
+        }
+
+        .navBar li{
+            display: inline-block;
+            padding: 8px;
+            border-right: 2px solid #FFD700;
+        }
+
+        .navBar li a{
+            font-size: 18px;
+            color: #003366;
+        }
+
+        #logout{
+            float: right;
+            border-right: none;
+        }
+
+        .search{
+            margin-top: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .search #searchTitleInput{
+            padding: 5px;
+            width : 25%;
+            border-radius: 10px;
+        }
+        .search #searchYearInput{
+            padding: 5px;
+            width : 25%;
+            border-radius: 10px;
+        }
+        .search form{
+            padding: 5px;
+            background-color: rgb(177, 177, 177);
+            border-radius: 10px;
+        }
+        .search form input{
+            border-radius: 10px;
+        }
+        .search .searchType input{
+            height: 30px;
+            border-radius: 10px;
+        }
+
+        
+    </style>
+</head>
+<body>
+        <div class = "navBarContainer">
+            <ul class = navBar>
+                <li><a>Homepage</a></li>
+                <li><a>Add New Job</a></li>
+                <li><a>Edit Job</a></li>
+                <li id = "logout"><a href = "./Index.1.html">Logout</a></li>
+            </ul>
+        </div>
+    
+        <div class = "search">
+            <div class = "searchType">
+                <input type="button" value="Search By Title" id="searchByTitleButton">
+                <input type="button" value="Search By Year" id="searchByYearButton">
+            </div>
+                <form>
+                    <div>
+                        <label for="searchTitle">Search for a job by title :</label>
+                        <input type = "text" name = "searchTitle" id = "searchTitleInput" placeholder="Enter job title" required>
+                        <input type = "submit" value = "Search" id = "searchTitleButton">
+                    </div>
+                    <br>    
+                    <div>
+                        <label for="searchYear">Search for a job by years of experience :</label>
+                        <input type = "number" name = "searchYear" id = "searchYearInput" placeholder="Enter years of experience" required>
+                        <input type = "submit" value = "Search" id = "searchYearButton">
+                    </div>
+                </form>
+        </div>
+
+    
+</body>
+</html>
