@@ -80,7 +80,7 @@ input:focus::placeholder {
     color: transparent; 
 }
 #emailBox , #passwordBox, #usernameBox, #cPasswordBox{
-    padding-bottom: 30px;
+    padding-bottom: 28px;
     position: relative;
 }
 #companyNameBox{
@@ -97,7 +97,7 @@ input:focus::placeholder {
 #companyNameBox input:focus + label{
     display: block;
     position: absolute;
-    bottom: 77px;
+    bottom: 60px;
     color: dimgray;
 }
 
@@ -194,4 +194,16 @@ input{
 
 #inputcontainer form input[type="checkbox"]{
     width: 3%;
+}
+
+#companyNameBox {
+    display: none; 
+}
+
+
+#cbox:checked ~ #companyNameBox {
+    display: block; 
+    margin-top: 20px;
+    padding-bottom: 0;
+
 }
