@@ -2,12 +2,6 @@ body{
     background-image: linear-gradient(to bottom right,rgba(5, 49, 74, 0.822) ,rgb(14, 127, 172) ,transparent);
     height: 100vh;
 }
-
-label{
-    text-align: center;
-    display: block;
-}
-
 *{
     font-family: sans-serif;
     padding: 0;
@@ -22,13 +16,14 @@ a{
 
 .header1{
     margin-top: 28px;
-    margin-bottom: 28px;
     padding: 0 15px;
     padding-bottom: 28px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     box-shadow: 0 7px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 1;
 }
 
 #Logo{
@@ -40,16 +35,14 @@ a{
 .logocon{
     width: 15%;
 }
-
 #navbar {
-width: 50%;
-background-color: rgb(255, 255, 255, 0.200);
-border-radius: 15px;
-display: flex;
-align-items: center;
-justify-content: space-evenly;
+ width: 50%;
+ background-color: rgb(255, 255, 255, 0.200);
+ border-radius: 15px;
+ display: flex;
+ align-items: center;
+ justify-content: space-evenly;
 }
-
 #Logout{
     padding-top: 5px;
     text-align: center;
@@ -59,75 +52,156 @@ justify-content: space-evenly;
     font-size: 20px;
     margin-left: 5%;
 }
-
+#Logout:hover{
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+}
 #navbar li{
     display: inline;
     justify-content: space-evenly;
     font-size: x-large;
 }
+#navbar li:hover{
+    position: relative;
+    bottom: 3px;
+    cursor: pointer;
+}
+
+/* ------------------------------------------ */
 
 
+.container{
+    height: 100%;
+}
 
 .jobFormContainer{
-    width: 725px;
-    height: 700px;
-    margin: auto;
-}
-
-.jobFormContainer div{
-    margin-bottom: 30px;
-    display: inline-flex;
-    flex-direction: column;
-    width: 40%;
-    height: 65px;
-    align-items: center;
-    border: 3px solid #A7C7E7;
-    padding: 10px;
+    height: 80%;
+    width: 45%;
+    background-color: white;
+    display: flex;
     justify-content: center;
-    border-radius: 15px;
-    gap: 5px;
-
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 20px;
+    border-radius: 8px;
+    position: relative;
+    top: 10%;
+}
+#jobCompanyContainer input, #jobIDContainer input, #jobTitleContainer input, #jobDescriptionContainer input{
+    width: 92.9%;
+    display: block; 
+    border-radius: 5px; 
+    height: 40px;
+    outline: none;
+    background-color: rgb(230, 230, 230);
+    border: transparent;
+    margin-bottom: 20px;
+}
+input, textarea{
+    padding-left: 10px;
+}
+#jobCompanyContainer input{
+    margin-top: 6px;
+}
+#jobSalaryExp input{
+    width: 43.8%;
+    display: block; 
+    border: solid 1px ;
+    border-radius: 5px; 
+    height: 30px;
+    outline: none;
+    background-color: rgb(230, 230, 230);
+    border: transparent;
+    text-align: center;
+}
+#jobSalaryExp{
+    margin-bottom: 10px;
 }
 
-#jobStatusContainer{
-    flex-direction: row;
-    gap: 5px;
-}
-
-#jobTitleContainer, #jobCompanyContainer, #jobExperianceContainer{
-    margin-right: 0;
-    float: right;
-}
-
-#jobDescriptionContainer{
-    display: block;
-    margin: auto;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    height: fit-content;
-    width: fit-content;
-
-}
-
-textarea{
+#jobDescription{
+    width: 92.9%;
+    display: block; 
+    border: solid 1px ;
+    border-radius: 5px; 
+    height: 55px;
+    outline: none;
+    background-color: rgb(230, 230, 230);
     resize: none;
-    width: 600px;
-    height: 90px;
+    border: transparent;
+    margin-bottom: 10px;
+    padding-top: 2%;
 }
-
-input{
-    width: 200px;
+.jobFormContainer form{
+    width: 90%;
+    height: 88%;
+    display: flex;
+    flex-direction: column;
 }
-
-#jobStatusOpen, #jobStatusClosed{
-    width: 10px;
+input:focus::placeholder {
+    color: transparent; 
+}
+#jobSalaryExp{
+    display: flex;
+    height: 40px;
+    gap: 20px;
+    flex-direction: row;
 }
 
 #submit{
-    display: block;
-    width: 80px;
-    height: 30px;
-    border-radius: 10px;
-    background-color: palevioletred;
-    margin: auto;
+    width: 94.7%;
+    height: 50px;
+    color: white;
+    font-size: large;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(13, 138, 176);
+    margin-bottom: 10px;
+    margin-top: 12px;
+}
+
+#submit:hover{
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+}
+
+#formText{
+    width: 90%;
+    margin-top: 5%;
+    margin-bottom: 3%;
+}
+#formText h2{
+    font-size: 26px;
+    color: rgb(13, 138, 176);
+    margin-bottom: 1%;
+}
+#formText p{
+    color: dimgray;
+    word-spacing: 0.2px;
+    letter-spacing: 0.5px;
+}
+#jobStatusContainer{
+    display: flex;
+}
+#jobStatusContainer pre{
+    width: 30%;
+    color: dimgray;
+}
+#OC{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    width: 40%;
+}
+#OC div label{
+    color: dimgray;
+}
+#masterContainer{
+    background-image: url(keyboard-coffee-smartphone-notebook-color-background-top-view_1286-776.jpg);
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
 }

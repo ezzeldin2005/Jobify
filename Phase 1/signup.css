@@ -79,12 +79,18 @@ body{
 input:focus::placeholder {
     color: transparent; 
 }
-#emailBox , #passwordBox, #usernameBox, #cPasswordBox{
+#emailBox , #passwordBox, #usernameBox{
     padding-bottom: 28px;
     position: relative;
 }
+#cPasswordBox{
+    position: relative;
+    padding-bottom: 10px;
+
+}
 #companyNameBox{
     padding-bottom: 18px;
+    padding-top: 10px;
     position: relative;
 
 }
@@ -126,6 +132,10 @@ input{
     background-color: rgb(13, 138, 176);
     margin-bottom: 10px;
     margin-top: 12px;
+}
+.buttonsub #Sub:hover{
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
 }
 #inputBox{
     display: flex;

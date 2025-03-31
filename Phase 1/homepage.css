@@ -85,6 +85,10 @@ input{
     margin-bottom: 10px;
     margin-top: 12px;
 }
+#Login:hover{
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+}
 
 .Loginbox{
     display: flex;

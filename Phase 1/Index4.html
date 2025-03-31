@@ -17,53 +17,61 @@
                     <li><a>Edit Job</a></li>
                 </ul>
                 <a id="Logout" href = "./Index.1.html">Logout</a>
-
+                
                 <br>
-
+                
             </div>
+            
+            <div id="masterContainer">
 
-            <div class = "jobFormContainer">
-                <form method="post">
-                    <div id = "jobIDContainer">
-                        <label for="jobID">Job ID</label>
-                        <input type="text" required name="jobID" id = "jobID">
-                    </div>
+                    <div class = "jobFormContainer">
+                        
+                        <div id="formText">
+                            <h2>Hello</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, minima.</p>
+                        </div>
+                        
+                        <form method="post">
+                            
+                            <div id = "jobCompanyContainer">
+                                <input type="text" required name = "jobCompany" id="jobCompany" placeholder="Job Company">
+                            </div>
+                            
+                            <div id = "jobIDContainer">
+                                <input type="text" required name="jobID" id = "jobID" placeholder="Job ID">
+                            </div>
+                            
+                            <div id = "jobTitleContainer">
+                            <input type="text" required name="jobTitle" id = "jobTitle" placeholder="Job Title">
+                        </div>
 
-                    <div id = "jobTitleContainer">
-                        <label for="jobTitle">Job Title</label>
-                        <input type="text" required name="jobTitle" id = "jobTitle">
-                    </div>
-
-                    <div id = "jobSalaryContainer">
-                        <label for="jobSalary">Salary</label>
-                        <input type = "number" required min = "0" name = "jobSalary" id = "jobSalary">
-                    </div>
-
-                    <div id = "jobCompanyContainer">
-                        <label for="jobCompany">Company Name</label>
-                        <input type="text" required name = "jobCompany" id="jobCompany">
-                    </div>
-
-                    <div id = "jobStatusContainer">
-                        <label for="jobStatusOpen">Open</label>
-                        <input type="radio" required name="jobStatus" id = "jobStatusOpen" value="Open">
-
-                        <label for="jobStatusClosed">Closed</label>
-                        <input type="radio" required name="jobStatus" id = "jobStatusClosed" value="Closed">
-                    </div>
-
-                    <div id = "jobExperianceContainer">
-                        <label for="jobExperiance">Years of Experiance</label>
-                        <input type="number" required min="0" name="jobExperiance" id = "jobExperiance">
-                    </div>
-
-                    <div id = "jobDescriptionContainer">
-                        <label for="jobDescription">Job Description</label>
-                        <textarea rows="5" cols="30" name="jobDescription" id="jobDescription"></textarea>
-                    </div>
-
-                    <input type="submit" value="Add Job" id="submit">
-                </form>
+                        <div id = "jobSalaryExp">
+                            <input type = "number" required min = "0" name = "jobSalary" id = "jobSalary" placeholder="Job Salary">
+                            <input type="number" required min="0" name="jobExperiance" id = "jobExperiance" placeholder="Years of Experiance">
+                        </div>
+                        
+                        <div id = "jobDescriptionContainer">
+                            <textarea rows="5" cols="30" name="jobDescription" id="jobDescription" placeholder="Job Description"></textarea>
+                        </div>
+                        
+                        <div id = "jobStatusContainer">
+                            <pre>Jop Status:</pre>
+                            <div id= "OC">
+                                <div>
+                                    <input type="radio" required name="jobStatus" id = "jobStatusOpen" value="Open">
+                                    <label for="jobStatusOpen">Open</label>
+                                </div>
+                                <div>
+                                    <input type="radio" required name="jobStatus" id = "jobStatusClosed" value="Closed">
+                                    <label for="jobStatusClosed">Closed</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <input type="submit" value="Add Job" id="submit">
+                    </form>
+                </div>
             </div>
         </div>
     </body>
