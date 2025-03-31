@@ -33,16 +33,17 @@ are displayed accordingly.
 logged in user. - The navigation bar should be accessible from all web pages
 --------------------------------------------------------------------------------
 # Tasks:
-1) sign up or Login **ezz** html done
-2) sign Up page **Ibrahim** in progress
-3) Login page **ezz** html done
-4) admin home page (nav:add new job , edit , home , Log out) **Ziad** html done
-5) add new job page **ziad** in progress
+1) sign up or Login **Done**
+2) sign Up page **Done**
+3) Login page **Done**
+4) admin home page (nav:add new job , edit , home , Log out) **Done**
+5) add new job page **Done**
 6) edit page
 7) Log out is a link to page **1**
 8) usr home page (nav: search , profile , Home , log out) --> **Samir is working on it**
-9) search page
+9) search page **AHMED**
 10) profile page --> **Samir is working on it**
+11) Page containing sign up & log in option
     
 **See the mock up for more detailes**
 
