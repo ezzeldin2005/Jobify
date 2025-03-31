@@ -1,9 +1,10 @@
 body{
-    background-image: linear-gradient(to bottom right,rgba(5, 49, 74, 0.822) ,rgb(14, 127, 172) ,transparent);
+    background-image: linear-gradient(rgba(96, 132, 187, 0.479), rgba(194, 199, 241, 0.213)), url(Background.jpg);
     height: 100vh;
 }
 *{
     font-family: sans-serif;
+    font-weight: 400;
     padding: 0;
     margin: 0;
 }
@@ -21,7 +22,7 @@ a{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    box-shadow: 0 7px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 13px 20px 0px rgb(33 44 81 / 30%);
     position: relative;
     z-index: 1;
 }
@@ -31,6 +32,11 @@ a{
     text-decoration: none;
     color: white;
     font-size: xx-large;
+    font-weight: 700;
+}
+#Logo:hover{
+    position: relative;
+    bottom: 3px;
 }
 .logocon{
     width: 15%;
@@ -43,14 +49,22 @@ a{
  align-items: center;
  justify-content: space-evenly;
 }
+
 #Logout{
     padding-top: 5px;
     text-align: center;
-    width: 8%;
+    width: 6%;
     background-color: rgba(19, 10, 10, 0.292);
     border-radius: 15px;
-    font-size: 20px;
+    font-size: 26px;
     margin-left: 5%;
+}
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 600,
+    'GRAD' 0,
+    'opsz' 24
 }
 #Logout:hover{
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4);
@@ -60,6 +74,10 @@ a{
     display: inline;
     justify-content: space-evenly;
     font-size: x-large;
+}
+#navbar li a{
+    font-size: 20px;
+    font-weight: 550;
 }
 #navbar li:hover{
     position: relative;
@@ -75,8 +93,8 @@ a{
 }
 
 .jobFormContainer{
-    height: 80%;
-    width: 45%;
+    height: 86%;
+    width: 50%;
     background-color: white;
     display: flex;
     justify-content: center;
@@ -84,39 +102,48 @@ a{
     flex-direction: column;
     justify-content: space-between;
     margin-left: 20px;
-    border-radius: 8px;
+    border-radius: 9px;
     position: relative;
-    top: 10%;
+    top: 8%;
+    box-shadow: 0px 5px 50px rgba(0, 0, 0, 0.4);
 }
 #jobCompanyContainer input, #jobIDContainer input, #jobTitleContainer input, #jobDescriptionContainer input{
     width: 92.9%;
     display: block; 
     border-radius: 5px; 
-    height: 40px;
+    height: 45px;
     outline: none;
     background-color: rgb(230, 230, 230);
     border: transparent;
-    margin-bottom: 20px;
+    margin-bottom: 18px;
 }
 input, textarea{
     padding-left: 10px;
+    padding-right: 10px;
 }
 #jobCompanyContainer input{
     margin-top: 6px;
 }
 #jobSalaryExp input{
-    width: 43.8%;
+    width: 43.6%;
     display: block; 
     border: solid 1px ;
     border-radius: 5px; 
-    height: 30px;
+    height: 38px;
     outline: none;
     background-color: rgb(230, 230, 230);
     border: transparent;
     text-align: center;
 }
 #jobSalaryExp{
-    margin-bottom: 10px;
+    margin-bottom: 18px;
+}
+input, textarea{
+    font-size: 17px;
+    color: rgb(63, 63, 63);
+}
+textarea:focus, input:focus {
+    color: rgb(63, 63, 63);
 }
 
 #jobDescription{
@@ -124,12 +151,12 @@ input, textarea{
     display: block; 
     border: solid 1px ;
     border-radius: 5px; 
-    height: 55px;
+    height: 70px;
     outline: none;
     background-color: rgb(230, 230, 230);
     resize: none;
     border: transparent;
-    margin-bottom: 10px;
+    margin-bottom: 18px;
     padding-top: 2%;
 }
 .jobFormContainer form{
@@ -140,6 +167,9 @@ input, textarea{
 }
 input:focus::placeholder {
     color: transparent; 
+}
+input::placeholder, textarea::placeholder{
+    color: rgb(155, 154, 154);
 }
 #jobSalaryExp{
     display: flex;
@@ -171,21 +201,23 @@ input:focus::placeholder {
     margin-bottom: 3%;
 }
 #formText h2{
-    font-size: 26px;
+    font-size: 40px;
     color: rgb(13, 138, 176);
     margin-bottom: 1%;
+    font-weight: 600;
 }
 #formText p{
     color: dimgray;
-    word-spacing: 0.2px;
-    letter-spacing: 0.5px;
+    font-size: 20px;
 }
 #jobStatusContainer{
     display: flex;
+    margin-bottom: 10px;
 }
 #jobStatusContainer pre{
     width: 30%;
     color: dimgray;
+    padding-left: 1%;
 }
 #OC{
     display: flex;
@@ -198,10 +230,14 @@ input:focus::placeholder {
     color: dimgray;
 }
 #masterContainer{
-    background-image: url(keyboard-coffee-smartphone-notebook-color-background-top-view_1286-776.jpg);
+    background-image: linear-gradient(rgba(87, 139, 216, 0.479), rgba(194, 199, 241, 0.213)), url(keyboard-coffee-smartphone-notebook-color-background-top-view_1286-776.jpg);
     width: 100%;
     height: 100%;
     background-repeat: no-repeat;
     background-size: cover;
     position: absolute;
+}
+#masterContainer:hover{
+    background-image: linear-gradient(rgba(87, 139, 216, 0.479), transparent), url(keyboard-coffee-smartphone-notebook-color-background-top-view_1286-776.jpg);
+
 }

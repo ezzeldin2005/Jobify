@@ -1,6 +1,5 @@
 body{
-    background-image: linear-gradient(to bottom right,rgba(5, 49, 74, 0.822) ,rgb(14, 127, 172) ,transparent);
-    height: 100vh;
+    background-image: linear-gradient(to bottom right, rgb(33 105 141 / 82%), rgb(105 149 185), rgb(41 132 164), #057a9069);    height: 100vh;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -15,6 +14,8 @@ body{
     border-radius: 50px 50px;
     display: flex;
     flex-direction: row;
+    box-shadow: 0px 5px 50px rgba(0, 0, 0, 0.4);
+    border-radius: 12px;
 }
 #contentSection{
     width: 60%;
@@ -70,6 +71,8 @@ body{
     border-radius: 5px; 
     height: 50px;
     outline: none;
+    background-color: rgb(230, 230, 230);
+    border: transparent;
 }
 #emailBox label, #passwordBox label, #usernameBox label, #companyNameBox label, #cPasswordBox label {
     display: none;
@@ -79,13 +82,16 @@ body{
 input:focus::placeholder {
     color: transparent; 
 }
+input::placeholder{
+    color: rgb(155, 154, 154);
+}
 #emailBox , #passwordBox, #usernameBox{
     padding-bottom: 28px;
     position: relative;
 }
 #cPasswordBox{
     position: relative;
-    padding-bottom: 10px;
+    padding-bottom: 15px;
 
 }
 #companyNameBox{
@@ -94,10 +100,16 @@ input:focus::placeholder {
     position: relative;
 
 }
-#emailBox input:focus + label, #passwordBox input:focus + label, #cPasswordBox input:focus + label, #usernameBox input:focus + label{
+#emailBox input:focus + label, #passwordBox input:focus + label, #usernameBox input:focus + label{
     display: block;
     position: absolute;
-    bottom: 86px;
+    bottom: 84px;
+    color: dimgray;
+}
+#cPasswordBox input:focus + label{
+    display: block;
+    position: absolute;
+    bottom: 72px;
     color: dimgray;
 }
 #companyNameBox input:focus + label{
@@ -115,8 +127,10 @@ input:focus::placeholder {
 }
 
 #header2{
-    margin-bottom: 4%;
+    margin-bottom: 3.5%;
     width: 80%;
+    text-align: center;
+    padding-right: 15%;
 }
 
 input{
@@ -143,7 +157,7 @@ input{
     align-items: center;
     background-color: white;
     width: 50%;
-    border-radius: 0 25px 25px 0;
+    border-radius: 0 12px 12px 0;
 }
 .imgbox{
     display: flex;
@@ -151,7 +165,7 @@ input{
     align-items: center;
     width: 50%;
     height: 100%;
-    border-radius: 25px 0px 0px 25px;
+    border-radius: 12px 0px 0px 12px;
     background-image: url(logimg.png);
 }
 .imgbox .IntroText{
@@ -178,7 +192,7 @@ input{
 
 .imgbox .IntroText #text{
     color: rgb(232, 224, 209); 
-    margin-bottom: 30%;
+    margin-bottom: 34%;
 }
 
 #inp{
@@ -209,7 +223,6 @@ input{
 #companyNameBox {
     display: none; 
 }
-
 
 #cbox:checked ~ #companyNameBox {
     display: block; 
