@@ -1,0 +1,124 @@
+body{
+    margin: 0;
+    box-sizing: border-box;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+}
+
+header {
+    background: #333333;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+header ul{
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    width: 45%;
+}
+
+header li{
+    text-align: center;
+}
+
+header a {
+    color: white;
+    text-decoration: none;
+}
+
+header ul li:hover{
+    scale: 1.1 1.1;
+}
+
+.logo {
+    font-size: 30px;
+    text-transform: uppercase;
+    padding: 10px;
+}
+
+.container{
+    background: whitesmoke;
+    width: 80%;
+}
+
+.content ul {
+    list-style-type: none;
+    gap: 30px;
+    padding: 0;
+    margin: 25px 0 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.content ul{
+    font-size: 1.3rem;
+}
+
+.content ul a {
+    text-decoration: none;
+}
+
+.content p{
+    font-size: 1rem;
+    color: #1d1d1d;
+    line-height: 1.8em;
+}
+
+.fa-brands.fa-instagram{
+    color: #E1306C;
+}
+
+#imgPro {
+    width: 175px;
+    height: 175px;
+    border-radius: 50%;
+    padding: 5px;
+    object-fit: cover;
+    box-shadow: 1px 3px 12px rgba(0, 0, 0, 0.18);
+    background: #fff;
+}
+
+.imgContainer{
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.center_col{
+    padding: 25px 20px;
+    text-align: center;
+    max-width: 350px;
+    position: relative;
+    margin: 0 auto;
+}
+
+.head{
+    width: 100%;
+    background: url("backgroundProfile.jpg") no-repeat 50% 20% / cover;
+    min-height: calc(100px + 15vw);
+}
+
+#username{
+    margin-top: 80px;
+    font-weight: 600;
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.details{
+    font-size: 0.9rem;
+    color: #818181;
+    margin: 6px;
+}
