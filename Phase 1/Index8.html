@@ -4,32 +4,39 @@
     <meta charset="UTF-8">
     <title>Profile Page</title>
     <link rel="stylesheet" href="userProfile.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=logout" />
     <script src="https://kit.fontawesome.com/e882ac110d.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header>
-        <a href="#" class="logo">Website</a>
-        <ul class="navBar">
-            <li> <a href="#"> <i class="material-icons">home</i> <br>Home</a> </li>
-            <li> <a href="#"> <i class="material-icons">search</i> <br>Search</a> </li>
-            <li> <a href="#"> <i class="material-icons">person</i> <br>Profile</a> </li>
-            <li> <a href="#"> <i class="material-icons">logout</i> <br>Log out</a> </li>
+    <div class ="header1">
+        <div class="logocon">
+            <a id="Logo" href="Index3.html">Website</a>
+        </div>
+        <ul id="navbar">
+            <li><a href="Index5.html">Homepage</a></li>
+            <li>
+                <div id="searchiconContainer">
+                    <img id="SearchIcon" src="SearchIcon.png">
+                </div>
+                <a href="Index4.html">Search</a>
+            </li>
+            <li><a href="Index8.html">Profile</a></li>
         </ul>
-    </header>
+        <a id="Logout" href = "./Index.1.html"><span class="material-symbols-outlined">logout</span></a>
+        <br>
+    </div>
 
     <div class="container">
+    <div class="container-content">
         <div class="header_wrapper">
             <div class="head"></div>
             <div class="center_col">
                 <div class="imgContainer">
                     <img src="pictureProfile.jpg" alt="profile image" id="imgPro">
                 </div>
-
                 <h2 id="username">Peter Parker</h2>
                 <p class="details">Front-end</p>
                 <p class="details">example@gmail.com</p>
-
                 <div class="content">
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet dolorem magni minima molestiae quas ullam.
@@ -53,8 +60,7 @@
                 </div>
             </div>
         </div>
-
-
+    </div>
     </div>
 </body>
 </html>
