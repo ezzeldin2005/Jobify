@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Job search</title>
-    <link rel="stylesheet" href="search.css">
+    <link rel="stylesheet" href="styles/search.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=logout" />
 </head>
 <body>
@@ -15,11 +15,11 @@
             <li><a href="Index6.html">Homepage</a></li>
             <li> 
                 <div id="searchiconContainer">
-                    <img id="SearchIcon" src="SearchIcon.png"> 
+                    <img id="SearchIcon" src="styles/images/SearchIcon.png"> 
                 </div>
                 <a href="Index5.html">Search</a>
             </li>
-            <li><a href="Index8.html">Profile</a></li>
+            <li><a href="Index7.html">Profile</a></li>
         </ul>
                 <a id="Logout" href = "./Index.1.html"><span class="material-symbols-outlined">logout</span></a>
                
@@ -27,23 +27,17 @@
 
     </div>
     
-    <div class = "search">
-            <form>
-                <input id="cbox" id="f" type="checkbox">
-                <label id="cboxTitle" id="f" for="cbox" style="color: dimgray;">By title</label>
-                <div id="searchTitleContainer">
-                    <label for="searchTitle">Search for a job by title :</label>
-                    <input type = "text" name = "searchTitle" id = "searchTitleInput" placeholder="Enter job title" >
-                    <input type = "submit" value = "Search" id = "searchTitleButton">
-                </div>
-                <br>    
-                <div id="searchYearContainer">
-                    <label for="searchYear">Search for a job by years of experience :</label>
-                    <input type = "number" name = "searchYear" id = "searchYearInput" placeholder="Enter years of experience" >
-                    <input type = "submit" value = "Search" id = "searchYearButton">
-                </div>
-                
-            </form>
+    <div id="searchelecontainer">
+        <div class = "search-bar">
+            <div id="select">
+                <select id="drop">
+                    <option value="0">By title</option>
+                    <option value="0">By years of experience</option>
+                </select>
+            </div>
+            <input type="text" id="" placeholder="Search" maxlength="50">
+            <button id= "searchBtn" type="submit"><img id="SearchIcon" src="styles/images/SearchIcon.png"></button>
+        </div>
     </div>
 
     <div class = "searchResult">

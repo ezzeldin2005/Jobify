@@ -1,5 +1,5 @@
 body{
-    background-image: linear-gradient(rgba(96, 132, 187, 0.479), rgba(194, 199, 241, 0.213)), url(Background.jpg);
+    background-image: linear-gradient(rgba(96, 132, 187, 0.479), rgba(194, 199, 241, 0.213)), url(images/Background.jpg);
     height: 100vh;
 }
 *{
@@ -101,7 +101,7 @@ a{
     align-items: center;
     flex-direction: column;
     justify-content: space-between;
-    margin-left: 20px;
+    margin-left: 11%;
     border-radius: 9px;
     position: relative;
     top: 8%;
@@ -230,7 +230,7 @@ input::placeholder, textarea::placeholder{
     color: dimgray;
 }
 #masterContainer{
-    background-image: linear-gradient(rgba(87, 139, 216, 0.479), rgba(194, 199, 241, 0.213)), url(keyboard-coffee-smartphone-notebook-color-background-top-view_1286-776.jpg);
+    background-image: linear-gradient(rgba(87, 139, 216, 0.479), rgba(194, 199, 241, 0.213)), url(images/keyboard-coffee-smartphone-notebook-color-background-top-view_1286-776.jpg);
     width: 100%;
     height: 100%;
     background-repeat: no-repeat;
@@ -238,6 +238,6 @@ input::placeholder, textarea::placeholder{
     position: absolute;
 }
 #masterContainer:hover{
-    background-image: linear-gradient(rgba(87, 139, 216, 0.479), transparent), url(keyboard-coffee-smartphone-notebook-color-background-top-view_1286-776.jpg);
+    background-image: linear-gradient(rgba(87, 139, 216, 0.479), transparent), url(images/keyboard-coffee-smartphone-notebook-color-background-top-view_1286-776.jpg);
 
 }

@@ -3,90 +3,8 @@
     <head>
         <meta charset = "UTF-8">
         <title>Admin Homepage</title>
-
-
-
-        <style>
-            body{
-                background-image: linear-gradient(to bottom right,rgba(5, 49, 74, 0.822) ,rgb(14, 127, 172) ,transparent);
-                height: 100vh;
-            }
-            *{
-                font-family: sans-serif;
-                padding: 0;
-                margin: 0;
-            }
-
-            a{
-                color: white;
-                text-decoration: none;
-                font-size: 20px;
-            }
-
-            .header1{
-                margin-top: 28px;
-                margin-bottom: 28px;
-                padding: 0 15px;
-                padding-bottom: 28px;
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-                box-shadow: 0 7px 10px rgba(0, 0, 0, 0.2);
-            }
-            
-            #Logo{
-                width: fit-content;
-                text-decoration: none;
-                color: white;
-                font-size: xx-large;
-            }
-            .logocon{
-                width: 15%;
-            }
-            #navbar {
-             width: 50%;
-             background-color: rgb(255, 255, 255, 0.200);
-             border-radius: 15px;
-             display: flex;
-             align-items: center;
-             justify-content: space-evenly;
-            }
-            #Logout{
-                padding-top: 5px;
-                text-align: center;
-                width: 8%;
-                background-color: rgba(19, 10, 10, 0.292);
-                border-radius: 15px;
-                font-size: 20px;
-                margin-left: 5%;
-            }
-            #Logout:hover{
-                box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4);
-            }
-            #navbar li{
-                display: inline;
-                justify-content: space-evenly;
-                font-size: x-large;
-            }
-            #navbar li:hover{
-                position: relative;
-                bottom: 3px;
-            }
-
-            .jobListContainer{
-                padding-left: 15px;
-            }   
-
-            .jobListContainer h2{
-                width: fit-content;
-                color: wheat;
-                background-color: rgba(19, 10, 10, 0.292);
-                border-radius: 15px;
-                padding: 7px;
-            }   
-
-        </style>
-
+        <link rel="stylesheet" href="styles/adminHomePage.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=logout" />
 
     </head>
 
@@ -102,14 +20,14 @@
                     <li><a href="Index4.html">Add New Job</a></li>
                     <li><a>Edit Job</a></li>
                 </ul>
-                <a id="Logout" href = "./Index.1.html">Logout</a>
+                <a id="Logout" href = "./Index.1.html"><span class="material-symbols-outlined" >logout</span></a>
 
                 <br>
 
             </div>
 
             <div class = "jobListContainer">
-                <h2>Available Jobs</h2>
+                <h2>Company Jobs</h2>
                 <ul class = "jobList">
                     
                 </ul>

@@ -1,0 +1,118 @@
+body{
+    background-image: linear-gradient(rgba(96, 132, 187, 0.479), rgba(194, 199, 241, 0.213)), url(images/Background.jpg);
+    height: 100vh;
+    width: 100vw;
+}
+*{
+    font-family: sans-serif;
+    font-weight: 400;
+    padding: 0;
+    margin: 0;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.header1{
+    margin-top: 28px;
+    padding: 0 15px;
+    padding-bottom: 28px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    box-shadow: 0px 13px 20px 0px rgb(33 44 81 / 30%);
+    position: relative;
+    z-index: 1;
+}
+
+#Logo{
+    width: fit-content;
+    text-decoration: none;
+    color: white;
+    font-size: xx-large;
+    font-weight: 700;
+}
+#Logo:hover{
+    position: relative;
+    bottom: 3px;
+}
+.logocon{
+    width: 15%;
+}
+#navbar {
+    width: 50%;
+    background-color: rgb(255, 255, 255, 0.200);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#Logout{
+    padding-top: 5px;
+    text-align: center;
+    width: 6%;
+    background-color: rgba(19, 10, 10, 0.292);
+    border-radius: 15px;
+    font-size: 26px;
+    margin-left: 5%;
+}
+.material-symbols-outlined {
+    font-variation-settings:
+            'FILL' 0,
+            'wght' 600,
+            'GRAD' 0,
+            'opsz' 24
+}
+#Logout:hover{
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+}
+#navbar li{
+    display: inline;
+    justify-content: space-evenly;
+    font-size: x-large;
+}
+#navbar li a{
+    font-size: 20px;
+    font-weight: 550;
+}
+#navbar li:hover{
+    position: relative;
+    bottom: 3px;
+    cursor: pointer;
+}
+
+#searchiconContainer{
+    margin: 0;
+    max-width: 20px;
+    max-height: 20px;
+    min-width: 5px;
+    min-height: 5px;
+    padding: 0;
+    display: inline-block;
+}
+#SearchIcon{
+    width: 100%;
+    height: auto;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    top: 3px;
+    left: 3px;
+}
+
+.jobListContainer{
+    padding: 30px;
+}
+
+.jobListContainer h2{
+    width: fit-content;
+    color: wheat;
+    background-color: rgba(19, 10, 10, 0.292);
+    border-radius: 15px;
+    padding: 7px;
+}
