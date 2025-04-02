@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <meta charset="UTF-8">
+        <title>Add Job</title>
+        <link rel="stylesheet" href="styles/adminAddJob.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=logout" />        <div class = "container">
+    </head>
+    <body>
+            <div class ="header1">
+                <div class="logocon">
+                    <a id="Logo" href="Index3.html">Website</a>
+                </div>
+                <ul id="navbar">
+                    <li><a href="Index3.html">Homepage</a></li>
+                    <li><a href="Index4.html">Add New Job</a></li>
+                    <li><a href="Index8.html">Edit Job</a></li>
+                </ul>
+                <a id="Logout" href = "./Index.1.html"><span class="material-symbols-outlined">logout</span></a>
+                
+                <br>
+                
+            </div>
+            
+            <div id="masterContainer">
+
+                    <div class = "jobFormContainer">
+                        
+                        <div id="formText">
+                            <h2>Edit Job</h2>
+                            <p>To complete the edit, hit 'Save Changes'</p>
+                        </div>
+                        
+                        <form method="post">
+                            
+                            <div id = "jobCompanyContainer">
+                                <input type="text" required name = "jobCompany" id="jobCompany" placeholder="Job Company" readonly>
+                            </div>
+                            
+                            <div id = "jobIDContainer">
+                                <input type="text" required name="jobID" id = "jobID" placeholder="Job ID" readonly>
+                            </div>
+                            
+                            <div id = "jobTitleContainer">
+                            <input type="text" required name="jobTitle" id = "jobTitle" placeholder="Job Title" readonly>
+                        </div>
+
+                        <div id = "jobSalaryExp">
+                            <input type = "number" required min = "0" name = "jobSalary" id = "jobSalary" placeholder="Job Salary">
+                            <input type="number" required min="0" name="jobExperiance" id = "jobExperiance" placeholder="Years of Experiance">
+                        </div>
+                        
+                        <div id = "jobDescriptionContainer">
+                            <textarea rows="5" cols="30" name="jobDescription" id="jobDescription" placeholder="Job Description"></textarea>
+                        </div>
+                        
+                        <div id = "jobStatusContainer">
+                            <pre>Jop Status:</pre>
+                            <div id= "OC">
+                                <div>
+                                    <input type="radio" required name="jobStatus" id = "jobStatusOpen" value="Open">
+                                    <label for="jobStatusOpen">Open</label>
+                                </div>
+                                <div>
+                                    <input type="radio" required name="jobStatus" id = "jobStatusClosed" value="Closed">
+                                    <label for="jobStatusClosed">Closed</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <input type="submit" value="Save Changes" id="submit">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
