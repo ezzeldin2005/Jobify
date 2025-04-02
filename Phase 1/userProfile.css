@@ -14,45 +14,6 @@ body{
     font-family: sans-serif;
 }
 
-/*header {
-    background: rgb(5, 44, 65);
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0;
-    margin-bottom: 10px;
-}
-
-header ul{
-    list-style-type: none;
-    display: flex;
-    justify-content: space-around;
-    width: 45%;
-}
-
-header li{
-    text-align: center;
-}
-
-header a {
-    color: white;
-    text-decoration: none;
-}
-
-header ul li a:hover{
-    color: deepskyblue;
-}
-
-header ul li:hover{
-    scale: 1.1 1.1;
-}
-
-.logo {
-    font-size: 30px;
-    padding-left: 50px;
-}*/
-
 *{
     font-family: sans-serif;
     font-weight: 400;
