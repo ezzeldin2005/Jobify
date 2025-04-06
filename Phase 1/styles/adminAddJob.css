@@ -170,7 +170,7 @@ input, textarea{
     position: relative;
     top: 6%;
     margin-right: 4%;
-    box-shadow: 0px 0px 20px 0px rgb(0 0 0 / 47%);
+    box-shadow: 0px 0px 11px 0px #231e2a;
 }
 #jobCompanyContainer input, #jobIDContainer input, #jobTitleContainer input{
     width: 97%;
@@ -344,7 +344,7 @@ input[type="radio"] {
     bottom: 3px;
 }
 #masterContainer{
-    background-image: linear-gradient(to top, #2b2139, #40344f);
+    background-image: linear-gradient(to top, #2b2139, #3d3449);
     display: flex;
     justify-content: center;
     width: 100%;
