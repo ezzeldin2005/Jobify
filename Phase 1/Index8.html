@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Job search</title>
     <link rel="stylesheet" href="styles/editJob.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=logout" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
 </head>
 <body>
     <div class ="header1">
@@ -12,9 +12,24 @@
             <a id="Logo" href="Index3.html">Website</a>
         </div>
         <ul id="navbar">
-            <li><a href="Index3.html">Homepage</a></li>
-            <li><a href="Index4.html">Add New Job</a></li>
-            <li><a href="Index8.html">Edit Job</a></li>
+            <li>
+                <div id="homeiconContainer">
+                    <span class="material-symbols-outlined">home</span>
+                    <a href="Index3.html">Home</a>
+                </div>
+            </li>
+            <li>
+                <div id="AddiconContainer">
+                    <span class="material-symbols-outlined">add</span>
+                    <a href="Index4.html">Add New Job</a>
+                </div>
+            </li>
+            <li>
+                <div id="editiconContainer">
+                    <span class="material-symbols-outlined">edit</span>
+                    <a href="index8.html">Edit Job</a>
+                </div>
+            </li>
         </ul>
         <a id="Logout" href = "./Index.1.html"><span class="material-symbols-outlined">logout</span></a>
         
@@ -46,7 +61,7 @@
                     <p>Location</p>
                     <p>Salary</p>
                     <div class="editDeletecontainer">
-                     <button class="editButton">Edit</button>
+                     <button class="editButton" onclick="window.location.href='index9.html'">Edit</button>
                      <button class="deleteButton">Delete</button>
                      </div>
                    <!-- Repeat jobCard div for more job listings -->
@@ -57,7 +72,7 @@
                     <p>Location</p>
                     <p>Salary</p>
                     <div class="editDeletecontainer">
-                        <button class="editButton">Edit</button>
+                        <button class="editButton" onclick="window.location.href='index9.html'">Edit</button>
                         <button class="deleteButton">Delete</button>
                      </div>
                    <!-- Repeat jobCard div for more job listings -->
@@ -67,7 +82,7 @@
                      <p>Location</p>
                      <p>Salary</p>
                      <div class="editDeletecontainer">
-                        <button class="editButton">Edit</button>
+                        <button class="editButton" onclick="window.location.href='index9.html'">Edit</button>
                         <button class="deleteButton">Delete</button>
                       </div>
                     <!-- Repeat jobCard div for more job listings -->

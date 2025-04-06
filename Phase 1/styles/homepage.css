@@ -160,7 +160,26 @@ input{
     align-items: center;
     border-radius: 12px;
     background-image: url(images/Image.png);
+    animation: backG 10s linear infinite alternate;
     background-size: cover;
+    box-shadow: 0px 0px 10px #514167b3;
+}
+@keyframes backG {
+    0%{
+        background-image: url(images/Image\ \(1\).jpg);
+    }
+    25%{
+        background-image: url(images/Noise\ &\ Texture.jpg);
+    }
+    50%{
+        background-image: url(images/Image.jpg);
+    }
+    75%{
+        background-image: url(images/66.jpg);
+    }
+    100%{
+        background-image: url(images/Image.png);
+    }
 }
 
 #introcontainer{
@@ -212,41 +231,6 @@ input{
     font-size: 18px;
     margin-bottom: 29%;
     text-align: center;
-}
-#last{
-    height: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 12px;
-}
-#last p{
-    height: 8px;
-    width: 60px;
-    border-radius: 3px;
-    border: transparent;
-    background-color: rgba(255, 255, 255, 0.429);
-}
-#last p:hover{
-    background-color: white;
-    position: relative;
-    bottom: 1.5px;
-    scale: 1.2;
-    transition: background-color 0.5s linear;
-    box-shadow:  0px 0px 10px 1px #2c2538;;
-}
-.intro:has(#last > p:hover){
-    background-image: url(images/Noise\ &\ Texture.jpg);
-    transition: background-image 1s linear;
-    
-}
-.intro:has(#last > p + p:hover){
-    background-image: url(images/Image.jpg);
-    transition: background-image 1s linear;
-}
-.intro:has(#last > p + p + p:hover){
-    background-image: url(images/Image\ \(1\).jpg);
-    transition: background-image 1s linear;
 }
 #rem{
     width: 15px;
