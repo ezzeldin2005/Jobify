@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Archivo+Black&family=Lilita+One&family=PT+Sans+Narrow:wght@400;700&family=Passion+One:wght@400;700;900&family=Ubuntu:ital@1&family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap');
+
 body{
     background-image: linear-gradient(to bottom right, #676278, #676278, #676278);
     height: 100vh;
@@ -200,11 +202,39 @@ input{
 .intro P , .intro h3{
     width: 80%;
 }
+#logobtn{
+    margin-bottom: 20%;
+    display: flex;
+
+}
+#logobtn a{
+    background-color: rgba(91, 90, 90, 0.366);
+    text-decoration: none;
+    color: white;
+    margin-top: 7.5%;
+    box-sizing: border-box;
+    border-radius: 18px;
+    text-align: center;
+    width: 29%;
+    height: 32%;
+    transition: box-shadow 0.3 ease-out;
+}
+#logobtn a span{
+    position: relative;
+    top: 17.5%;
+    left: 4%;
+}
+#logobtn a:hover{
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    position: relative;
+    bottom: 2px;
+}
 #Logo{
-    margin-bottom: 25%;
     color: white;
     font-size: 40px;
     padding-left: 6%;
+    width: 60%;
 }
 #inp{
     height: 70%;
@@ -218,7 +248,7 @@ input{
     width: 100%;
 }
 .intro .IntroText #Welcome{
-    font-size: 30px;
+    font-size: 34px;
     padding-left: 10%;
     color: white; 
     margin-bottom: 0%;
@@ -228,8 +258,10 @@ input{
 .intro .IntroText #text{
     color: white; 
     padding-left: 10.5%;
-    font-size: 18px;
+    font-size: 20px;
+    font-family: "PT Sans Narrow", sans-serif;
     margin-bottom: 29%;
+    width: 78%;
     text-align: center;
 }
 #rem{
