@@ -1,0 +1,29 @@
+<Jobs>
+<Job>
+    <Company></Company>
+    <Id></Id>
+    <Title>ibrahim</Title>
+    <YearsofExperiance>3</YearsofExperiance>
+    <Salary></Salary>
+    <JobDescription></JobDescription>
+    <Status></Status>
+</Job>
+<Job>
+    <Company></Company>
+    <Id></Id>
+    <Title>ezz</Title>
+    <YearsofExperiance>2</YearsofExperiance>
+    <Salary></Salary>
+    <JobDescription></JobDescription>
+    <Status></Status>
+</Job>  
+<Job>
+    <Company></Company>
+    <Id></Id>
+    <Title>ziad</Title>
+    <YearsofExperiance>1</YearsofExperiance>
+    <Salary></Salary>
+    <JobDescription></JobDescription>
+    <Status></Status>
+</Job> 
+</Jobs>     

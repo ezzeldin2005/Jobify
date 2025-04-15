@@ -43,10 +43,10 @@
             <div id="select">
                 <select id="drop">
                     <option value="0">By title</option>
-                    <option value="0">By years of experience</option>
+                    <option value="1">By years of experience</option>
                 </select>
             </div>
-            <input type="text" id="" placeholder="Search" maxlength="50">
+            <input type="text" id="searchInput" placeholder="Search" maxlength="50">
             <button id= "searchBtn" type="submit"><span id="SearchIcon" class="material-symbols-outlined">search</span></button>
         </div>
     </div>
@@ -54,7 +54,26 @@
     <div class = "searchResult">
         <div id="resultBorder">
             <div id="searchResultContainer">
-                <div class="cards">
+                <div id="cards">
+                    <div class="jobCard">
+                        <h3>Job Title</h3>
+                        <p>Company Name</p>
+                        <p>Years of Experiance</p>
+                        <p>Salary</p>
+                        <div id="applyButtoncontainer">
+                            <button id="applyButton">Apply</button>
+                        </div>
+                    </div>
+                    <div class="jobCard">
+                        <h3>Job Title</h3>
+                        <p>Company Name</p>
+                        <p>Location</p>
+                        <p>Salary</p>
+                        <div id="applyButtoncontainer">
+                            <button id="applyButton">Apply</button>
+                        </div>
+                    </div>
+               
                     <div class="jobCard">
                         <h3>Job Title</h3>
                         <p>Company Name</p>
@@ -72,17 +91,7 @@
                         <div id="applyButtoncontainer">
                             <button id="applyButton">Apply</button>
                         </div>
-                    </div>
-               </div>
-               <div class="cards">
-                    <div class="jobCard">
-                        <h3>Job Title</h3>
-                        <p>Company Name</p>
-                        <p>Location</p>
-                        <p>Salary</p>
-                        <div id="applyButtoncontainer">
-                            <button id="applyButton">Apply</button>
-                        </div>
+                
                     </div>
                     <div class="jobCard">
                         <h3>Job Title</h3>
@@ -97,6 +106,6 @@
             </div>
         </div>
     </div>
-    
+    <script src="./scripts/jobSearch.js"></script>
 </body>
 </html>
