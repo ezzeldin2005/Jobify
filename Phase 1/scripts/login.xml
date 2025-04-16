@@ -1,0 +1,25 @@
+<root>
+    <user>
+        <email>user1@example.com</email>
+        <password>user1pass</password>
+    </user>
+    <user>
+        <email>user2@example.com</email>
+        <password>user2pass</password>
+    </user><user>
+        <email>user3@example.com</email>
+        <password>user3pass</password>
+    </user>
+    <admin>
+        <email>admin1@example.com</email>
+        <password>admin1pass</password>
+    </admin>
+    <admin>
+        <email>admin2@example.com</email>
+        <password>admin2pass</password>
+    </admin>
+    <admin>
+        <email>admin3@example.com</email>
+        <password>admin3pass</password>
+    </admin>
+</root>
