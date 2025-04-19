@@ -10,7 +10,7 @@
 <body>
     <div class ="header1">
         <div class="logocon">
-            <a id="Logo" href="Index0.html">Website</a>
+            <a id="Logo" href="Index0.html"><img src="styles/images/image-removebg-preview.png" alt=""></a>
         </div>
         <ul id="navbar">
             <li>
@@ -32,19 +32,21 @@
                 </div>
             </li>
         </ul>
-                <a id="Logout" href = "./index0.html"><span class="material-symbols-outlined">logout</span></a>
+        <a id="Logout" href = "./index0.html"><span class="material-symbols-outlined">logout</span></a>
                
         <br>
 
     </div>
     
     <div id="searchelecontainer">
-        <div class = "search-bar">
+        <div id = "search-bar">
             <div id="select">
-                <select id="drop">
-                    <option value="0">By title</option>
-                    <option value="1">By years of experience</option>
-                </select>
+                <p id="selectText">All Categories</p>
+                <img src="styles/images/Arrowhead-Down-01-256.png">
+                <ul id="list">
+                    <li class="options">By Title</li>
+                    <li class="options">By Years of Experience</li>
+                </ul>
             </div>
             <input type="text" id="searchInput" placeholder="Search" maxlength="50">
             <button id= "searchBtn" type="submit"><span id="SearchIcon" class="material-symbols-outlined">search</span></button>
@@ -55,53 +57,6 @@
         <div id="resultBorder">
             <div id="searchResultContainer">
                 <div id="cards">
-                    <div class="jobCard">
-                        <h3>Job Title</h3>
-                        <p>Company Name</p>
-                        <p>Years of Experiance</p>
-                        <p>Salary</p>
-                        <div id="applyButtoncontainer">
-                            <button id="applyButton">Apply</button>
-                        </div>
-                    </div>
-                    <div class="jobCard">
-                        <h3>Job Title</h3>
-                        <p>Company Name</p>
-                        <p>Location</p>
-                        <p>Salary</p>
-                        <div id="applyButtoncontainer">
-                            <button id="applyButton">Apply</button>
-                        </div>
-                    </div>
-               
-                    <div class="jobCard">
-                        <h3>Job Title</h3>
-                        <p>Company Name</p>
-                        <p>Location</p>
-                        <p>Salary</p>
-                        <div id="applyButtoncontainer">
-                            <button id="applyButton">Apply</button>
-                        </div>
-                    </div>
-                    <div class="jobCard">
-                        <h3>Job Title</h3>
-                        <p>Company Name</p>
-                        <p>Location</p>
-                        <p>Salary</p>
-                        <div id="applyButtoncontainer">
-                            <button id="applyButton">Apply</button>
-                        </div>
-                
-                    </div>
-                    <div class="jobCard">
-                        <h3>Job Title</h3>
-                        <p>Company Name</p>
-                        <p>Location</p>
-                        <p>Salary</p>
-                        <div id="applyButtoncontainer">
-                            <button id="applyButton">Apply</button>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
