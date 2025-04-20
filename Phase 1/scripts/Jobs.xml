@@ -1,21 +1,23 @@
 <Jobs>
 <Job>
     <Company>Ahmed</Company>
-    <Id></Id>
+    <Id>HA123</Id>
     <Title>ibrahim</Title>
-    <YearsofExperiance>3</YearsofExperiance>
-    <Salary></Salary>
-    <JobDescription></JobDescription>
-    <Status></Status>
+    <YearsofExperiance>3 Years</YearsofExperiance>
+    <Salary>3000$ : 5000$</Salary>
+    <JobDescription>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab fugit mollitia perferendis repellendus, vero incidunt officia ratione? Unde aliquid aut exercitationem temporibus consequatur corrupti ut obcaecati laboriosam facilis, sint animi quam soluta amet sit voluptate esse consequuntur iusto corporis ex ea laborum quisquam dolores molestias nostrum! Eligendi voluptate atque sapiente rem deleniti similique soluta at, officiis, eaque aut, libero quos dolores dolorum dolor. Voluptatibus obcaecati, nisi, nobis ratione magnam necessitatibus voluptas molestias eaque, praesentium architecto qui perferendis dolor autem adipisci sequi? Provident quas, itaque accusamus nostrum consectetur dolorem enim adipisci distinctio aut mollitia alias exercitationem, obcaecati et sit nobis veritatis. Reprehenderit sed velit ipsum voluptatum quidem magnam. Ex neque, quo, officiis dele</JobDescription>
+    <Status>Open now</Status>
 </Job>
 <Job>
-    <Company></Company>
-    <Id></Id>
-    <Title>ezz</Title>
-    <YearsofExperiance>2</YearsofExperiance>
-    <Salary></Salary>
-    <JobDescription></JobDescription>
-    <Status></Status>
+    <Title>Frontend Developer</Title>
+    <Id>FE234</Id>
+    <Company>CodeCrafters Inc.</Company>
+    <YearsofExperiance>2-4 Years</YearsofExperiance>
+    <Salary>4500$ : 6000$</Salary>
+    <Status>Hiring Now</Status>
+    <JobDescription>
+       We are looking for a Software Engineer to join our team and help design, build, and maintain scalable applications. The ideal candidate has experience with modern programming languages, clean code practices, and team collaboration. You will be responsible for writing reliable code, participating in code reviews, debugging issues, and contributing to architecture decisions. Familiarity with web frameworks, APIs, databases, and cloud platforms is highly valued. You’ll work closely with product managers and designers to deliver high-quality features. A passion for solving real-world problems, attention to detail, and a willingness to learn are essential. This is a full-time role with growth opportunities, competitive pay, and a supportive team environment. and i am lokking for eat happy schoole welcome to my world mark mohamed ali ismail tarek ahmed happy schoole welcome to my
+    </JobDescription>
 </Job>  
 <Job>
     <Company></Company>

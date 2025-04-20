@@ -1,7 +1,6 @@
 body{
     background-image: linear-gradient(to right, #2e253b , #393045 , #352e3e);
-    height: 200vh;
-    
+    height: auto;
 }
 *{
     font-family: sans-serif;
@@ -16,9 +15,9 @@ a{
 }
 
 .header1{
-    padding-bottom: 28px;
-    padding-top: 28px;
-    padding-left: 15px;
+    padding-bottom: 12px;
+    padding-top: 10px;
+    box-sizing: border-box;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -31,18 +30,18 @@ a{
 
 #Logo{
     width: fit-content;
-    text-decoration: none;
-    color: #d3ccdd;
-    font-size: xx-large;
-    font-weight: 700;
+}
+#Logo img{
+    width: 150px;
 }
 #Logo:hover{
     position: relative;
     bottom: 3px;
 }
 .logocon{
-    width: 15%;
-    padding-top: 5px;
+    width: 11%;
+    box-sizing: border-box;
+    padding-left: 30px;
 }
 #navbar {
  width: 50%;
@@ -50,16 +49,6 @@ a{
  display: flex;
  align-items: center;
  justify-content: space-evenly;
-}
-
-#Logout{
-    padding-top: 5px;
-    text-align: center;
-    width: 6%;
-    background-color: white;
-    border-radius: 15px;
-    font-size: 26px;
-    margin-left: 5%;
 }
 .material-symbols-outlined {
     font-variation-settings:
@@ -98,19 +87,18 @@ a{
     bottom: 3px;
     cursor: pointer;
 }
-.logocon{
-    width: 15%;
-}
 #Logout{
+    margin-top: 0.8%;
     padding-top: 12px;
+    margin-right: 3%;
+    box-sizing: border-box;
     text-align: center;
     width: 8%;
-    height: 37px;
-    background-color: #5c4ea2;
+    height: 49px;
+    background-color: #4d4284;
     color: #c8c0d2;
     border-radius: 7px;
     font-size: 20px;
-    margin-left: 5%;
 }
 #Logout:hover{
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4);
@@ -136,7 +124,10 @@ a{
     bottom: 3%;
 }
 
-/*---------------------------------------------------*/
+
+
+/* ----------------------------------- */
+
 .container{
     display: flex;
     justify-content: center;
