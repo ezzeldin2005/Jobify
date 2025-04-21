@@ -22,9 +22,9 @@ a{
     flex-direction: row;
     justify-content: space-between;
     background-image: linear-gradient(to right, #2e253b , #393045 , #352e3e);
-    box-shadow: 0px 13px 20px 0px rgb(23 26 39 / 30%);
+    box-shadow: 0 13px 20px 0 rgb(23 26 39 / 30%);
     position: sticky;
-    top: 0%;
+    top: 0;
     z-index: 1;
 }
 
@@ -58,12 +58,11 @@ a{
     'opsz' 24
 }
 #Logout:hover{
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
     cursor: pointer;
 }
 #navbar li{
     display: flex;
-    justify-content: center;
     align-items: center;
     justify-content: space-evenly;
     font-size: 18px;
@@ -101,7 +100,7 @@ a{
     font-size: 20px;
 }
 #Logout:hover{
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
 }
 #searchiconContainer, #profileiconContainer, #homeiconContainer{
     display: flex;
@@ -124,10 +123,6 @@ a{
     bottom: 3%;
 }
 
-
-
-/* ----------------------------------- */
-
 .container{
     display: flex;
     justify-content: center;
@@ -137,7 +132,8 @@ a{
     background: #c2b7ca;
     width: 80%;
     border-radius: 20px;
-    box-shadow: 0px 0px 4px 3px #676278;
+    box-shadow: 0 0 4px 3px #676278;
+    position: relative;
 }
 
 .content ul {
@@ -171,8 +167,8 @@ a{
     border-radius: 50%;
     padding: 5px;
     object-fit: cover;
-    box-shadow: 1px 3px 12px rgba(0, 0, 0, 0.18);
-    background-color: #676278;
+    background-color: #c2b7ca;
+    cursor: pointer;
 }
 
 .imgContainer{
@@ -219,4 +215,276 @@ body::-webkit-scrollbar-track {
 body::-webkit-scrollbar-thumb {
     background-color: #2e253b7d;
     border-radius: 12px;
+}
+
+.secondPart {
+    position: relative;
+}
+
+#edit-btn {
+    background-color: #c2b7ca;
+    border: none;
+    border-radius: 50%;
+    padding: 8px;
+    cursor: pointer;
+    font-size: 10px;
+    transition: background-color 0.2s ease;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+#edit-btn:hover {
+    background-color: #d2c8d9;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+.modal{
+    width: 90%;
+    max-width: 750px;
+    max-height: 90vh;
+    background-color: white;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+.modal-background {
+    width: 90%;
+    max-width: 750px;
+    max-height: 80vh;
+
+    border-radius: 8px;
+}
+.modal-header {
+    margin: 5px;
+    padding: 0 1rem;
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+    flex-shrink: 0;
+}
+
+.modal-header h3 {
+    margin: 15px 5px;
+}
+
+.modal-footer {
+    padding: 1rem;
+    background-color: #fff;
+    border-top: 1px solid #ccc;
+    flex-shrink: 0;
+}
+
+.required-note {
+    font-size: 13px;
+    color: gray;
+    padding-bottom: 10px;
+    margin-bottom: 0;
+    margin-top: 10px;
+}
+
+/* Scrollable body */
+.modal-body {
+    padding: 1rem;
+    overflow-y: auto;
+    flex-grow: 1;
+}
+
+/* Form styling */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    color: #424242;
+}
+
+.save-btn {
+    background-color: #0a66c2;
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    float: right;
+}
+
+.close-btn {
+    float: right;
+    cursor: pointer;
+    font-size: 2.5rem;
+}
+
+label {
+    color: gray;
+    display: block;
+    margin-top: 20px;
+}
+
+#edit-background-btn {
+    border: none;
+    border-radius: 50%;
+    padding: 6px;
+    cursor: pointer;
+    font-size: 3px;
+    transition: background-color 0.2s ease;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+#edit-background-btn:hover {
+    background-color: #c2bfbf;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 3.7rem;
+    background-color: white;
+    min-width: 140px;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+    z-index: 1;
+    padding: 10px;
+    padding-top: 0;
+    border-radius: 10px;
+}
+
+.dropdown-content label,
+.dropdown-content button {
+    display: block;
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    padding: 8px 0;
+    font-size: 14px;
+}
+
+.dropdown-content label:hover,
+.dropdown-content button:hover {
+    background-color: #f0f0f0;
+}
+
+/*_______________________________________*/
+.pictureProfileModal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+/* Modal box */
+.modal-content {
+    background-color: #1c1c1c;
+    width: 650px;
+    border-radius: 10px;
+    padding: 10px 0 0 0;
+    color: white;
+    position: relative;
+    margin: 0;
+}
+
+/* Header */
+.pictureProfileModal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.pictureProfileModal-header h2 {
+    margin: 0;
+    font-size: 20px;
+}
+
+/* Close button */
+.close {
+    font-size: 2.5rem;
+    cursor: pointer;
+}
+
+/* Body */
+.pictureProfileModal-body {
+    display: flex;
+    justify-content: center;
+    margin: 50px 0;
+}
+
+.profile-image {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 6px solid #1c1c1c;
+    box-shadow: 0 0 0 5px #3c3c3c;
+}
+
+/* Footer buttons */
+.pictureProfileModal-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    border-top: 1px solid #3c3c3c;
+    align-items: stretch;
+}
+
+.change-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    padding: 0 20px;
+    margin-top: 0;
+}
+
+.delete-btn {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    padding: 0 20px;
+}
+.left-btn:hover, .right-btn:hover{
+    background-color: #818181;
+}
+
+.left-btn, .right-btn {
+    height: 70px;
+    display: inline-flex;
+    align-items: center;
 }

@@ -1,0 +1,29 @@
+<users>
+    <user>
+        <Id>1</Id>
+        <FirstName>peter</FirstName>
+        <LastName>parker</LastName>
+        <Email>example@gmail.com </Email>
+        <JobTile>frontend</JobTile>
+        <Birthday></Birthday>
+        <PhoneNumber></PhoneNumber>
+    </user>
+    <user>
+        <Id>2</Id>
+        <FirstName></FirstName>
+        <LastName></LastName>
+        <Email></Email>
+        <JobTile></JobTile>
+        <Birthday></Birthday>
+        <PhoneNumber></PhoneNumber>
+    </user>
+    <user>
+        <Id>3</Id>
+        <FirstName></FirstName>
+        <LastName></LastName>
+        <Email></Email>
+        <JobTile></JobTile>
+        <Birthday></Birthday>
+        <PhoneNumber></PhoneNumber>
+    </user>
+</users>
