@@ -14,13 +14,13 @@ let addJobCard = function(job){
     buttonContainer.id = 'applyButtoncontainer';
     applyButton.id = 'applyButton';
     
-    jobTitle.innerHTML = '<span class="label">Title: </span><br>' + job['Title'];
-    jobId.innerHTML = '<span class="label">Job ID: </span><br>' + job['Id'];
-    companyName.innerHTML = '<span class="label">Company: </span><br>' + job['Company'];
-    experiance.innerHTML = '<span class="label">Years of Experiance: </span><br>' + job['YearsofExperiance'];
-    Salary.innerHTML = '<span class="label">Salary: </span><br>' + job['Salary'];
-    status.innerHTML = '<span class="label">Status: </span><br>' + job['Status'];
-    jobDescription.innerHTML = '<span class="label">Job description: </span><br>' + jobsArray['JobDescription'];
+    jobTitle.innerHTML = '<span class="label">Title: </span><br>' + job['title'];
+    jobId.innerHTML = '<span class="label">Job ID: </span><br>' + job['id'];
+    companyName.innerHTML = '<span class="label">Company: </span><br>' + job['company'];
+    experiance.innerHTML = '<span class="label">Years of Experiance: </span><br>' + job['yearsofExperiance'];
+    Salary.innerHTML = '<span class="label">Salary: </span><br>' + job['salary'];
+    status.innerHTML = '<span class="label">Status: </span><br>' + job['status'];
+    jobDescription.innerHTML = '<span class="label">Job description: </span><br>' + jobsArray['description'];
     applyButton.innerHTML = 'Apply';
 
     buttonContainer.appendChild(applyButton);
