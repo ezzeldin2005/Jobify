@@ -1,54 +1,57 @@
 let addJobCard = function(job){
     let jobCard = document.createElement('div');
-            let jobTitle =  document.createElement('h3');
-            let jobId =  document.createElement('h3');
-            let companyName = document.createElement('p');
-            let experiance = document.createElement('p');
-            let Salary = document.createElement('p');
-            let jobDescription = document.createElement('p');
-            let status = document.createElement('p');
-            let buttonContainer = document.createElement('div');
-            let editButton = document.createElement('button');
-            let deleteButton = document.createElement('button');
+    let jobTitle =  document.createElement('h3');
+    let jobId =  document.createElement('h3');
+    let companyName = document.createElement('p');
+    let experiance = document.createElement('p');
+    let Salary = document.createElement('p');
+    let jobDescription = document.createElement('p');
+    let status = document.createElement('p');
+    let buttonContainer = document.createElement('div');
+    let editButton = document.createElement('button');
+    let deleteButton = document.createElement('button');
 
-            jobCard.className = 'jobCard';
-            buttonContainer.className = 'editDeletecontainer';
-            editButton.className = 'editButton';
-            deleteButton.className = 'deleteButton';
-            
-            jobTitle.innerHTML = '<span class="label">Title: </span><br>' + jobs['title'];
-            jobId.innerHTML = '<span class="label">Job ID: </span><br>' + jobs['id'];
-            companyName.innerHTML = '<span class="label">Company: </span><br>' + jobs['company'];
-            experiance.innerHTML = '<span class="label">Years of Experiance: </span><br>' + jobs['yearsofExperiance'];
-            Salary.innerHTML = '<span class="label">Salary: </span><br>' + jobs['salary'];
-            status.innerHTML = '<span class="label">Status: </span><br>' + jobs['status'];
-            jobDescription.innerHTML = '<span class="label">Job description: </span><br>' + jobs['description'];
-            editButton.innerHTML = 'Edit';
-            deleteButton.innerHTML = 'Delete';
+    jobCard.className = 'jobCard';
+    buttonContainer.className = 'editDeletecontainer';
+    editButton.className = 'editButton';
+    deleteButton.className = 'deleteButton';
+    
+    jobTitle.innerHTML = '<span class="label">Title: </span><br>' + job['title'];
+    jobId.innerHTML = '<span class="label">Job ID: </span><br>' + job['id'];
+    companyName.innerHTML = '<span class="label">Company: </span><br>' + job['company'];
+    experiance.innerHTML = '<span class="label">Years of Experiance: </span><br>' + job['yearsofExperiance'];
+    Salary.innerHTML = '<span class="label">Salary: </span><br>' + job['salary'];
+    status.innerHTML = '<span class="label">Status: </span><br>' + job['status'];
+    jobDescription.innerHTML = '<span class="label">Job description: </span><br>' + job['description'];
+    editButton.innerHTML = 'Edit';
+    deleteButton.innerHTML = 'Delete';
 
-            console.log('hello');
+    console.log('hello');
 
-            buttonContainer.appendChild(editButton);
-            buttonContainer.appendChild(deleteButton);
-            jobCard.appendChild(jobTitle);
-            jobCard.appendChild(jobId);
-            jobCard.appendChild(companyName);
-            jobCard.appendChild(experiance);
-            jobCard.appendChild(Salary);
-            jobCard.appendChild(status);
-            jobCard.appendChild(jobDescription);
-            jobCard.appendChild(buttonContainer);
+    buttonContainer.appendChild(editButton);
+    buttonContainer.appendChild(deleteButton);
+    jobCard.appendChild(jobTitle);
+    jobCard.appendChild(jobId);
+    jobCard.appendChild(companyName);
+    jobCard.appendChild(experiance);
+    jobCard.appendChild(Salary);
+    jobCard.appendChild(status);
+    jobCard.appendChild(jobDescription);
+    jobCard.appendChild(buttonContainer);
 
-            deleteButton.onclick = function () {
-                if (confirm('Are you sure you want to delete this job posting?')) {
-                    jobCard.remove();
-                }
-            };
-            editButton.onclick = function () {
-                window.location.href = 'index9.html';
-            };
-        
-            document.getElementById('cards').appendChild(jobCard);
+    deleteButton.onclick = function () {
+        if (confirm('Are you sure you want to delete this job posting?')) {
+            jobCard.remove();
+            let jobs = JSON.parse(localStorage.getItem("jobs")) || [];
+            jobs = jobs.filter(item => item["id"] !== job["id"]);
+            localStorage.setItem("jobs", JSON.stringify(jobs));
+        }
+    };
+    editButton.onclick = function () {
+        window.location.href = 'index9.html';
+    };
+
+    document.getElementById('cards').appendChild(jobCard);
 }
 
 

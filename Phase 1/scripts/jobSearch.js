@@ -20,7 +20,7 @@ let addJobCard = function(job){
     experiance.innerHTML = '<span class="label">Years of Experiance: </span><br>' + job['yearsofExperiance'];
     Salary.innerHTML = '<span class="label">Salary: </span><br>' + job['salary'];
     status.innerHTML = '<span class="label">Status: </span><br>' + job['status'];
-    jobDescription.innerHTML = '<span class="label">Job description: </span><br>' + jobsArray['description'];
+    jobDescription.innerHTML = '<span class="label">Job description: </span><br>' + job['description'];
     applyButton.innerHTML = 'Apply';
 
     buttonContainer.appendChild(applyButton);
