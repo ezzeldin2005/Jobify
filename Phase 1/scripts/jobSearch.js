@@ -1,53 +1,53 @@
+let addJobCard = function(job){
+    let jobCard = document.createElement('div');
+    let jobTitle =  document.createElement('h3');
+    let jobId =  document.createElement('h3');
+    let companyName = document.createElement('p');
+    let experiance = document.createElement('p');
+    let Salary = document.createElement('p');
+    let jobDescription = document.createElement('p');
+    let status = document.createElement('p');
+    let buttonContainer = document.createElement('div');
+    let applyButton = document.createElement('button');
+
+    jobCard.className = 'jobCard';
+    buttonContainer.id = 'applyButtoncontainer';
+    applyButton.id = 'applyButton';
+    
+    jobTitle.innerHTML = '<span class="label">Title: </span><br>' + job['Title'];
+    jobId.innerHTML = '<span class="label">Job ID: </span><br>' + job['Id'];
+    companyName.innerHTML = '<span class="label">Company: </span><br>' + job['Company'];
+    experiance.innerHTML = '<span class="label">Years of Experiance: </span><br>' + job['YearsofExperiance'];
+    Salary.innerHTML = '<span class="label">Salary: </span><br>' + job['Salary'];
+    status.innerHTML = '<span class="label">Status: </span><br>' + job['Status'];
+    jobDescription.innerHTML = '<span class="label">Job description: </span><br>' + jobsArray['JobDescription'];
+    applyButton.innerHTML = 'Apply';
+
+    buttonContainer.appendChild(applyButton);
+    jobCard.appendChild(jobTitle);
+    jobCard.appendChild(jobId);
+    jobCard.appendChild(companyName);
+    jobCard.appendChild(experiance);
+    jobCard.appendChild(Salary);
+    jobCard.appendChild(status);
+    jobCard.appendChild(jobDescription);
+    jobCard.appendChild(buttonContainer);
+
+    document.getElementById('cards').appendChild(jobCard);
+}
+
+
+
+
+
 /* Start display all jobs onload */
 
 window.onload = function () {
-    const xhttp = new XMLHttpRequest();
-    xhttp.onload = function () {
-        const xhttpResponse = xhttp.responseXML;
-        let jobs = xhttpResponse.getElementsByTagName('Job');
-
-        for (let i = 0; i < jobs.length; i++) {
-            let jobCard = document.createElement('div');
-            let jobTitle =  document.createElement('h3');
-            let jobId =  document.createElement('h3');
-            let companyName = document.createElement('p');
-            let experiance = document.createElement('p');
-            let Salary = document.createElement('p');
-            let jobDescription = document.createElement('p');
-            let status = document.createElement('p');
-            let buttonContainer = document.createElement('div');
-            let applyButton = document.createElement('button');
-
-            jobCard.className = 'jobCard';
-            buttonContainer.id = 'applyButtoncontainer';
-            applyButton.id = 'applyButton';
-            
-            jobTitle.innerHTML = '<span class="label">Title: </span><br>' + jobs[i].getElementsByTagName('Title')[0].textContent;
-            jobId.innerHTML = '<span class="label">Job ID: </span><br>' + jobs[i].getElementsByTagName('Id')[0].textContent;
-            companyName.innerHTML = '<span class="label">Company: </span><br>' + jobs[i].getElementsByTagName('Company')[0].textContent;
-            experiance.innerHTML = '<span class="label">Years of Experiance: </span><br>' + jobs[i].getElementsByTagName('YearsofExperiance')[0].textContent;
-            Salary.innerHTML = '<span class="label">Salary: </span><br>' + jobs[i].getElementsByTagName('Salary')[0].textContent;
-            status.innerHTML = '<span class="label">Status: </span><br>' + jobs[i].getElementsByTagName('Status')[0].textContent;
-            jobDescription.innerHTML = '<span class="label">Job description: </span><br>' + jobs[i].getElementsByTagName('JobDescription')[0].textContent;
-            applyButton.innerHTML = 'Apply';
-
-            buttonContainer.appendChild(applyButton);
-            jobCard.appendChild(jobTitle);
-            jobCard.appendChild(jobId);
-            jobCard.appendChild(companyName);
-            jobCard.appendChild(experiance);
-            jobCard.appendChild(Salary);
-            jobCard.appendChild(status);
-            jobCard.appendChild(jobDescription);
-            jobCard.appendChild(buttonContainer);
-
-            document.getElementById('cards').appendChild(jobCard);
-        }
+    const jobs = JSON.parse(localStorage.getItem("jobs")) || [];
+    for (let i = 0; i < jobs.length; i++) {
+        addJobCard(jobs[i]);
     };
-
-    xhttp.open("GET", "./scripts/Jobs.xml");
-    xhttp.send();
-};
+}    
 
 /* End display all jobs onload */
 
@@ -80,108 +80,33 @@ select.onclick = function () {
 /* Start search for results onclick */
 
 document.getElementById('searchBtn').addEventListener('click', function(){
-    const xhttp = new XMLHttpRequest();
     document.getElementById('cards').innerHTML = '';
-    xhttp.onload = function(){
-        const xhttpResponse = xhttp.responseXML;
-        let inputValue = text.innerHTML;
-        let searchValue = document.getElementById('searchInput').value;
-        let jobs = xhttpResponse.getElementsByTagName('Job');
-    
-        if (inputValue == 'By Title'){
-            let regex = new RegExp(`.*${searchValue}.*`, 'i');
-            for (i = 0; i < jobs.length; i++){
-                if (regex.test(jobs[i].getElementsByTagName('Title')[0].textContent)){
-                    let jobCard = document.createElement('div');
-                    let jobTitle =  document.createElement('h3');
-                    let jobId =  document.createElement('h3');
-                    let companyName = document.createElement('p');
-                    let experiance = document.createElement('p');
-                    let Salary = document.createElement('p');
-                    let jobDescription = document.createElement('p');
-                    let status = document.createElement('p');
-                    let buttonContainer = document.createElement('div');
-                    let applyButton = document.createElement('button');
+    let inputValue = text.innerHTML;
+    let searchValue = document.getElementById('searchInput').value;
+    const jobs = JSON.parse(localStorage.getItem("jobs")) || []; 
 
-                    jobCard.className = 'jobCard';
-                    buttonContainer.id = 'applyButtoncontainer';
-                    applyButton.id = 'applyButton';
-                    
-                    jobTitle.innerHTML = '<span class="label">Title: </span><br>' + jobs[i].getElementsByTagName('Title')[0].textContent;
-                    jobId.innerHTML = '<span class="label">Job ID: </span><br>' + jobs[i].getElementsByTagName('Id')[0].textContent;
-                    companyName.innerHTML = '<span class="label">Company: </span><br>' + jobs[i].getElementsByTagName('Company')[0].textContent;
-                    experiance.innerHTML = '<span class="label">Years of Experiance: </span><br>' + jobs[i].getElementsByTagName('YearsofExperiance')[0].textContent;
-                    Salary.innerHTML = '<span class="label">Salary: </span><br>' + jobs[i].getElementsByTagName('Salary')[0].textContent;
-                    status.innerHTML = '<span class="label">Status: </span><br>' + jobs[i].getElementsByTagName('Status')[0].textContent;
-                    jobDescription.innerHTML = '<span class="label">Job description: </span><br>' + jobs[i].getElementsByTagName('JobDescription')[0].textContent;
-                    applyButton.innerHTML = 'Apply';
-
-                   
-                    buttonContainer.appendChild(applyButton);
-                    jobCard.appendChild(jobTitle);
-                    jobCard.appendChild(jobId);
-                    jobCard.appendChild(companyName);
-                    jobCard.appendChild(experiance);
-                    jobCard.appendChild(Salary);
-                    jobCard.appendChild(status);
-                    jobCard.appendChild(jobDescription);
-                    jobCard.appendChild(buttonContainer);
-
-                    document.getElementById('cards').appendChild(jobCard);
-                    
-                }   
-            }
-        }
-
-        else{
-            let regex = new RegExp(`.*${searchValue}.*`, 'i');
-            for (i = 0; i < jobs.length; i++){
-            if (regex.test(jobs[i].getElementsByTagName('YearsofExperiance')[0].textContent)){
-                let jobCard = document.createElement('div');
-                let jobTitle =  document.createElement('h3');
-                let jobId =  document.createElement('h3');
-                let companyName = document.createElement('p');
-                let experiance = document.createElement('p');
-                let Salary = document.createElement('p');
-                let jobDescription = document.createElement('p');
-                let status = document.createElement('p');
-                let buttonContainer = document.createElement('div');
-                let applyButton = document.createElement('button');
-
-                jobCard.className = 'jobCard';
-                buttonContainer.id = 'applyButtoncontainer';
-                applyButton.id = 'applyButton';
-
-                jobTitle.innerHTML = '<span class="label">Title: </span><br>' + jobs[i].getElementsByTagName('Title')[0].textContent;
-                jobId.innerHTML = '<span class="label">Job ID: </span><br>' + jobs[i].getElementsByTagName('Id')[0].textContent;
-                companyName.innerHTML = '<span class="label">Company: </span><br>' + jobs[i].getElementsByTagName('Company')[0].textContent;
-                experiance.innerHTML = '<span class="label">Years of Experiance: </span><br>' + jobs[i].getElementsByTagName('YearsofExperiance')[0].textContent;
-                Salary.innerHTML = '<span class="label">Salary: </span><br>' + jobs[i].getElementsByTagName('Salary')[0].textContent;
-                status.innerHTML = '<span class="label">Status: </span><br>' + jobs[i].getElementsByTagName('Status')[0].textContent;
-                jobDescription.innerHTML = '<span class="label">Job description: </span><br>' + jobs[i].getElementsByTagName('JobDescription')[0].textContent;
-                applyButton.innerHTML = 'Apply';
-
+    if (inputValue == 'By Title'){
+        let regex = new RegExp(`.*${searchValue}.*`, 'i');
+        for (i = 0; i < jobs.length; i++){
+            if (regex.test(jobs[i].getElementsByTagName('Title')[0].textContent)){
+                addJobCard(jobs[i]);
                 
-                buttonContainer.appendChild(applyButton);
-                jobCard.appendChild(jobTitle);
-                jobCard.appendChild(jobId);
-                jobCard.appendChild(companyName);
-                jobCard.appendChild(experiance);
-                jobCard.appendChild(Salary);
-                jobCard.appendChild(status);
-                jobCard.appendChild(jobDescription);
-                jobCard.appendChild(buttonContainer);
-
-                document.getElementById('cards').appendChild(jobCard);
-                }    
-            }
+            }   
         }
-        
-    } 
+    }
 
-    xhttp.open('GET', "./scripts/Jobs.xml");
-    xhttp.send();
+    else{
+        let regex = new RegExp(`.*${searchValue}.*`, 'i');
+        for (i = 0; i < jobs.length; i++){
+        if (regex.test(jobs[i].getElementsByTagName('YearsofExperiance')[0].textContent)){
+                addJobCard(jobs[i]);
+            }    
+        }
+    }
+        
 })
+
+
 
 /* End search for results 'onclick' */
 
@@ -189,107 +114,29 @@ document.getElementById('searchBtn').addEventListener('click', function(){
 /* Start search for results 'typing' */
 
 document.getElementById('searchInput').addEventListener('input', function(){
-    const xhttp = new XMLHttpRequest();
     document.getElementById('cards').innerHTML = '';
-    xhttp.onload = function(){
-        const xhttpResponse = xhttp.responseXML;
-        let inputValue = text.innerHTML;
-        let searchValue = document.getElementById('searchInput').value;
-        let jobs = xhttpResponse.getElementsByTagName('Job');
-    
-        if (inputValue == 'By Title'){
-            let regex = new RegExp(`.*${searchValue}.*`, 'i');
-            for (i = 0; i < jobs.length; i++){
-                if (regex.test(jobs[i].getElementsByTagName('Title')[0].textContent)){
-                    let jobCard = document.createElement('div');
-                    let jobTitle =  document.createElement('h3');
-                    let jobId =  document.createElement('h3');
-                    let companyName = document.createElement('p');
-                    let experiance = document.createElement('p');
-                    let Salary = document.createElement('p');
-                    let jobDescription = document.createElement('p');
-                    let status = document.createElement('p');
-                    let buttonContainer = document.createElement('div');
-                    let applyButton = document.createElement('button');
+    let inputValue = text.innerHTML;
+    let searchValue = document.getElementById('searchInput').value;
+    const jobs = JSON.parse(localStorage.getItem("jobs")) || []; 
 
-                    jobCard.className = 'jobCard';
-                    buttonContainer.id = 'applyButtoncontainer';
-                    applyButton.id = 'applyButton';
-                    
-                    jobTitle.innerHTML = '<span class="label">Title: </span><br>' + jobs[i].getElementsByTagName('Title')[0].textContent;
-                    jobId.innerHTML = '<span class="label">Job ID: </span><br>' + jobs[i].getElementsByTagName('Id')[0].textContent;
-                    companyName.innerHTML = '<span class="label">Company: </span><br>' + jobs[i].getElementsByTagName('Company')[0].textContent;
-                    experiance.innerHTML = '<span class="label">Years of Experiance: </span><br>' + jobs[i].getElementsByTagName('YearsofExperiance')[0].textContent;
-                    Salary.innerHTML = '<span class="label">Salary: </span><br>' + jobs[i].getElementsByTagName('Salary')[0].textContent;
-                    status.innerHTML = '<span class="label">Status: </span><br>' + jobs[i].getElementsByTagName('Status')[0].textContent;
-                    jobDescription.innerHTML = '<span class="label">Job description: </span><br>' + jobs[i].getElementsByTagName('JobDescription')[0].textContent;
-                    applyButton.innerHTML = 'Apply';
-
-                    
-                    buttonContainer.appendChild(applyButton);
-                    jobCard.appendChild(jobTitle);
-                    jobCard.appendChild(jobId);
-                    jobCard.appendChild(companyName);
-                    jobCard.appendChild(experiance);
-                    jobCard.appendChild(Salary);
-                    jobCard.appendChild(status);
-                    jobCard.appendChild(jobDescription);
-                    jobCard.appendChild(buttonContainer);
-
-                    document.getElementById('cards').appendChild(jobCard);
-                        
-                }   
-            }
+    if (inputValue == 'By Title'){
+        let regex = new RegExp(`.*${searchValue}.*`, 'i');
+        for (i = 0; i < jobs.length; i++){
+            if (regex.test(jobs[i].getElementsByTagName('Title')[0].textContent)){
+                addJobCard(jobs[i]);
+                
+            }   
         }
+    }
 
-        else if(inputValue == 'By Years of Experience'){
-            let regex = new RegExp(`.*${searchValue}.*`, 'i');
-            for (i = 0; i < jobs.length; i++){
-            if (regex.test(jobs[i].getElementsByTagName('YearsofExperiance')[0].textContent)){
-                    let jobCard = document.createElement('div');
-                    let jobTitle =  document.createElement('h3');
-                    let jobId =  document.createElement('h3');
-                    let companyName = document.createElement('p');
-                    let experiance = document.createElement('p');
-                    let Salary = document.createElement('p');
-                    let jobDescription = document.createElement('p');
-                    let status = document.createElement('p');
-                    let buttonContainer = document.createElement('div');
-                    let applyButton = document.createElement('button');
-
-                    jobCard.className = 'jobCard';
-                    buttonContainer.id = 'applyButtoncontainer';
-                    applyButton.id = 'applyButton';
-                    
-                    jobTitle.innerHTML = '<span class="label">Title: </span><br>' + jobs[i].getElementsByTagName('Title')[0].textContent;
-                    jobId.innerHTML = '<span class="label">Job ID: </span><br>' + jobs[i].getElementsByTagName('Id')[0].textContent;
-                    companyName.innerHTML = '<span class="label">Company: </span><br>' + jobs[i].getElementsByTagName('Company')[0].textContent;
-                    experiance.innerHTML = '<span class="label">Years of Experiance: </span><br>' + jobs[i].getElementsByTagName('YearsofExperiance')[0].textContent;
-                    Salary.innerHTML = '<span class="label">Salary: </span><br>' + jobs[i].getElementsByTagName('Salary')[0].textContent;
-                    status.innerHTML = '<span class="label">Status: </span><br>' + jobs[i].getElementsByTagName('Status')[0].textContent;
-                    jobDescription.innerHTML = '<span class="label">Job description: </span><br>' + jobs[i].getElementsByTagName('JobDescription')[0].textContent;
-                    applyButton.innerHTML = 'Apply';
-
-
-                    buttonContainer.appendChild(applyButton);
-                    jobCard.appendChild(jobTitle);
-                    jobCard.appendChild(jobId);
-                    jobCard.appendChild(companyName);
-                    jobCard.appendChild(experiance);
-                    jobCard.appendChild(Salary);
-                    jobCard.appendChild(status);
-                    jobCard.appendChild(jobDescription);
-                    jobCard.appendChild(buttonContainer);
-
-                    document.getElementById('cards').appendChild(jobCard);
-                }    
-            }
+    else{
+        let regex = new RegExp(`.*${searchValue}.*`, 'i');
+        for (i = 0; i < jobs.length; i++){
+        if (regex.test(jobs[i].getElementsByTagName('YearsofExperiance')[0].textContent)){
+                addJobCard(jobs[i]);
+            }    
         }
-        
-    } 
-
-    xhttp.open('GET', "./scripts/Jobs.xml");
-    xhttp.send();
+    }
 })
 
 
