@@ -7,7 +7,7 @@ document.getElementById("form").addEventListener("submit", function(e){
         title: this.elements["jobTitle"].value,
         salary: this.elements["jobSalary"].value,
         yearsOfExperiance: this.elements["jobExperiance"].value,
-        descreption: this.elements["jobDescription"].value,
+        description: this.elements["jobDescription"].value,
         status: this.elements["jobStatus"].value,
     }
 

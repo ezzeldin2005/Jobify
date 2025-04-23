@@ -19,7 +19,7 @@ let addJobCard = function(job){
     jobTitle.innerHTML = '<span class="label">Title: </span><br>' + job['title'];
     jobId.innerHTML = '<span class="label">Job ID: </span><br>' + job['id'];
     companyName.innerHTML = '<span class="label">Company: </span><br>' + job['company'];
-    experiance.innerHTML = '<span class="label">Years of Experiance: </span><br>' + job['yearsofExperiance'];
+    experiance.innerHTML = '<span class="label">Years of Experiance: </span><br>' + job['yearsOfExperiance'];
     Salary.innerHTML = '<span class="label">Salary: </span><br>' + job['salary'];
     status.innerHTML = '<span class="label">Status: </span><br>' + job['status'];
     jobDescription.innerHTML = '<span class="label">Job description: </span><br>' + job['description'];
@@ -104,7 +104,7 @@ document.getElementById('searchBtn').addEventListener('click', function(){
     if (inputValue == 'By Title'){
         let regex = new RegExp(`.*${searchValue}.*`, 'i');
         for (i = 0; i < jobs.length; i++){
-            if (regex.test(jobs[i].getElementsByTagName('Title')[0].textContent)){
+            if (regex.test(jobs[i]['Title'])){
                 addJobCard(jobs[i]);
                 
             }   
@@ -114,7 +114,7 @@ document.getElementById('searchBtn').addEventListener('click', function(){
     else{
         let regex = new RegExp(`.*${searchValue}.*`, 'i');
         for (i = 0; i < jobs.length; i++){
-        if (regex.test(jobs[i].getElementsByTagName('YearsofExperiance')[0].textContent)){
+        if (regex.test(jobs[i]['YearsofExperiance'])){
                 addJobCard(jobs[i]);
             }    
         }
@@ -135,7 +135,7 @@ document.getElementById('searchInput').addEventListener('input', function(){
     if (inputValue == 'By Title'){
         let regex = new RegExp(`.*${searchValue}.*`, 'i');
         for (i = 0; i < jobs.length; i++){
-            if (regex.test(jobs[i].getElementsByTagName('Title')[0].textContent)){
+            if (regex.test(jobs[i]['Title'])){
                 addJobCard(jobs[i]);
                 
             }   
@@ -145,7 +145,7 @@ document.getElementById('searchInput').addEventListener('input', function(){
     else{
         let regex = new RegExp(`.*${searchValue}.*`, 'i');
         for (i = 0; i < jobs.length; i++){
-        if (regex.test(jobs[i].getElementsByTagName('YearsofExperiance')[0].textContent)){
+        if (regex.test(jobs[i]['YearsofExperiance'])){
                 addJobCard(jobs[i]);
             }    
         }
