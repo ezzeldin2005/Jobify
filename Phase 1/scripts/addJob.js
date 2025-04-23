@@ -10,6 +10,18 @@ document.getElementById("form").addEventListener("submit", function(e){
         description: this.elements["jobDescription"].value,
         status: this.elements["jobStatus"].value,
     }
+    if (checkId(newjob['id'])) {
+        document.getElementById('message').textContent = 'Job ID already exists!';
+        document.getElementById('message').style.color = 'red';
+        document.getElementById('message').style.marginTop = '2px';
+        return;
+    }
+    else
+    {
+        document.getElementById('message').textContent = 'Job added successfully!';
+        document.getElementById('message').style.color = 'green';
+        document.getElementById('message').style.marginTop = '2px';
+    }
 
     jobs.push(newjob);
     localStorage.setItem("jobs", JSON.stringify(jobs));
@@ -24,3 +36,14 @@ document.getElementById("form").addEventListener("submit", function(e){
         option.checked = false;
     }
 })
+
+let checkId = function(id){
+    const jobs = JSON.parse(localStorage.getItem('jobs')) || [];
+    for (let i = 0; i < jobs.length; i++) {
+        if (jobs[i]['id'] == id) {
+            return true;
+        }
+    }
+    return false;
+
+}
