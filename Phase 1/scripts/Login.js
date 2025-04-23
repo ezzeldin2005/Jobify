@@ -1,48 +1,47 @@
-document.getElementById('Login').addEventListener('click', function(){
+document.getElementById('formInputs').addEventListener('submit', function(e) {
+    e.preventDefault();
 
-    const xhttp = new XMLHttpRequest();
 
-    xhttp.onload = function(){
-        const xhttpResponse = xhttp.responseXML;
-        const Email = document.getElementById('Email').value;
-        const password = document.getElementById('password').value;
-        const users = xhttpResponse.getElementsByTagName('user');
-        const admins = xhttpResponse.getElementsByTagName('admin');
-        
-        let matchFound = false;
-        
-        for (let i = 0; i < users.length; i++) {
+    const email = document.getElementById('Email').value.trim();
+    const password = document.getElementById('password').value;
+    const messageElement = document.getElementById('message');
 
-            const userEmail = users[i].getElementsByTagName('email')[0].textContent.trim();
-            const userPassword = users[i].getElementsByTagName('password')[0].textContent.trim();
-            
-            if (userEmail === Email && userPassword === password) {
-                
-                window.location.href = "./Index6.html";
-                matchFound = true;
-                break;
-            }
-        }
+    // Check if user exists
+    const users = JSON.parse(localStorage.getItem('users')) || [];
 
-        for (let i = 0; i < admins.length; i++) {
 
-            const adminEmail = admins[i].getElementsByTagName('email')[0].textContent.trim();
-            const adminPassword = admins[i].getElementsByTagName('password')[0].textContent.trim();
-            
-            if (adminEmail === Email && adminPassword === password) {
-            
-                window.location.href = "./Index3.html";
-                matchFound = true;
-                break;
-            }
-        }
+    // Find user by email
+    const user = users.find(user => user.email === email);
 
-        if (!matchFound) {
-            alert("Invalid email or password");
-        }
-
+    if (!user) {
+        showMessage('Email does not exist', 'error');
+        return;
     }
 
-    xhttp.open('GET', "./scripts/Login.xml");
-    xhttp.send();
-})
+    // Now check password 
+    if (user.password !== password){
+        showMessage('Invalid password!', 'error');
+        return;
+    }
+
+     showMessage('Login successful!', 'success');
+
+    // Redirect based on role after 2 seconds
+    setTimeout(() => {
+        window.location.href = user.role === 'admin' ? './Index3.html' : './Index6.html';
+    }, 2000);
+
+   
+});
+
+function showMessage(message, type) {
+    const messageElement = document.getElementById('message');
+    messageElement.textContent = message;
+    messageElement.style.color = type === 'error' ? 'red' : 'green';
+    messageElement.style.marginTop = '0px';
+
+    setTimeout(() => {
+        messageElement.textContent = '';
+        messageElement.style.color = '';
+    }, 5000);
+}
