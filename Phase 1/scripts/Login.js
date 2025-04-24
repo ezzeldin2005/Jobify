@@ -26,6 +26,10 @@ document.getElementById('formInputs').addEventListener('submit', function(e) {
 
      showMessage('Login successful!', 'success');
 
+// Store the logged-in user's email and ID in localStorage
+    localStorage.setItem('currentUserEmail', user.email);
+
+
     // Redirect based on role after 2 seconds
     setTimeout(() => {
         window.location.href = user.role === 'admin' ? './Index3.html' : './Index6.html';
@@ -45,3 +49,5 @@ function showMessage(message, type) {
         messageElement.style.color = '';
     }, 5000);
 }
+
+
