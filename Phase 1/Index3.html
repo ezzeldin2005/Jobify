@@ -1,50 +1,50 @@
 <!DOCTYPE html>
 <html lang = "eng">
-    <head>
-        <meta charset = "UTF-8">
-        <title>Admin Homepage</title>
-        <link rel="stylesheet" href="styles/adminHomePage.css">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
-    </head>
+<head>
+    <meta charset = "UTF-8">
+    <title>Admin Homepage</title>
+    <link rel="stylesheet" href="styles/adminHomePage.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+</head>
 
-    <body>
-        <div class ="header1">
-            <div class="logocon">
-                <a id="Logo" href="Index0.html"><img src="styles/images/image-removebg-preview.png" alt=""></a>
+<body>
+<div class ="header1">
+    <div class="logocon">
+        <a id="Logo" href="Index0.html"><img src="styles/images/image-removebg-preview.png" alt=""></a>
+    </div>
+    <ul id="navbar">
+        <li>
+            <div id="homeiconContainer">
+                <span class="material-symbols-outlined">home</span>
+                <a href="Index3.html">Home</a>
             </div>
-            <ul id="navbar">
-                <li>
-                    <div id="homeiconContainer">
-                        <span class="material-symbols-outlined">home</span>
-                        <a href="Index3.html">Home</a>
-                    </div>
-                </li>
-                <li>
-                    <div id="AddiconContainer">
-                        <span class="material-symbols-outlined">add</span>
-                        <a href="Index4.html">Add New Job</a>
-                    </div>
-                </li>
-                <li>
-                    <div id="editiconContainer">
-                        <span class="material-symbols-outlined">edit</span>
-                        <a href="index8.html">Edit Job</a>
-                    </div>
-                </li>
-            </ul>
-            <a id="Logout" href = "./index0.html"><span class="material-symbols-outlined">logout</span></a>
-            
-        </div>
-
-        <div class = "container">
-
-
-            <div class = "jobListContainer">
-                <h2>Company Jobs</h2>
-                <ul class = "jobList">
-                    
-                </ul>
+        </li>
+        <li>
+            <div id="AddiconContainer">
+                <span class="material-symbols-outlined">add</span>
+                <a href="Index4.html">Add New Job</a>
             </div>
+        </li>
+        <li>
+            <div id="editiconContainer">
+                <span class="material-symbols-outlined">edit</span>
+                <a href="index8.html">Edit Job</a>
+            </div>
+        </li>
+    </ul>
+    <a id="Logout" href = "#"><span class="material-symbols-outlined">logout</span></a>
+
+</div>
+
+<div class = "container">
+
+
+    <div class = "jobListContainer">
+        <h2>Company Jobs</h2>
+        <div id = "cards">
         </div>
-    </body>
+    </div>
+</div>
+<script src="./scripts/adminHome.js"></script>
+</body>
 </html>

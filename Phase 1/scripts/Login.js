@@ -49,5 +49,3 @@ function showMessage(message, type) {
         messageElement.style.color = '';
     }, 5000);
 }
-
-

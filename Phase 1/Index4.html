@@ -1,102 +1,103 @@
 <!DOCTYPE html>
 <html lang="eng">
-    <head>
-        <meta charset="UTF-8">
-        <title>Add Job</title>
-        <link rel="stylesheet" href="styles/adminAddJob.css">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
-    </head>
-    <body>
-        <div class ="header1">
-            <div class="logocon">
-                <a id="Logo" href="Index0.html"><img src="styles/images/image-removebg-preview.png"></a>
+<head>
+    <meta charset="UTF-8">
+    <title>Add Job</title>
+    <link rel="stylesheet" href="styles/adminAddJob.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+</head>
+<body>
+<div class ="header1">
+    <div class="logocon">
+        <a id="Logo" href="Index0.html"><img src="styles/images/image-removebg-preview.png"></a>
+    </div>
+    <ul id="navbar">
+        <li>
+            <div id="homeiconContainer">
+                <span class="material-symbols-outlined">home</span>
+                <a href="Index3.html">Home</a>
             </div>
-            <ul id="navbar">
-                <li>
-                    <div id="homeiconContainer">
-                        <span class="material-symbols-outlined">home</span>
-                        <a href="Index3.html">Home</a>
-                    </div>
-                </li>
-                <li>
-                    <div id="AddiconContainer">
-                        <span class="material-symbols-outlined">add</span>
-                        <a href="Index4.html">Add New Job</a>
-                    </div>
-                </li>
-                <li>
-                    <div id="editiconContainer">
-                        <span class="material-symbols-outlined">edit</span>
-                        <a href="index8.html">Edit Job</a>
-                    </div>
-                </li>
-            </ul>
-            <a id="Logout" href = "#"><span class="material-symbols-outlined">logout</span></a>
-            
+        </li>
+        <li>
+            <div id="AddiconContainer">
+                <span class="material-symbols-outlined">add</span>
+                <a href="Index4.html">Add New Job</a>
+            </div>
+        </li>
+        <li>
+            <div id="editiconContainer">
+                <span class="material-symbols-outlined">edit</span>
+                <a href="index8.html">Edit Job</a>
+            </div>
+        </li>
+    </ul>
+    <a id="Logout" href = "#"><span class="material-symbols-outlined">logout</span></a>
+
+</div>
+
+<div id="masterContainer">
+
+    <div class = "jobFormContainer">
+
+        <div id="formText">
+            <h2>Add a new Job</h2>
+            <p>Looking to post a new job? Just fill in the details below and hit 'Add Job'!</p>
         </div>
-            
-            <div id="masterContainer">
 
-                    <div class = "jobFormContainer">
-                        
-                        <div id="formText">
-                            <h2>Add a new Job</h2>
-                            <p>Looking to post a new job? Just fill in the details below and hit 'Add Job'!</p>
-                        </div>
-                        
-                        <form id="form">
-                            
-                            <div id = "jobCompanyContainer">
-                                <input type="text" required name = "jobCompany" id="jobCompany" placeholder="Job Company">
-                                <label for="jobCompany">Job Company</label>
-                            </div>
-                            
-                            <div id = "jobIDContainer">
-                                <input type="text" required name="jobID" id = "jobID" placeholder="Job ID">
-                                <label for="jobID">Job ID</label>
-                            </div>
-                            
-                            <div id = "jobTitleContainer">
-                            <input type="text" required name="jobTitle" id = "jobTitle" placeholder="Job Title">
-                            <label for="jobTitle">Job Title</label>
-                        </div>
+        <form id="form">
 
-                        <div id = "jobSalaryExp">
-                            <div>
-                                <input type = "text" required min = "0" name = "jobSalary" id = "jobSalary" placeholder="Job Salary">
-                                <label for="jobSalary">Job Salary</label>
-                            </div>
-                            <div>
-                                <input type="text" required min="0" name="jobExperiance" id = "jobExperiance" placeholder="Years of Experiance">
-                                <label for="jobExperiance">Years of Experiance</label>
-                            </div>
-                        </div>
-                        
-                        <div id = "jobDescriptionContainer">
-                            <textarea rows="5" cols="30" name="jobDescription" id="jobDescription" maxlength="1050" required placeholder="Job Description"></textarea>
-                            <label for="jobDescription">Job Description</label>
-                        </div>
-                        
-                        <div id = "jobStatusContainer">
-                            <pre>Jop Status:</pre>
-                            <div id= "OC">
-                                <div>
-                                    <input type="radio" required name="jobStatus" id = "jobStatusOpen" value="Open">
-                                    <label for="jobStatusOpen">Open</label>
-                                </div>
-                                <div>
-                                    <input type="radio" required name="jobStatus" id = "jobStatusClosed" value="Closed">
-                                    <label for="jobStatusClosed">Closed</label>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        
-                        <input type="submit" value="Add Job" id="submit">
-                    </form>
+            <div id = "jobCompanyContainer">
+                <input type="text" required name = "jobCompany" id="jobCompany" placeholder="Job Company">
+                <label for="jobCompany">Job Company</label>
+            </div>
+
+            <div id = "jobIDContainer">
+                <input type="text" required name="jobID" id = "jobID" placeholder="Job ID">
+                <label for="jobID">Job ID</label>
+            </div>
+
+            <div id = "jobTitleContainer">
+                <input type="text" required name="jobTitle" id = "jobTitle" placeholder="Job Title">
+                <label for="jobTitle">Job Title</label>
+            </div>
+
+            <div id = "jobSalaryExp">
+                <div>
+                    <input type = "number" required min = "0" name = "jobSalary" id = "jobSalary" placeholder="Job Salary">
+                    <label for="jobSalary">Job Salary</label>
+                </div>
+                <div>
+                    <input type="number" required min="0" name="jobExperiance" id = "jobExperiance" placeholder="Years of Experiance">
+                    <label for="jobExperiance">Years of Experiance</label>
                 </div>
             </div>
-        </div>
-        <script src=".\scripts\addJob.js"></script>
-    </body>
+
+            <div id = "jobDescriptionContainer">
+                <textarea rows="5" cols="30" name="jobDescription" id="jobDescription" maxlength="1050" required placeholder="Job Description"></textarea>
+                <label for="jobDescription">Job Description</label>
+            </div>
+
+            <div id = "jobStatusContainer">
+                <pre>Job Status:</pre>
+                <div id= "OC">
+                    <div>
+                        <input type="radio" required name="jobStatus" id = "jobStatusOpen" value="Open">
+                        <label for="jobStatusOpen">Open</label>
+                    </div>
+                    <div>
+                        <input type="radio" required name="jobStatus" id = "jobStatusClosed" value="Closed">
+                        <label for="jobStatusClosed">Closed</label>
+                    </div>
+                </div>
+            </div>
+
+
+            <input type="submit" value="Add Job" id="submit">
+            <p id = 'message'></p>
+        </form>
+    </div>
+</div>
+</div>
+<script src=".\scripts\addJob.js"></script>
+</body>
 </html>

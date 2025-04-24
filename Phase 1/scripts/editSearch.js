@@ -15,11 +15,11 @@ let addJobCard = function(job){
     buttonContainer.className = 'editDeletecontainer';
     editButton.className = 'editButton';
     deleteButton.className = 'deleteButton';
-    
+
     jobTitle.innerHTML = '<span class="label">Title: </span><br>' + job['title'];
     jobId.innerHTML = '<span class="label">Job ID: </span><br>' + job['id'];
     companyName.innerHTML = '<span class="label">Company: </span><br>' + job['company'];
-    experiance.innerHTML = '<span class="label">Years of Experiance: </span><br>' + job['yearsofExperiance'];
+    experiance.innerHTML = '<span class="label">Years of Experiance: </span><br>' + job['yearsOfExperiance'];
     Salary.innerHTML = '<span class="label">Salary: </span><br>' + job['salary'];
     status.innerHTML = '<span class="label">Status: </span><br>' + job['status'];
     jobDescription.innerHTML = '<span class="label">Job description: </span><br>' + job['description'];
@@ -71,7 +71,7 @@ window.onload = function () {
 
 let list = document.getElementById('list');
 let select = document.getElementById('select');
-let searchBar = document.getElementById('searchelecontainer');  
+let searchBar = document.getElementById('searchelecontainer');
 let text = document.getElementById('selectText');
 let options = document.getElementsByClassName('options');
 
@@ -99,24 +99,24 @@ document.getElementById('searchBtn').addEventListener('click', function(){
     document.getElementById('cards').innerHTML = '';
     let inputValue = text.innerHTML;
     let searchValue = document.getElementById('searchInput').value;
-    const jobs = JSON.parse(localStorage.getItem("jobs")) || []; 
+    const jobs = JSON.parse(localStorage.getItem("jobs")) || [];
 
     if (inputValue == 'By Title'){
         let regex = new RegExp(`.*${searchValue}.*`, 'i');
         for (i = 0; i < jobs.length; i++){
-            if (regex.test(jobs[i].getElementsByTagName('Title')[0].textContent)){
+            if (regex.test(jobs[i]['Title'])){
                 addJobCard(jobs[i]);
-                
-            }   
+
+            }
         }
     }
 
     else{
         let regex = new RegExp(`.*${searchValue}.*`, 'i');
         for (i = 0; i < jobs.length; i++){
-        if (regex.test(jobs[i].getElementsByTagName('YearsofExperiance')[0].textContent)){
+            if (regex.test(jobs[i]['YearsofExperiance'])){
                 addJobCard(jobs[i]);
-            }    
+            }
         }
     }
 })
@@ -130,34 +130,27 @@ document.getElementById('searchInput').addEventListener('input', function(){
     document.getElementById('cards').innerHTML = '';
     let inputValue = text.innerHTML;
     let searchValue = document.getElementById('searchInput').value;
-    const jobs = JSON.parse(localStorage.getItem("jobs")) || []; 
+    const jobs = JSON.parse(localStorage.getItem("jobs")) || [];
 
     if (inputValue == 'By Title'){
         let regex = new RegExp(`.*${searchValue}.*`, 'i');
         for (i = 0; i < jobs.length; i++){
-            if (regex.test(jobs[i].getElementsByTagName('Title')[0].textContent)){
+            if (regex.test(jobs[i]['Title'])){
                 addJobCard(jobs[i]);
-                
-            }   
+
+            }
         }
     }
 
     else{
         let regex = new RegExp(`.*${searchValue}.*`, 'i');
         for (i = 0; i < jobs.length; i++){
-        if (regex.test(jobs[i].getElementsByTagName('YearsofExperiance')[0].textContent)){
+            if (regex.test(jobs[i]['YearsofExperiance'])){
                 addJobCard(jobs[i]);
-            }    
+            }
         }
     }
 })
 
 
 /* End search for results 'typing' */
-
-document.getElementById('Logout').addEventListener('click', function(e) {
-    e.preventDefault(); // Prevent the default link behavior
-    localStorage.removeItem('currentUserEmail');
-    localStorage.removeItem('currentUserId');
-    window.location.href = './index0.html'; // Redirect to your login page
-});
