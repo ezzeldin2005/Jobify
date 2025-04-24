@@ -9,93 +9,86 @@
     <script src="https://kit.fontawesome.com/e882ac110d.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class ="header1">
-        <div class="logocon">
-            <a id="Logo" href="Index0.html"><img src="styles/images/image-removebg-preview.png" alt=""></a>
-        </div>
-        <ul id="navbar">
-            <li>
-                <div id="homeiconContainer">
-                    <span class="material-symbols-outlined">home</span>
-                    <a href="Index6.html">Home</a>
-                </div>
-            </li>
-            <li> 
-                <div id="searchiconContainer">
-                    <span class="material-symbols-outlined">search</span>
-                    <a href="Index5.html">Search</a>
-                </div>
-            </li>
-            <li>
-                <div id="profileiconContainer">
-                    <span class="material-symbols-outlined">person</span>
-                    <a href="Index7.html">Profile</a>
-                </div>
-            </li>
-        </ul>
-        <a id="Logout" href = "#"><span class="material-symbols-outlined">logout</span></a>
-
+<div class ="header1">
+    <div class="logocon">
+        <a id="Logo" href="Index0.html"><img src="styles/images/image-removebg-preview.png" alt=""></a>
     </div>
+    <ul id="navbar">
+        <li>
+            <div id="homeiconContainer">
+                <span class="material-symbols-outlined">home</span>
+                <a href="Index6.html">Home</a>
+            </div>
+        </li>
+        <li>
+            <div id="searchiconContainer">
+                <span class="material-symbols-outlined">search</span>
+                <a href="Index5.html">Search</a>
+            </div>
+        </li>
+        <li>
+            <div id="profileiconContainer">
+                <span class="material-symbols-outlined">person</span>
+                <a href="Index7.html">Profile</a>
+            </div>
+        </li>
+    </ul>
+    <a id="Logout" href = "#"><span class="material-symbols-outlined">logout</span></a>
 
-    <div class="container">
-        <div class="container-content">
-            <div class="head"></div>
-            <button id="edit-background-btn">
+</div>
+
+<div class="container">
+    <div class="container-content">
+        <div class="head"></div>
+        <button id="edit-background-btn">
             <span class="material-symbols-outlined" id="background-btn">photo_camera</span>
-            </button>
-            <div class="dropdown-content" id="dropdownMenu">
-                <label for="fileInput">📤 Change Photo</label>
-                <button id="delete-btn">🗑️ Delete Photo</button>
-                <input type="file" id="fileInput" accept="image/*" style="display: none;">
-            </div>
+        </button>
+        <div class="dropdown-content" id="dropdownMenu">
+            <label for="fileInput">📤 Change Photo</label>
+            <button id="delete-btn">🗑️ Delete Photo</button>
+            <input type="file" id="fileInput" accept="image/*" style="display: none;">
+        </div>
 
 
-            <div class="secondPart">
-                <div class="center_col">
-                    <div class="imgContainer">
-                        <img src="styles/images/pictureProfile.jpg" alt="profile image" id="imgPro">
-                    </div>
-                    <h2 id="username">Peter Parker</h2>
-                    <p class="details">Front-end</p>
-                    <p class="details">example@gmail.com</p>
-                    <div class="content">
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet dolorem magni minima molestiae quas ullam.
-                            Adipisci consequatur corporis eveniet exercitationem illo inventore, maxime minus voluptate? Aut commodi
-                            maxime odit sed.
-                        </p>
-                    </div>
+        <div class="secondPart">
+            <div class="center_col">
+                <div class="imgContainer">
+                    <img src="" alt="profile image" id="imgPro">
                 </div>
-                <button id="edit-btn"><span class="material-symbols-outlined">edit</span></button>
+                <h2 id="username"></h2>
+                <p class="details" id="job"></p>
+                <p class="details" id="email"></p>
+                <div>
+                    <p id="About"></p>
+                </div>
+            </div>
+            <button id="edit-btn"><span class="material-symbols-outlined">edit</span></button>
+        </div>
+    </div>
+</div>
+
+<div id="profileModal" class="pictureProfileModal">
+    <div class="modal-content">
+        <div class="pictureProfileModal-header">
+            <h2>Profile photo</h2>
+            <span class="close">&times;</span>
+        </div>
+
+        <div class="pictureProfileModal-body">
+            <img src="" alt="Profile" class="profile-image" id="profile-image"/>
+        </div>
+
+        <div class="pictureProfileModal-footer">
+            <div class="left-btn">
+                <label for="profileInput" class="change-btn"><i class="fa fa-camera"></i> Change </label>
+                <input type="file" class="change-btn" id="profileInput" accept="image/*" style="display: none;">
+            </div>
+            <div class="right-btn">
+                <button class="delete-btn" id="deleteProPic-btn"><i class="fa fa-trash"></i> Delete</button>
             </div>
         </div>
     </div>
-
-    <div id="profileModal" class="pictureProfileModal">
-        <div class="modal-content">
-            <div class="pictureProfileModal-header">
-                <h2>Profile photo</h2>
-                <span class="close">&times;</span>
-            </div>
-
-            <div class="pictureProfileModal-body">
-                <img src="styles/images/pictureProfile.jpg" alt="Profile" class="profile-image" id="profile-image"/>
-            </div>
-
-            <div class="pictureProfileModal-footer">
-                <div class="left-btn">
-                    <label for="profileInput" class="change-btn"><i class="fa fa-camera"></i> Change </label>
-                    <input type="file" class="change-btn" id="profileInput" accept="image/*" style="display: none;">
-                </div>
-                <div class="right-btn">
-                    <button class="delete-btn" id="deleteProPic-btn"><i class="fa fa-trash"></i> Delete</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <script src="scripts/userProfile.js"></script>
-
+</div>
+<script src="scripts/userProfile.js"></script>
 </body>
 </html>

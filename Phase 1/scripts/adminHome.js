@@ -41,3 +41,10 @@ window.onload = function () {
         addJobCard(jobs[i]);
     };
 };
+
+document.getElementById('Logout').addEventListener('click', function(e) {
+    e.preventDefault(); // Prevent the default link behavior
+    localStorage.removeItem('currentUserEmail');
+    localStorage.removeItem('currentUserId');
+    window.location.href = './index0.html'; // Redirect to your login page
+});

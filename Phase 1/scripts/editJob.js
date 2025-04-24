@@ -52,3 +52,11 @@ document.getElementById('form').addEventListener('submit', function (def) {
     localStorage.setItem("jobs", JSON.stringify(jobs));
     window.location.href = 'index8.html';
 })
+
+
+document.getElementById('Logout').addEventListener('click', function(e) {
+    e.preventDefault(); // Prevent the default link behavior
+    localStorage.removeItem('currentUserEmail');
+    localStorage.removeItem('currentUserId');
+    window.location.href = './index0.html'; // Redirect to your login page
+});

@@ -10,7 +10,7 @@ const profiles = JSON.parse(localStorage.getItem('profiles')) || [];
 const user = users.find(u => u.email === email);
 const profile = profiles.find(p => p.email === email);
 const indexPro = profiles.findIndex(p => p.email === email);
-const indexUser = users.findIndex(p => p.email === email);
+const indexUser = users.findIndex(u => u.email === email);
 
 let jobTitle = '', birthday = '', phoneNumber = '', about = '';
 let profileImageURL = '../styles/images/default-profile-picture.png';
@@ -43,9 +43,9 @@ else {
 
 // display
 document.querySelector('#username').innerHTML = user.username;
-if (jobTitle) document.querySelector('#job').innerHTML = jobTitle;
+document.querySelector('#job').innerHTML = jobTitle;
 document.querySelector('#email').innerHTML = email;
-if (about) document.querySelector('#About').innerHTML = about;
+document.querySelector('#About').innerHTML = about;
 document.querySelector("#imgPro").src = profileImageURL;
 document.querySelector(".head").style.background = `url("${backgroundURL}") no-repeat 50% 20% / cover`;
 
@@ -99,6 +99,7 @@ function buildEdit(){
 
         const input = document.createElement("input");
         input.type = inputType;
+        input.className = "editFormInput";
         input.id = inputId;
         input.name = inputName;
         if (required) input.required = true;
@@ -124,7 +125,7 @@ function buildEdit(){
     textarea.id = "about";
     textarea.value = about;
     textarea.style.resize = "none";
-    textarea.style.height = "100px";
+    textarea.style.height = "150px";
     textarea.style.fontSize = "16px";
     textarea.style.padding = "10px";
 
@@ -256,7 +257,7 @@ changeProPicBtn.addEventListener("change", function (event) {
 });
 
 deleteproPicBtn.addEventListener("click", () => {
-    profiles[indexPro].backgroundURL = "../styles/images/default-profile-picture.png";
+    profiles[indexPro].profileImageURL = "../styles/images/default-profile-picture.png";
     localStorage.setItem("profiles", JSON.stringify(profiles));
     document.querySelector("#imgPro").src = "styles/images/default-profile-picture.png";
     document.querySelector("#profile-image").src = "styles/images/default-profile-picture.png";
