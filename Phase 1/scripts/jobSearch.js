@@ -88,7 +88,7 @@ document.getElementById('searchBtn').addEventListener('click', function(){
     if (inputValue == 'By Title'){
         let regex = new RegExp(`.*${searchValue}.*`, 'i');
         for (i = 0; i < jobs.length; i++){
-            if (regex.test(jobs[i]['Title'])){
+            if (regex.test(jobs[i]['title'])){
                 addJobCard(jobs[i]);
 
             }
@@ -98,7 +98,7 @@ document.getElementById('searchBtn').addEventListener('click', function(){
     else{
         let regex = new RegExp(`.*${searchValue}.*`, 'i');
         for (i = 0; i < jobs.length; i++){
-            if (regex.test(jobs[i]['YearsofExperiance'])){
+            if (regex.test(jobs[i]['yearsOfExperiance'])){
                 addJobCard(jobs[i]);
             }
         }
@@ -122,7 +122,7 @@ document.getElementById('searchInput').addEventListener('input', function(){
     if (inputValue == 'By Title'){
         let regex = new RegExp(`.*${searchValue}.*`, 'i');
         for (i = 0; i < jobs.length; i++){
-            if (regex.test(jobs[i]['Title'])){
+            if (regex.test(jobs[i]['title'])){
                 addJobCard(jobs[i]);
 
             }
@@ -132,7 +132,7 @@ document.getElementById('searchInput').addEventListener('input', function(){
     else{
         let regex = new RegExp(`.*${searchValue}.*`, 'i');
         for (i = 0; i < jobs.length; i++){
-            if (regex.test(jobs[i]['YearsofExperiance'])){
+            if (regex.test(jobs[i]['yearsOfExperiance'])){
                 addJobCard(jobs[i]);
             }
         }

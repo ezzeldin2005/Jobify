@@ -229,7 +229,7 @@ a{
     height: 100%;
     display: grid;
     flex-wrap: wrap;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 3fr));
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 19px;
 }
 .jobCard{

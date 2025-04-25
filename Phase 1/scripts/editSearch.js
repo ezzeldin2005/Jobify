@@ -26,8 +26,6 @@ let addJobCard = function(job){
     editButton.innerHTML = 'Edit';
     deleteButton.innerHTML = 'Delete';
 
-    console.log('hello');
-
     buttonContainer.appendChild(editButton);
     buttonContainer.appendChild(deleteButton);
     jobCard.appendChild(jobTitle);
@@ -49,6 +47,7 @@ let addJobCard = function(job){
     };
     editButton.onclick = function () {
         window.location.href = 'index9.html';
+        localStorage.editId = job['id'];
     };
 
     document.getElementById('cards').appendChild(jobCard);
@@ -104,7 +103,7 @@ document.getElementById('searchBtn').addEventListener('click', function(){
     if (inputValue == 'By Title'){
         let regex = new RegExp(`.*${searchValue}.*`, 'i');
         for (i = 0; i < jobs.length; i++){
-            if (regex.test(jobs[i]['Title'])){
+            if (regex.test(jobs[i]['title'])){
                 addJobCard(jobs[i]);
 
             }
@@ -114,7 +113,7 @@ document.getElementById('searchBtn').addEventListener('click', function(){
     else{
         let regex = new RegExp(`.*${searchValue}.*`, 'i');
         for (i = 0; i < jobs.length; i++){
-            if (regex.test(jobs[i]['YearsofExperiance'])){
+            if (regex.test(jobs[i]['yearsOfExperiance'])){
                 addJobCard(jobs[i]);
             }
         }
@@ -135,7 +134,7 @@ document.getElementById('searchInput').addEventListener('input', function(){
     if (inputValue == 'By Title'){
         let regex = new RegExp(`.*${searchValue}.*`, 'i');
         for (i = 0; i < jobs.length; i++){
-            if (regex.test(jobs[i]['Title'])){
+            if (regex.test(jobs[i]['title'])){
                 addJobCard(jobs[i]);
 
             }
@@ -145,7 +144,7 @@ document.getElementById('searchInput').addEventListener('input', function(){
     else{
         let regex = new RegExp(`.*${searchValue}.*`, 'i');
         for (i = 0; i < jobs.length; i++){
-            if (regex.test(jobs[i]['YearsofExperiance'])){
+            if (regex.test(jobs[i]['yearsOfExperiance'])){
                 addJobCard(jobs[i]);
             }
         }

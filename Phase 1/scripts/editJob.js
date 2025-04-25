@@ -22,7 +22,7 @@ const jobs = JSON.parse(localStorage.getItem("jobs")) || [];
     for (let i = 0; i < jobs.length; i++) {
         if (jobs[i]['id'] == localStorage.getItem("editId")) {
             showJobData(jobs[i]);
-            break
+            break;
         }
     }; 
     
