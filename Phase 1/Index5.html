@@ -5,60 +5,103 @@
     <title>Job search</title>
     <link rel="stylesheet" href="styles/search.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=cloud_upload" />
 </head>
 <body>
-    <div class ="header1">
-        <div class="logocon">
-            <a id="Logo" href="Index0.html"><img src="styles/images/image-removebg-preview.png" alt=""></a>
-        </div>
-        <ul id="navbar">
-            <li>
-                <div id="homeiconContainer">
-                    <span class="material-symbols-outlined">home</span>
-                    <a href="Index6.html">Home</a>
-                </div>
-            </li>
-            <li> 
-                <div id="searchiconContainer">
-                    <span class="material-symbols-outlined">search</span>
-                    <a href="Index5.html">Search</a>
-                </div>
-            </li>
-            <li>
-                <div id="profileiconContainer">
-                    <span class="material-symbols-outlined">person</span>
-                    <a href="Index7.html">Profile</a>
-                </div>
-            </li>
-        </ul>
-        <a id="Logout" href = "#"><span class="material-symbols-outlined">logout</span></a>
-
+<div class ="header1">
+    <div class="logocon">
+        <a id="Logo" href="Index0.html"><img src="styles/images/image-removebg-preview.png" alt=""></a>
     </div>
-    
-    <div id="searchelecontainer">
-        <div id = "search-bar">
-            <div id="select">
-                <p id="selectText">None</p>
-                <img src="styles/images/Arrowhead-Down-01-256.png">
-                <ul id="list">
-                    <li class="options">By Title</li>
-                    <li class="options">By Years of Experience</li>
-                </ul>
+    <ul id="navbar">
+        <li>
+            <div id="homeiconContainer">
+                <span class="material-symbols-outlined">home</span>
+                <a href="Index6.html">Home</a>
             </div>
-            <input type="text" id="searchInput" placeholder="Search" maxlength="50">
-            <button id= "searchBtn" type="submit"><span id="SearchIcon" class="material-symbols-outlined">search</span></button>
-        </div>
-    </div>
+        </li>
+        <li>
+            <div id="searchiconContainer">
+                <span class="material-symbols-outlined">search</span>
+                <a href="Index5.html">Search</a>
+            </div>
+        </li>
+        <li>
+            <div id="profileiconContainer">
+                <span class="material-symbols-outlined">person</span>
+                <a href="Index7.html">Profile</a>
+            </div>
+        </li>
+    </ul>
+    <a id="Logout" href = "#"><span class="material-symbols-outlined">logout</span></a>
 
-    <div class = "searchResult">
-        <div id="resultBorder">
-            <div id="searchResultContainer">
-                <div id="cards">
-                </div>
+</div>
+
+<div id="searchelecontainer">
+    <div id = "search-bar">
+        <div id="select">
+            <p id="selectText">None</p>
+            <img src="styles/images/Arrowhead-Down-01-256.png">
+            <ul id="list">
+                <li class="options">By Title</li>
+                <li class="options">By Years of Experience</li>
+            </ul>
+        </div>
+        <input type="text" id="searchInput" placeholder="Search" maxlength="50">
+        <button id= "searchBtn" type="submit"><span id="SearchIcon" class="material-symbols-outlined">search</span></button>
+    </div>
+</div>
+
+<div class = "searchResult">
+    <div id="resultBorder">
+        <div id="searchResultContainer">
+            <div id="cards">
             </div>
         </div>
     </div>
-    <script src="./scripts/jobSearch.js"></script>
+</div>
+
+<!-- Apply Modal -->
+<div id="applyPopup" class="popup-container">
+    <div class="popup-content">
+        <div class="modal-header">
+            <span id="closePopup">&times;</span>
+            <h2>Apply to </h2>
+        </div>
+        <div class="modal-body">
+            <div class="section-title">Contact Info</div>
+
+            <div class="profile-section">
+                <img src="" alt="Profile Picture" class="profile-pic" id="profilePic">
+                <div class="name"></div>
+            </div>
+
+            <form id="applyForm">
+                <label for="fname">First Name*</label>
+                <input type="text" id="fname" required>
+
+                <label for="lname">Last Name*</label>
+                <input type="text" id="lname" required>
+
+                <label for="email">Email*</label>
+                <input type="email" id="email" required>
+
+                <label for="phoneNumber">Mobile phone number*</label>
+                <input type="tel" id="phoneNumber" required>
+
+                <label for="file-input">Upload CV</label>
+                <div class="upload-area" id="uploadArea">
+                    <p><span class="material-symbols-sharp">cloud_upload</span><br> Upload your resume here</p>
+                </div>
+                <input type="file" id="file-input" required hidden>
+            </form>
+
+            <div class="modal-footer">
+                <button type="submit" class="applyBtn" id="applyBtn">Apply</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="./scripts/jobSearch.js"></script>
 </body>
 </html>

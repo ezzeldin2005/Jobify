@@ -33,7 +33,6 @@ window.onload = function () {
     document.querySelector('#username').innerHTML = user.username;
     document.querySelector('#job').innerHTML = jobTitle;
     document.querySelector('#email').innerHTML = email;
-    document.querySelector('#phoneNumber').innerHTML = phoneNumber;
     document.querySelector('#About').innerHTML = about;
     document.querySelector("#imgPro").src = profileImageURL;
     document.querySelector(".head").style.background = `url("${backgroundURL}") no-repeat 50% 20% / cover`;
@@ -134,7 +133,6 @@ window.onload = function () {
 
             document.querySelector('#username').innerHTML = users[indexUser].username;
             document.querySelector('#job').innerHTML = profiles[indexPro].jobTitle;
-            document.querySelector('#phoneNumber').innerHTML = profiles[indexPro].phoneNumber;
             document.querySelector('#About').innerHTML = profiles[indexPro].about;
 
             modalOverlay.remove();

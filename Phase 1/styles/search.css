@@ -44,18 +44,18 @@ a{
     padding-left: 30px;
 }
 #navbar {
- width: 50%;
- border-radius: 15px;
- display: flex;
- align-items: center;
- justify-content: space-evenly;
+    width: 50%;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 }
 .material-symbols-outlined {
     font-variation-settings:
-    'FILL' 0,
-    'wght' 600,
-    'GRAD' 0,
-    'opsz' 24
+            'FILL' 0,
+            'wght' 600,
+            'GRAD' 0,
+            'opsz' 24
 }
 #Logout:hover{
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4);
@@ -131,7 +131,7 @@ a{
 
 #searchelecontainer{
     display: flex;
-   justify-content: center;
+    justify-content: center;
     height: 80px;
     margin-bottom: 2%;
 }
@@ -242,9 +242,9 @@ a{
     position: relative;
     bottom:  5px;
     box-shadow: 0px 0px 4px 3px #676278;
-    background-color: rgb(201, 192, 207);    
+    background-color: rgb(201, 192, 207);
 }
-#applyButton{
+.applyButton{
     width: 200px;
     padding: 8px 0;
     background-color: #5c4ea2;
@@ -255,7 +255,7 @@ a{
     align-items: center;
     transition: all 0.5s ease;
 }
-#applyButton:hover{
+.applyButton:hover{
     cursor: pointer;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
 }
@@ -301,4 +301,183 @@ body::-webkit-scrollbar-track {
 body::-webkit-scrollbar-thumb {
     background-color: #2e253b7d;
     border-radius: 12px;
+}
+
+/*Apply modal*/
+
+.popup-container {
+    font-family: Arial, sans-serif;
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+    justify-content: center;
+    z-index: 999;
+}
+
+.popup-content {
+    width: 90%;
+    max-width: 750px;
+    max-height: 72vh;
+    padding-left: 8px;
+    background-color: #2e253b;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    margin-top: 2.3rem;
+}
+
+.modal-header {
+    margin: 5px 5px 5px -8px;
+    padding: 0 .5rem 0 1.4rem;
+    background-color: #2e253b;
+    border-bottom: 1px solid #ccc;
+    flex-shrink: 0;
+
+}
+
+.modal-header h2 {
+    margin: 15px 0;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.section-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: darkgrey;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.profile-section {
+    margin: 20px 0;
+}
+.profile-pic {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 2px;
+}
+.name {
+    font-size: 18px;
+    margin: 0;
+    padding-left: 1rem;
+    color: rgba(240, 248, 255, 0.726);
+}
+
+.modal-body {
+    padding: 1rem;
+    overflow-y: auto;
+    flex-grow: 1;
+    margin-bottom: 20px;
+}
+
+.modal-body::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modal-body::-webkit-scrollbar-track {
+    background: #414040;
+    border-radius: 10px;
+}
+
+.modal-body::-webkit-scrollbar-thumb {
+    background-color: rgba(102, 88, 136, 0.49);
+    border-radius: 10px;
+}
+
+#applyForm label {
+    display: block;
+    margin-top: 20px;
+    color: rgb(168, 168, 168);
+}
+
+#applyForm Input:hover {
+    border-color: rgb(168, 168, 168);
+    outline: solid #7668bafd 1px;
+}
+
+#applyForm input {
+    padding: 0.5rem;
+    border-radius: 4px;
+    border: 1px solid #514b61;
+    font-size: 17px;
+    color: rgba(240, 248, 255, 0.726);
+    background-color: #514b61;
+    caret-color: white;
+}
+
+#closePopup {
+    color: white;
+    float: right;
+    cursor: pointer;
+    font-size: 2.5rem;
+}
+
+.popup-content form {
+    display: flex;
+    flex-direction: column;
+}
+
+.upload-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px dashed #b9b9b9;
+    border-radius: 10px;
+    color: rgba(240, 248, 255, 0.726);
+    margin: 2px 0 20px 0;
+    background-color: #514b61;
+    cursor: pointer;
+    text-align: center;
+    transition: background 0.3s ease;
+    height: 100px;
+}
+
+.upload-area:hover {
+    background-color: #736a85;
+}
+
+.modal-footer {
+    border-top: 1px solid rgba(102, 88, 136, 0.49);;
+    padding: 1rem;
+    background-color: #2e253b;
+    flex-shrink: 0;
+    margin: 0 -1rem;
+}
+
+.applyBtn {
+    background-color: #7668bafd;
+    color: white;
+    margin-bottom: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    float: right;
+}
+
+.applyBtn:active {
+    background-color: rgba(140, 125, 204, 0.99);
+}
+
+.applied {
+    width: 200px;
+    padding: 8px 0;
+    border-radius: 10px;
+    border: none;
+    font-size: 15px;
+    align-items: center;
+    transition: all 0.5s ease;
+    background-color: #292152;
+    color: #cccccc;
 }

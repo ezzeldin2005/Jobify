@@ -1,3 +1,6 @@
+let users, user, profiles, profile, email, appliedJobs;
+let currentJobToApply = null;
+
 let addJobCard = function(job){
     let jobCard = document.createElement('div');
     let jobTitle =  document.createElement('h3');
@@ -12,7 +15,8 @@ let addJobCard = function(job){
 
     jobCard.className = 'jobCard';
     buttonContainer.id = 'applyButtoncontainer';
-    applyButton.id = 'applyButton';
+    applyButton.className = 'applyButton';
+    applyButton.id = `applyButton${job['id']}`;
 
     jobTitle.innerHTML = '<span class="label">Title: </span><br>' + job['title'];
     jobId.innerHTML = '<span class="label">Job ID: </span><br>' + job['id'];
@@ -21,7 +25,17 @@ let addJobCard = function(job){
     Salary.innerHTML = '<span class="label">Salary: </span><br>' + job['salary'];
     status.innerHTML = '<span class="label">Status: </span><br>' + job['status'];
     jobDescription.innerHTML = '<span class="label">Job description: </span><br>' + job['description'];
-    applyButton.innerHTML = 'Apply';
+
+    // Check if the user applied for this job before or not
+    if (appliedJobs.some(j => j.jobID === job['id'])) {
+        applyButton.innerHTML = 'Applied';
+        applyButton.className = 'applied';
+        applyButton.disabled = true;
+    }
+    else{
+        applyButton.innerHTML = 'Apply';
+        applyButton.addEventListener('click', () => openApplyPopup(job));
+    }
 
     buttonContainer.appendChild(applyButton);
     jobCard.appendChild(jobTitle);
@@ -37,16 +51,26 @@ let addJobCard = function(job){
 }
 
 
-
+// Get the current user's email
+function getCurrentUserEmail() {
+    return localStorage.getItem('currentUserEmail');
+}
 
 
 /* Start display all jobs onload */
 
 window.onload = function () {
     const jobs = JSON.parse(localStorage.getItem("jobs")) || [];
+    users = JSON.parse(localStorage.getItem("users")) || [];
+    profiles = JSON.parse(localStorage.getItem('profiles')) || [];
+    appliedJobs = JSON.parse(localStorage.getItem('appliedJobs')) || [];
+    email = getCurrentUserEmail();
+    user = users.find(u => u.email === email);
+    profile = profiles.find(p => p.email === email);
+
     for (let i = 0; i < jobs.length; i++) {
         addJobCard(jobs[i]);
-    };
+    }
 }
 
 /* End display all jobs onload */
@@ -107,7 +131,6 @@ document.getElementById('searchBtn').addEventListener('click', function(){
 })
 
 
-
 /* End search for results 'onclick' */
 
 
@@ -139,9 +162,75 @@ document.getElementById('searchInput').addEventListener('input', function(){
     }
 })
 
-
 /* End search for results 'typing' */
 
+
+/* Start apply for a job */
+function openApplyPopup(job) {
+    currentJobToApply = job;
+    document.querySelector('#applyPopup').style.display = 'flex';
+    document.querySelector('#applyPopup h2').textContent = 'Apply to ' + job.company;
+    document.querySelector('#email').value = email;
+    document.querySelector('#phoneNumber').value = profile.phoneNumber;
+    document.querySelector('#profilePic').src = profile.profileImageURL;
+    document.querySelector('.name').innerText = user.username;
+}
+
+// Submit for apply
+document.getElementById('applyBtn').addEventListener('click', function (e){
+    e.preventDefault(); // prevent accidental form submission if any
+
+    const form = document.getElementById('applyForm');
+    if (!form.checkValidity()) {
+        form.reportValidity(); // this will show the browser validation messages
+    }
+    else {
+        let applyBtnCard = document.querySelector(`#applyButton${job['id']}`);
+        document.getElementById('applyPopup').style.display = 'none';
+        applyBtnCard.disabled = true;
+        applyBtnCard.innerHTML = 'Applied';
+        applyBtnCard.className = 'applied';
+
+        let appliedJob = {
+            Email: email,
+            jobID: job['id']
+        };
+
+        appliedJobs.push(appliedJob);
+        localStorage.setItem('appliedJobs', JSON.stringify(appliedJobs));
+
+        // Close the modal (pop up)
+        document.getElementById('applyPopup').style.display = 'none';
+    }
+});
+
+// Close pop-up when X is clicked
+document.getElementById('closePopup').addEventListener('click', function() {
+    document.getElementById('applyPopup').style.display = 'none';
+});
+
+// Close pop-up when clicking outside content
+window.addEventListener('click', function(e) {
+    if (e.target == document.getElementById('applyPopup')) {
+        document.getElementById('applyPopup').style.display = 'none';
+    }
+});
+
+// I did that because the file input is hidden (For a pretty view)
+document.getElementById('uploadArea').addEventListener('click', function() {
+    document.getElementById('file-input').click();
+});
+
+// ديه شويه حركات كده
+document.getElementById('file-input').addEventListener('change', function() {
+    const fileName = this.files[0]?.name || 'No file chosen';
+    document.getElementById('uploadArea').innerHTML = `<p><i class="fas fa-file-upload"></i><br>${fileName}</p>`;
+});
+
+
+// finally, the end of the apply
+
+// Logout
 document.getElementById('Logout').addEventListener('click', function(e) {
     e.preventDefault(); // Prevent the default link behavior
     localStorage.removeItem('currentUserEmail');
