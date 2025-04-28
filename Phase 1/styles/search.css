@@ -481,3 +481,9 @@ body::-webkit-scrollbar-thumb {
     background-color: #292152;
     color: #cccccc;
 }
+
+#cvMessage {
+    color: red;
+    display: none;
+    text-align: end;
+}

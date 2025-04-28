@@ -181,11 +181,17 @@ document.getElementById('applyBtn').addEventListener('click', function (e){
     e.preventDefault(); // prevent accidental form submission if any
 
     const form = document.getElementById('applyForm');
+    const fileInput = document.getElementById('file-input');
+
     if (!form.checkValidity()) {
         form.reportValidity(); // this will show the browser validation messages
     }
+    else if (!fileInput.files.length) {
+        // No resume selected
+        document.getElementById('cvMessage').style.display = 'block';
+    }
     else {
-        let applyBtnCard = document.querySelector(`#applyButton${job['id']}`);
+        let applyBtnCard = document.querySelector(`#applyButton${currentJobToApply['id']}`);
         document.getElementById('applyPopup').style.display = 'none';
         applyBtnCard.disabled = true;
         applyBtnCard.innerHTML = 'Applied';
@@ -193,7 +199,7 @@ document.getElementById('applyBtn').addEventListener('click', function (e){
 
         let appliedJob = {
             Email: email,
-            jobID: job['id']
+            jobID: currentJobToApply['id']
         };
 
         appliedJobs.push(appliedJob);
