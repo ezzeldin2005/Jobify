@@ -178,7 +178,7 @@ function openApplyPopup(job) {
 
 // Submit for apply
 document.getElementById('applyBtn').addEventListener('click', function (e){
-    e.preventDefault(); // prevent accidental form submission if any
+    e.preventDefault();
 
     const form = document.getElementById('applyForm');
     const fileInput = document.getElementById('file-input');
@@ -192,6 +192,7 @@ document.getElementById('applyBtn').addEventListener('click', function (e){
     }
     else {
         let applyBtnCard = document.querySelector(`#applyButton${currentJobToApply['id']}`);
+        document.getElementById('cvMessage').style.display = 'none';
         document.getElementById('applyPopup').style.display = 'none';
         applyBtnCard.disabled = true;
         applyBtnCard.innerHTML = 'Applied';
