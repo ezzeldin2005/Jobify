@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const adminCheckbox = document.getElementById('cbox');
     const companyNameInput = document.getElementById('companyName');
-    
+
     // Toggle requirement based on checkbox
     if (adminCheckbox) {
         adminCheckbox.addEventListener('change', function() {
@@ -9,6 +9,11 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+// Function to get the current user's email
+function getCurrentUserEmail() {
+    return localStorage.getItem('currentUserEmail');
+}
 
 document.getElementById('formInputs').addEventListener('submit', function(e) {
     e.preventDefault();
@@ -21,7 +26,7 @@ document.getElementById('formInputs').addEventListener('submit', function(e) {
     const isAdmin = document.getElementById('cbox').checked;
     const message = document.getElementById('message');
 
-    
+
     // Password validation
     if (password !== confirmPass) {
         showMessage('Passwords do not match!', 'error');
@@ -30,6 +35,7 @@ document.getElementById('formInputs').addEventListener('submit', function(e) {
 
     // Check if user exists
     const users = JSON.parse(localStorage.getItem('users')) || [];
+    const profiles = JSON.parse(localStorage.getItem('profiles')) || [];
     const userExists = users.some(user => user.username === username || user.email === email);
 
     if (userExists) {
@@ -37,11 +43,11 @@ document.getElementById('formInputs').addEventListener('submit', function(e) {
         return;
     }
 
-    // Create user object
+    // Create user object (with basic password obfuscation)
     const user = {
         username,
         email,
-        password, 
+        password,
         companyName: isAdmin ? companyName : null,
         role: isAdmin ? 'admin' : 'user',
     };
@@ -56,6 +62,23 @@ document.getElementById('formInputs').addEventListener('submit', function(e) {
 
     // Store the logged-in user's email and ID in localStorage
     localStorage.setItem('currentUserEmail', user.email);
+
+    const curEmail = getCurrentUserEmail();
+    if (!curEmail) {
+        console.error('No user email found in localStorage');
+    }
+
+    const profile = {
+        email: curEmail,
+        jobTitle: '',
+        phoneNumber: '',
+        about: '',
+        profileImageURL: '../styles/images/default-profile-picture.png',
+        backgroundURL: '../styles/images/defaultBackground.jpg'
+    }
+
+    profiles.push(profile);
+    localStorage.setItem('profiles', JSON.stringify(profiles));
 
     // Redirect based on role
     setTimeout(() => {
@@ -74,4 +97,6 @@ function showMessage(message, type) {
         messageElement.style.color = '';
     }, 5000);
 }
+
+
 

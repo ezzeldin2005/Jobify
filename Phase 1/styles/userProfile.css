@@ -181,9 +181,11 @@ a{
 .center_col{
     padding: 25px 20px;
     text-align: center;
-    max-width: 350px;
+    max-width: 25%;
     position: relative;
     margin: 0 auto;
+    overflow-wrap: break-word;
+    word-break: break-word;
 }
 
 .head{

@@ -1,6 +1,15 @@
 document.getElementById('formInputs').addEventListener('submit', function(e) {
     e.preventDefault();
 
+    // Function to get the current user's email
+    function getCurrentUserEmail() {
+        return localStorage.getItem('currentUserEmail');
+    }
+
+    const curEmail = getCurrentUserEmail();
+    if (!curEmail) {
+        console.error('No user email found in localStorage');
+    }
 
     const email = document.getElementById('Email').value.trim();
     const password = document.getElementById('password').value;
@@ -8,7 +17,6 @@ document.getElementById('formInputs').addEventListener('submit', function(e) {
 
     // Check if user exists
     const users = JSON.parse(localStorage.getItem('users')) || [];
-
 
     // Find user by email
     const user = users.find(user => user.email === email);
@@ -18,15 +26,15 @@ document.getElementById('formInputs').addEventListener('submit', function(e) {
         return;
     }
 
-    // Now check password 
+    // Now check password
     if (user.password !== password){
         showMessage('Invalid password!', 'error');
         return;
     }
 
-     showMessage('Login successful!', 'success');
+    showMessage('Login successful!', 'success');
 
-// Store the logged-in user's email and ID in localStorage
+    // Store the logged-in user's email and ID in localStorage
     localStorage.setItem('currentUserEmail', user.email);
 
 
@@ -35,7 +43,7 @@ document.getElementById('formInputs').addEventListener('submit', function(e) {
         window.location.href = user.role === 'admin' ? './Index3.html' : './Index6.html';
     }, 2000);
 
-   
+
 });
 
 function showMessage(message, type) {

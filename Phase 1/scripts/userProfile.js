@@ -164,17 +164,18 @@ window.onload = function () {
         if (file) {
             const reader = new FileReader();
             reader.onload = function (e) {
-                const newURL = e.target.result;
-                profiles[indexPro].backgroundURL = newURL;
+                backgroundURL = e.target.result;
+                profiles[indexPro].backgroundURL = backgroundURL;
                 localStorage.setItem("profiles", JSON.stringify(profiles));
-                document.querySelector(".head").style.background = `url("${newURL}") no-repeat 50% 20% / cover`;
+                document.querySelector(".head").style.background = `url("${backgroundURL}") no-repeat 50% 20% / cover`;
             };
             reader.readAsDataURL(file);
         }
     });
 
     deleteBtn.addEventListener("click", () => {
-        profiles[indexPro].backgroundURL = "../styles/images/defaultBackground.jpg";
+        backgroundURL = "../styles/images/defaultBackground.jpg";
+        profiles[indexPro].backgroundURL = backgroundURL;
         localStorage.setItem("profiles", JSON.stringify(profiles));
         document.querySelector(".head").style.background = `url("styles/images/defaultBackground.jpg") no-repeat 50% 20% / cover`;
     });
@@ -204,11 +205,11 @@ window.onload = function () {
         if (file) {
             const reader = new FileReader();
             reader.onload = function (e) {
-                const newURL = e.target.result;
-                profiles[indexPro].profileImageURL = newURL;
+                profileImageURL = e.target.result;
+                profiles[indexPro].profileImageURL = profileImageURL;
                 localStorage.setItem("profiles", JSON.stringify(profiles));
-                document.querySelector("#imgPro").src = newURL;
-                document.querySelector("#profile-image").src = newURL;
+                document.querySelector("#imgPro").src = profileImageURL;
+                document.querySelector("#profile-image").src = profileImageURL;
             };
             reader.readAsDataURL(file);
         }
