@@ -37,7 +37,7 @@ document.getElementById('formInputs').addEventListener('submit', function(e) {
         return;
     }
 
-    // Create user object (with basic password obfuscation)
+    // Create user object
     const user = {
         username,
         email,
