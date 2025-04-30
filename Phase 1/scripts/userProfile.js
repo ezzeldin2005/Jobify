@@ -216,7 +216,8 @@ window.onload = function () {
     });
 
     deleteproPicBtn.addEventListener("click", () => {
-        profiles[indexPro].profileImageURL = "../styles/images/default-profile-picture.png";
+        profileImageURL = "../styles/images/default-profile-picture.png"
+        profiles[indexPro].profileImageURL = profileImageURL;
         localStorage.setItem("profiles", JSON.stringify(profiles));
         document.querySelector("#imgPro").src = "styles/images/default-profile-picture.png";
         document.querySelector("#profile-image").src = "styles/images/default-profile-picture.png";
