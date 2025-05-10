@@ -1,4 +1,4 @@
-let addJobCard = function(job){
+nn vvvvv.lh0let addJobCard = function(job){
     let jobCard = document.createElement('div');
     let jobTitle =  document.createElement('h3');
     let jobId =  document.createElement('h3');
