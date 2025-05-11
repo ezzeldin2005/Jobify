@@ -15,7 +15,7 @@
             <div class="imgbox">
                 <div class="IntroText">
                     <div id="logobtn">
-                        <h3 id="Logo"><img style="width: 140px" src="{% static 'Images/image-removebg-preview.png' %}"></h3>
+                        <h3 id="Logo"><img style="width: 140px" src="{% static 'CSS/Images/image-removebg-preview.png' %}"></h3>
                         <a href="/">Back to Website<span style="color: rgb(169, 169, 169);" class="material-symbols-outlined">keyboard_backspace</span></a>
                     </div>
                     <p id="Welcome">Welcome to Jobify</p>
@@ -84,12 +84,7 @@
                             <div class="buttonsub">
                                 <button id="Sub" type="submit">Submit</button>
                             </div>
-                            <!-- Add this at the top of your form to show errors -->
-                            {% if error %}
-                            <div class="error-message" style="color: red; margin-bottom: 15px;">
-                                {{ error }}
-                            </div>
-                            {% endif %}
+                            <p id = 'message'></p>
                         </form>
                     
                     </div>
@@ -97,6 +92,6 @@
                 
         </div>
     </div>
-    <script src="{% static 'JS/signup.js' %}?v=1"></script>
+    <script src="{% static 'JS/signup.js' %}"></script>
 </body>
 </html>
