@@ -161,26 +161,26 @@ input{
     justify-content: center;
     align-items: center;
     border-radius: 12px;
-    background-image: url(./Images/Image.png);
+    background-image: url(images/Image.png);
     animation: backG 10s linear infinite alternate;
     background-size: cover;
     box-shadow: 0px 0px 10px #514167b3;
 }
 @keyframes backG {
     0%{
-        background-image: url(./Images/Image\ \(1\).jpg);
+        background-image: url(images/Image\ \(1\).jpg);
     }
     25%{
-        background-image: url(./Images/Noise\ &\ Texture.jpg);
+        background-image: url(images/Noise\ &\ Texture.jpg);
     }
     50%{
-        background-image: url(./Images/Image.jpg);
+        background-image: url(images/Image.jpg);
     }
     75%{
-        background-image: url(./Images/66.jpg);
+        background-image: url(images/66.jpg);
     }
     100%{
-        background-image: url(./Images/Image.png);
+        background-image: url(images/Image.png);
     }
 }
 

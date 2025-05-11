@@ -26,8 +26,8 @@ window.onload = function () {
     let jobTitle = profile.jobTitle || '';
     let phoneNumber = profile.phoneNumber || '';
     let about = profile.about || '';
-    let profileImageURL = profile.profileImageURL || '../CSS/Images/default-profile-picture.png';
-    let backgroundURL = profile.backgroundURL || '../CSS/Images/defaultBackground.jpg';
+    let profileImageURL = profile.profileImageURL || '../styles/images/default-profile-picture.png';
+    let backgroundURL = profile.backgroundURL || '../styles/images/defaultBackground.jpg';
 
     // Display user data
     document.querySelector('#username').innerHTML = user.username;
@@ -155,7 +155,7 @@ window.onload = function () {
     const deleteBtn = document.getElementById("delete-btn");
 
     cameraBtn.addEventListener("click", () => {
-        deleteBtn.style.display = (backgroundURL === '../CSS/Images/defaultBackground.jpg') ? "none" : "block";
+        deleteBtn.style.display = (backgroundURL === '../styles/images/defaultBackground.jpg') ? "none" : "block";
         dropdownMenu.style.display = (dropdownMenu.style.display === "block") ? "none" : "block";
     });
 
@@ -177,7 +177,7 @@ window.onload = function () {
         backgroundURL = "../styles/images/defaultBackground.jpg";
         profiles[indexPro].backgroundURL = backgroundURL;
         localStorage.setItem("profiles", JSON.stringify(profiles));
-        document.querySelector(".head").style.background = `url("../CSS/Images/defaultBackground.jpg") no-repeat 50% 20% / cover`;
+        document.querySelector(".head").style.background = `url("styles/images/defaultBackground.jpg") no-repeat 50% 20% / cover`;
     });
 
     window.addEventListener("click", (e) => {
@@ -216,17 +216,17 @@ window.onload = function () {
     });
 
     deleteproPicBtn.addEventListener("click", () => {
-        profileImageURL = "../CSS/Images/default-profile-picture.png"
+        profileImageURL = "../styles/images/default-profile-picture.png"
         profiles[indexPro].profileImageURL = profileImageURL;
         localStorage.setItem("profiles", JSON.stringify(profiles));
-        document.querySelector("#imgPro").src = "../CSS/Images/default-profile-picture.png";
-        document.querySelector("#profile-image").src = "../CSS/Images/default-profile-picture.png";
+        document.querySelector("#imgPro").src = "styles/images/default-profile-picture.png";
+        document.querySelector("#profile-image").src = "styles/images/default-profile-picture.png";
     });
 
     document.getElementById('Logout').addEventListener('click', function (e) {
-        e.preventDefault();
+    
         localStorage.removeItem('currentUserEmail');
         localStorage.removeItem('currentUserId');
-        window.location.href = '/';
+
     });
 };

@@ -40,7 +40,7 @@ document.getElementById('formInputs').addEventListener('submit', function(e) {
 
     // Redirect based on role after 2 seconds
     setTimeout(() => {
-        window.location.href = user.role === 'admin' ? './Index3.html' : './Index6.html';
+        window.location.href = user.role === 'admin' ? '/AdminHomePage' : '/UserHomePage';
     }, 2000);
 
 

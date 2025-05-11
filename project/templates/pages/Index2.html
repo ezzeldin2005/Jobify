@@ -40,7 +40,8 @@
 
                         <form action="post" id="formInputs">
 
-                           
+                            {% csrf_token %}
+                            
                             <div id="usernameBox">
                                 
                                 <input type="text" id="userName" name="username" placeholder="User name" required>
@@ -75,7 +76,7 @@
                                     <input type="text" id="companyName" name="companyName" placeholder="Company name"   >
                                     <label for="companyName">Company name</label>
                                 </div>
-                                <input id="cbox" type="checkbox">
+                                <input id="cbox" name="AdminBox" type="checkbox">
                                 <label for="cbox" style="color: rgb(142, 141, 141);">as Admin</label>
                             </div>
 
@@ -83,7 +84,12 @@
                             <div class="buttonsub">
                                 <button id="Sub" type="submit">Submit</button>
                             </div>
-                            <p id="message"></p>
+                            <!-- Add this at the top of your form to show errors -->
+                            {% if error %}
+                            <div class="error-message" style="color: red; margin-bottom: 15px;">
+                                {{ error }}
+                            </div>
+                            {% endif %}
                         </form>
                     
                     </div>
@@ -91,6 +97,6 @@
                 
         </div>
     </div>
-    <script src="{% static 'JS/signup.js' %}"></script>
+    <script src="{% static 'JS/signup.js' %}?v=1"></script>
 </body>
 </html>

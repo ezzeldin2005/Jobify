@@ -1,4 +1,4 @@
-nn vvvvv.lh0let addJobCard = function(job){
+addJobCard = function(job){
     let jobCard = document.createElement('div');
     let jobTitle =  document.createElement('h3');
     let jobId =  document.createElement('h3');
@@ -43,8 +43,6 @@ window.onload = function () {
 };
 
 document.getElementById('Logout').addEventListener('click', function(e) {
-    e.preventDefault(); // Prevent the default link behavior
     localStorage.removeItem('currentUserEmail');
     localStorage.removeItem('currentUserId');
-    window.location.href = './index0.html'; // Redirect to your login page
 });

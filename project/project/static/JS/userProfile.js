@@ -224,9 +224,9 @@ window.onload = function () {
     });
 
     document.getElementById('Logout').addEventListener('click', function (e) {
-        e.preventDefault();
+    
         localStorage.removeItem('currentUserEmail');
         localStorage.removeItem('currentUserId');
-        window.location.href = './index0.html';
+
     });
 };
