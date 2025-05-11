@@ -1,0 +1,48 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="{% static 'CSS/userHomePage.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+</head>
+<body>
+
+    <div class ="header1">
+        <div class="logocon">
+            <a id="Logo" href="/"><img src="{% static 'Images/image-removebg-preview.png' %}" alt=""></a>
+        </div>
+        <ul id="navbar">
+            <li>
+                <div id="homeiconContainer">
+                    <span class="material-symbols-outlined">home</span>
+                    <a href="UserHomePage">Home</a>
+                </div>
+            </li>
+            <li> 
+                <div id="searchiconContainer">
+                    <span class="material-symbols-outlined">search</span>
+                    <a href="Search">Search</a>
+                </div>
+            </li>
+            <li>
+                <div id="profileiconContainer">
+                    <span class="material-symbols-outlined">person</span>
+                    <a href="Profile">Profile</a>
+                </div>
+            </li>
+        </ul>
+        <a id="Logout" href = "/"><span class="material-symbols-outlined">logout</span></a>
+
+    </div>
+
+    <div class = "jobListContainer">
+        <h2>Applied Jobs</h2>
+        <ul class = "jobList">
+
+        </ul>
+    </div>
+</body>
+</html>

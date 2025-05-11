@@ -1,0 +1,285 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Archivo+Black&family=Lilita+One&family=PT+Sans+Narrow:wght@400;700&family=Passion+One:wght@400;700;900&family=Ubuntu:ital@1&family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap');
+
+body{
+    background-image: linear-gradient(to bottom right, #676278, #676278, #676278);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+*{
+    font-family: sans-serif;
+}
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+.Container{
+    width: 90%;
+    height: 90%;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    box-shadow: 0px 5px 50px rgba(0, 0, 0, 0.4);
+    border-radius: 12px;
+    background-color: #2e253b;
+}
+
+#header2{
+    width: 75%;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.Emailbox input, .passwordbox input{
+    display: block; 
+    border-radius: 5px; 
+    height: 50px;
+    width: 100%;
+    background-color: #514b61;
+    border: transparent;
+}
+
+.Emailbox label, .passwordbox label {
+    display: none;
+    font-size: 14px;
+    color:rgb(168, 168, 168);
+}
+
+input:focus::placeholder {
+    color: transparent; 
+}
+input::placeholder{
+    color: rgb(145, 145, 145);
+}
+
+.Emailbox{
+    padding-bottom: 20px;
+    position: relative;
+    width: 95%;
+}
+
+.passwordbox{
+    padding-bottom: 7px;
+    position: relative;
+    width: 95%;
+    margin-bottom: 2%;
+}
+
+input{
+    padding-left: 10px;
+    padding-right: 10px;
+    caret-color: white;
+    color: rgba(240, 248, 255, 0.726);
+}
+.Emailbox input:focus + label {
+    display: block;
+    position: absolute;
+    bottom: 80px;
+}
+
+.passwordbox input:focus + label{
+    display: block;
+    position: absolute;
+    bottom: 66px;
+}
+
+.Emailbox input:focus ,.passwordbox input:focus {
+    border-color: rgb(168, 168, 168);
+    outline: solid #7668bafd 2px;
+}
+
+#Login{
+    width: 100%;
+    height: 50px;
+    color: white;
+    font-size: large;
+    border-radius: 5px;
+    border: none;
+    background-color: #5c4ea2;
+    margin-bottom: 10px;
+    margin-top: 28px;
+}
+#Login:hover{
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+}
+
+.Loginbox{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.signup p{
+    display: inline;
+    color: rgb(168, 168, 168)
+}
+.signup a{
+    color: #7968ce;
+}
+
+
+#inputBox{
+    width: 50%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    border-radius: 0 12px 12px 0;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+
+#inputcontainer{
+    width: 80%; 
+    max-width: 400px; 
+    height: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.signup a:hover{
+    color: rgb(93, 93, 150)
+}
+
+.intro {
+    height: 95%;
+    width: 95%;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    background-image: url(./Images/Image.png);
+    animation: backG 10s linear infinite alternate;
+    background-size: cover;
+    box-shadow: 0px 0px 10px #514167b3;
+}
+@keyframes backG {
+    0%{
+        background-image: url(./Images/Image\ \(1\).jpg);
+    }
+    25%{
+        background-image: url(./Images/Noise\ &\ Texture.jpg);
+    }
+    50%{
+        background-image: url(./Images/Image.jpg);
+    }
+    75%{
+        background-image: url(./Images/66.jpg);
+    }
+    100%{
+        background-image: url(./Images/Image.png);
+    }
+}
+
+#introcontainer{
+    width: 50%;
+    height: 100%;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.intro .IntroText{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 100%;
+}
+.intro P , .intro h3{
+    width: 80%;
+}
+#logobtn{
+    margin-bottom: 20%;
+    display: flex;
+
+}
+#logobtn a{
+    background-color: rgba(91, 90, 90, 0.366);
+    text-decoration: none;
+    color: white;
+    margin-top: 8.2%;
+    box-sizing: border-box;
+    border-radius: 18px;
+    text-align: center;
+    width: 29%;
+    height: 28%;
+    transition: box-shadow 0.3 ease-out;
+}
+#logobtn a span{
+    position: relative;
+    top: 17.5%;
+    left: 4%;
+}
+#logobtn a:hover{
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    position: relative;
+    bottom: 2px;
+}
+#Logo{
+    color: white;
+    font-size: 40px;
+    padding-left: 6%;
+    width: 60%;
+}
+#inp{
+    height: 70%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#inputcontainer form{
+    width: 100%;
+}
+.intro .IntroText #Welcome{
+    font-size: 34px;
+    padding-left: 10%;
+    color: white; 
+    margin-bottom: 0%;
+    text-align: center;
+}
+
+.intro .IntroText #text{
+    color: white; 
+    padding-left: 10.5%;
+    font-size: 20px;
+    font-family: "PT Sans Narrow", sans-serif;
+    margin-bottom: 29%;
+    width: 78%;
+    text-align: center;
+}
+#rem{
+    width: 15px;
+    height: 15px;
+}
+#checklabel{
+    position: relative;
+    bottom: 2px;
+    display: inline-block;
+}
+body::-webkit-scrollbar {
+    width: 15px;
+}
+body::-webkit-scrollbar-track {
+    background-image: linear-gradient(to bottom right, #676278, #676278, #676278);;
+}
+  
+body::-webkit-scrollbar-thumb {
+    background-image: linear-gradient(to bottom right, #676278, #676278, #676278);;
+}

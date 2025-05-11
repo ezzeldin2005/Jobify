@@ -1,0 +1,69 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Job search</title>
+    <link rel="stylesheet" href="{% static 'CSS/editJob.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+</head>
+<body>
+    <div class ="header1">
+        <div class="logocon">
+            <a id="Logo" href="/"><img src="{% static 'Images/image-removebg-preview.png' %}" alt=""></a>
+        </div>
+        <ul id="navbar">
+            <li>
+                <div id="homeiconContainer">
+                    <span class="material-symbols-outlined">home</span>
+                    <a href="AdminHomePage">Home</a>
+                </div>
+            </li>
+            <li>
+                <div id="AddiconContainer">
+                    <span class="material-symbols-outlined">add</span>
+                    <a href="AddJob">Add New Job</a>
+                </div>
+            </li>
+            <li>
+                <div id="editiconContainer">
+                    <span class="material-symbols-outlined">edit</span>
+                    <a href="EditJob">Edit Job</a>
+                </div>
+            </li>
+        </ul>
+        <a id="Logout" href = "/"><span class="material-symbols-outlined">logout</span></a>
+        
+    </div>
+
+    </div>
+    
+    <div id="searchelecontainer">
+        <div id = "search-bar">
+            <div id="select">
+                <p id="selectText">None</p>
+                <img src="{% static 'Images/Arrowhead-Down-01-256.png' %}">
+                <ul id="list">
+                    <li class="options">By Title</li>
+                    <li class="options">By Years of Experience</li>
+                </ul>
+            </div>
+            <input type="text" id="searchInput" placeholder="Search" maxlength="50">
+            <button id= "searchBtn" type="submit"><span id="SearchIcon" class="material-symbols-outlined">search</span></button>
+        </div>
+    </div>
+
+    <div class = "searchResult">
+        <div id="resultBorder">
+            <div id="searchResultContainer">
+                <div id="cards">    
+               </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="{% static 'JS/editSearch.js' %}"></script>
+    
+</body>
+</html>

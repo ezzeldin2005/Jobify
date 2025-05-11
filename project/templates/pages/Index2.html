@@ -1,0 +1,96 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'CSS/signup.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+</head>
+<body>
+    <div class="Container">
+
+        <div id ="introcontainer">
+            <div class="imgbox">
+                <div class="IntroText">
+                    <div id="logobtn">
+                        <h3 id="Logo"><img style="width: 140px" src="{% static 'Images/image-removebg-preview.png' %}"></h3>
+                        <a href="/">Back to Website<span style="color: rgb(169, 169, 169);" class="material-symbols-outlined">keyboard_backspace</span></a>
+                    </div>
+                    <p id="Welcome">Welcome to Jobify</p>
+                    <P id="text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad iure temporibus sed sapiente!</P>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="inputBox">
+            <div id="inp">
+
+                
+                <div id="header2">
+                    <h1 style="color: white; font-size: 43px;">Create new account</h1>
+                    <P style="color: rgb(168, 168, 168);">Please fill this form to create an account</P>
+                </div>
+
+            
+                    <div id="inputcontainer">
+
+
+                        <form action="post" id="formInputs">
+
+                           
+                            <div id="usernameBox">
+                                
+                                <input type="text" id="userName" name="username" placeholder="User name" required>
+                                <label for="userName">Username</label>
+                                
+                            </div>
+                            <div id="emailBox">
+                                
+                                <input type="email" id="email" name="email" placeholder="Email" required>
+                                <label for="email">Email</label>
+                                
+                            </div>
+                        
+                        
+                            <div id="passwordBox">
+                                
+                                <input type="password" id="password" name="password" placeholder="Password" required minlength="9" maxlength="20" >
+                                <label for="password">Password</label>
+                                
+                            </div>
+
+                            <div id="cPasswordBox">
+                                
+                                <input type="password" id="cPassword" name="cPassword" placeholder="Confirm Password" minlength="9" maxlength="20" required>
+                                <label for="cPassword">Confirm password</label>
+                                
+                            </div>
+
+
+                            <div>
+                                <div id="companyNameBox">
+                                    <input type="text" id="companyName" name="companyName" placeholder="Company name"   >
+                                    <label for="companyName">Company name</label>
+                                </div>
+                                <input id="cbox" type="checkbox">
+                                <label for="cbox" style="color: rgb(142, 141, 141);">as Admin</label>
+                            </div>
+
+
+                            <div class="buttonsub">
+                                <button id="Sub" type="submit">Submit</button>
+                            </div>
+                            <p id="message"></p>
+                        </form>
+                    
+                    </div>
+            </div>
+                
+        </div>
+    </div>
+    <script src="{% static 'JS/signup.js' %}"></script>
+</body>
+</html>

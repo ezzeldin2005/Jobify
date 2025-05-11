@@ -1,0 +1,353 @@
+body{
+    background-image: linear-gradient(to right, #2e253b , #393045 , #352e3e);
+    height: auto;
+}
+*{
+    font-family: sans-serif;
+    font-weight: 400;
+    padding: 0;
+    margin: 0;
+}
+
+a{
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.header1{
+    padding-bottom: 12px;
+    padding-top: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-image: linear-gradient(to right, #2e253b , #393045 , #352e3e);
+    box-shadow: 0px 13px 20px 0px rgb(23 26 39 / 30%);
+    position: sticky;
+    top: 0%;
+    z-index: 1;
+}
+
+#Logo{
+    width: fit-content;
+}
+#Logo img{
+    width: 150px;
+}
+#Logo:hover{
+    position: relative;
+    bottom: 3px;
+}
+.logocon{
+    width: 11%;
+    box-sizing: border-box;
+    padding-left: 30px;
+}
+#navbar {
+ width: 50%;
+ border-radius: 15px;
+ display: flex;
+ align-items: center;
+ justify-content: space-evenly;
+}
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 600,
+    'GRAD' 0,
+    'opsz' 24
+}
+#Logout:hover{
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+}
+#navbar li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 18px;
+    background-color: rgba(255, 255, 255, 0.105);
+    width: 32%;
+    height: 48px;
+    border-radius: 7px;
+    text-align: center;
+}
+#navbar li a{
+    font-size: 20px;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    display: inline-block;
+    font-weight: 550;
+    color: white;
+}
+#navbar li:hover{
+    position: relative;
+    bottom: 3px;
+    cursor: pointer;
+}
+#Logout{
+    margin-top: 0.8%;
+    padding-top: 12px;
+    margin-right: 3%;
+    box-sizing: border-box;
+    text-align: center;
+    width: 8%;
+    height: 49px;
+    background-color: #4d4284;
+    color: #c8c0d2;
+    border-radius: 7px;
+    font-size: 20px;
+}
+#Logout:hover{
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4);
+}
+
+#homeiconContainer, #editiconContainer, #AddiconContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    color: #c8c0d2;
+    gap: 4px;
+    width: 100%;
+    height: 100%;
+}
+#homeiconContainer a, #editiconContainer a, #AddiconContainer a{
+    width: 100%;
+    height: 100%;
+    padding-top: 12px;
+}
+#homeiconContainer span{
+    position: relative;
+    left: 32%;
+    bottom: 3%;
+}
+#editiconContainer span{
+    position: relative;
+    left: 28%;
+    bottom: 3%;
+}
+#AddiconContainer span{
+    position: relative;
+    left: 19%;
+    bottom: 3%;
+}
+
+/* ------------------------------------------ */
+
+
+.container{
+    height: 100%;
+}
+input, textarea{
+    padding-left: 10px;
+    padding-right: 10px;
+    caret-color: white;
+    font-size: 17px;
+    color: rgba(240, 248, 255, 0.726);
+}
+.jobFormContainer{
+    height: 77%;
+    width: 50%;
+    background-color: #2e253b;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 9px;
+    position: relative;
+    top: 6%;
+    margin-right: 4%;
+    box-shadow: 0px 0px 11px 0px #231e2a;
+}
+#jobCompanyContainer input, #jobIDContainer input, #jobTitleContainer input{
+    width: 97%;
+    display: block; 
+    border-radius: 5px; 
+    height: 50px;
+    outline: none;
+    border: solid 1px;
+    background-color: #514b61;
+    border: transparent;
+    margin-bottom: 4.3%;
+}
+.jobFormContainer form div{
+    position: relative;
+}
+#jobCompanyContainer label, #jobIDContainer label, #jobTitleContainer label, #jobDescriptionContainer label, #jobSalaryExp div label{
+    display: none;
+    font-size: 16px;
+    color: rgb(168, 168, 168);
+}
+#jobCompanyContainer input:focus , #jobIDContainer input:focus , #jobTitleContainer input:focus , #jobDescriptionContainer textarea:focus, #jobExperiance input:focus, #jobSalary input:focus{
+    border-color: rgb(168, 168, 168);
+    outline: solid #7668bafd 2px;
+}
+#jobCompanyContainer input:focus + label, #jobIDContainer input:focus + label, #jobTitleContainer input:focus + label{
+    display: block;
+    position: absolute;
+    bottom: 86px;
+    color: rgb(168, 168, 168);
+}
+#jobSalaryExp div input:focus + label {
+    display: block;
+    position: absolute;
+    bottom: 55px;
+    color: rgb(168, 168, 168);
+}
+#jobDescriptionContainer textarea:focus + label{
+    display: block;
+    position: absolute;
+    bottom: 123px;
+    color: rgb(168, 168, 168);
+} 
+#jobCompanyContainer input{
+    margin-top: 6px;
+}
+#jobSalaryExp div{
+    width: 47%;
+    display: block; 
+    border: solid 1px ;
+    border-radius: 5px;
+    height: 50px;
+    outline: none;
+    border: transparent;
+}
+#jobSalaryExp div input{
+    width: 98.6%;
+    display: block; 
+    border: solid 1px ;
+    border-radius: 5px;
+    height: 45px;
+    background-color: #514b61;
+    outline: none;
+    border: transparent;
+}
+#jobSalaryExp{
+    margin-bottom: 5%;
+}
+textarea:focus, input:focus{
+    color: rgba(240, 248, 255, 0.726);
+}
+
+#jobDescription{
+    width: 96.8%;
+    display: block; 
+    border: solid 1px ;
+    border-radius: 5px; 
+    height: 75px;
+    outline: none;
+    background-color: #514b61;
+    resize: none;
+    border: transparent;
+    margin-bottom: 4%;
+    padding-top: 2%;
+}
+.jobFormContainer form{
+    width: 90%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+}
+input:focus::placeholder, textarea:focus::placeholder {
+    color: transparent; 
+}
+input::placeholder, textarea::placeholder{
+    color: rgb(174, 174, 174);
+}
+#jobSalaryExp{
+    display: flex;
+    height: 40px;
+    gap: 25px;
+    flex-direction: row;
+}
+
+#submit{
+    width: 99.8%;
+    height: 68px;
+    color: white;
+    font-size: large;
+    border-radius: 5px;
+    border: none;
+    background-color: #7668bafd;
+    margin-bottom: 10px;
+    margin-top: 12px;
+}
+
+#submit:hover{
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+}
+
+#formText{
+    width: 90%;
+    margin-bottom: 5%;
+    margin-top: 7%;
+}
+#formText h2{
+    font-size: 40px;
+    color: white;
+    margin-bottom: 3%;
+    font-weight: 600;
+    text-align: center;
+}
+#formText p{
+    color: rgb(168, 168, 168);;
+    font-size: 18px;
+    text-align: center;
+}
+#jobStatusContainer{
+    display: flex;
+    margin-bottom: 10px;
+    gap: 50px;
+    padding: 14px;
+    background-color: #514b61;
+    border-radius: 5px; 
+    width: 95.7%;
+}
+#jobStatusContainer pre{
+    width: 30%;
+    color: rgb(168, 168, 168);
+    font-size: 18px;
+    padding-left: 1%;
+}
+input[type="radio"] {
+    accent-color: #7668bafd;
+    margin-right: 7px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+#OC{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    width: 40%;
+}
+#OC div label{
+    color: rgb(168, 168, 168);
+    font-size: 18px;
+    position: relative;
+    bottom: 3px;
+}
+#masterContainer{
+    background-image: linear-gradient(to top, #2b2139, #3d3449);
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 145vh;
+    position: absolute;
+}
+body::-webkit-scrollbar {
+    width: 15px;
+}
+body::-webkit-scrollbar-track {
+    background-image: linear-gradient(to bottom right, #2e253b ,#676278);
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #2e253b7d;
+    border-radius: 12px;
+}

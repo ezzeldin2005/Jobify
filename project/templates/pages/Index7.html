@@ -1,0 +1,94 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'CSS/userProfile.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <script src="https://kit.fontawesome.com/e882ac110d.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class ="header1">
+    <div class="logocon">
+        <a id="Logo" href="/"><img src="{% static 'Images/image-removebg-preview.png' %}" alt=""></a>
+    </div>
+    <ul id="navbar">
+        <li>
+            <div id="homeiconContainer">
+                <span class="material-symbols-outlined">home</span>
+                <a href="UserHomePage">Home</a>
+            </div>
+        </li>
+        <li>
+            <div id="searchiconContainer">
+                <span class="material-symbols-outlined">search</span>
+                <a href="Search"Z>Search</a>
+            </div>
+        </li>
+        <li>
+            <div id="profileiconContainer">
+                <span class="material-symbols-outlined">person</span>
+                <a href="Profile">Profile</a>
+            </div>
+        </li>
+    </ul>
+    <a id="Logout" href = "/"><span class="material-symbols-outlined">logout</span></a>
+
+</div>
+
+<div class="container">
+    <div class="container-content">
+        <div class="head"></div>
+        <button id="edit-background-btn">
+            <span class="material-symbols-outlined" id="background-btn">photo_camera</span>
+        </button>
+        <div class="dropdown-content" id="dropdownMenu">
+            <label for="fileInput">📤 Change Photo</label>
+            <button id="delete-btn">🗑️ Delete Photo</button>
+            <input type="file" id="fileInput" accept="image/*" style="display: none;">
+        </div>
+
+
+        <div class="secondPart">
+            <div class="center_col">
+                <div class="imgContainer">
+                    <img src="" alt="profile image" id="imgPro">
+                </div>
+                <h2 id="username"></h2>
+                <p class="details" id="job"></p>
+                <p class="details" id="email"></p>
+                <p id="About"></p>
+            </div>
+            <button id="edit-btn"><span class="material-symbols-outlined">edit</span></button>
+        </div>
+    </div>
+</div>
+
+<div id="profileModal" class="pictureProfileModal">
+    <div class="modal-content">
+        <div class="pictureProfileModal-header">
+            <h2>Profile photo</h2>
+            <span class="close">&times;</span>
+        </div>
+
+        <div class="pictureProfileModal-body">
+            <img src="" alt="Profile" class="profile-image" id="profile-image"/>
+        </div>
+
+        <div class="pictureProfileModal-footer">
+            <div class="left-btn">
+                <label for="profileInput" class="change-btn"><i class="fa fa-camera"></i> Change </label>
+                <input type="file" class="change-btn" id="profileInput" accept="image/*" style="display: none;">
+            </div>
+            <div class="right-btn">
+                <button class="delete-btn" id="deleteProPic-btn"><i class="fa fa-trash"></i> Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="{% static 'JS/userProfile.js' %}"></script>
+</body>
+</html>

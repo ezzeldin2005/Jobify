@@ -1,0 +1,316 @@
+body{
+    background-image: linear-gradient(to right, #2e253b , #393045 , #352e3e);
+    height: auto;
+}
+*{
+    font-family: sans-serif;
+    font-weight: 400;
+    padding: 0;
+    margin: 0;
+}
+
+a{
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.header1{
+    padding-bottom: 12px;
+    padding-top: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-image: linear-gradient(to right, #2e253b , #393045 , #352e3e);
+    box-shadow: 0px 13px 20px 0px rgb(23 26 39 / 30%);
+    position: sticky;
+    top: 0%;
+    z-index: 1;
+}
+
+#Logo{
+    width: fit-content;
+}
+#Logo img{
+    width: 150px;
+}
+#Logo:hover{
+    position: relative;
+    bottom: 3px;
+}
+.logocon{
+    width: 11%;
+    box-sizing: border-box;
+    padding-left: 30px;
+}
+#navbar {
+ width: 50%;
+ border-radius: 15px;
+ display: flex;
+ align-items: center;
+ justify-content: space-evenly;
+}
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 600,
+    'GRAD' 0,
+    'opsz' 24
+}
+#Logout:hover{
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+}
+#navbar li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 18px;
+    background-color: rgba(255, 255, 255, 0.105);
+    width: 32%;
+    height: 48px;
+    border-radius: 7px;
+    text-align: center;
+}
+#navbar li a{
+    font-size: 20px;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    display: inline-block;
+    font-weight: 550;
+    color: white;
+}
+#navbar li:hover{
+    position: relative;
+    bottom: 3px;
+    cursor: pointer;
+}
+#Logout{
+    margin-top: 0.8%;
+    padding-top: 12px;
+    margin-right: 3%;
+    box-sizing: border-box;
+    text-align: center;
+    width: 8%;
+    height: 49px;
+    background-color: #4d4284;
+    color: #c8c0d2;
+    border-radius: 7px;
+    font-size: 20px;
+}
+#Logout:hover{
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4);
+}
+
+#homeiconContainer, #editiconContainer, #AddiconContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    color: #c8c0d2;
+    gap: 4px;
+    width: 100%;
+    height: 100%;
+}
+#homeiconContainer a, #editiconContainer a, #AddiconContainer a{
+    width: 100%;
+    height: 100%;
+    padding-top: 12px;
+}
+#homeiconContainer span{
+    position: relative;
+    left: 32%;
+    bottom: 3%;
+}
+#editiconContainer span{
+    position: relative;
+    left: 28%;
+    bottom: 3%;
+}
+#AddiconContainer span{
+    position: relative;
+    left: 19%;
+    bottom: 3%;
+}
+
+/* ------------------------------------------ */
+
+
+#searchelecontainer{
+    display: flex;
+   justify-content: center;
+    height: 80px;
+    margin-bottom: 2%;
+}
+#search-bar{
+    width: 90%;
+    display: flex;
+    border-radius: 4px;
+    padding: 2px;
+    max-width: 800px;
+    gap: 5px;
+    margin-top: 2%;
+}
+#select{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    background-color: #4d4284;
+    width: 360px;
+    padding: 22px 15px;
+    box-sizing: border-box;
+    position: relative;
+    border-radius: 4px;
+    cursor: pointer;
+}
+#select img{
+    width: 15px;
+}
+#select ul{
+    position: absolute;
+    top: 120%;
+    left: 0;
+    list-style: none;
+    background-color: white;
+    color: #4b417e;
+    width: 100%;
+    border-radius: 4px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s;
+}
+#select ul.open{
+    max-height: 100px;
+}
+
+#select ul li{
+    padding: 10px;
+    cursor: pointer;
+}
+#select ul li:hover{
+    background-color: rgb(174, 174, 174);
+}
+#search-bar input{
+    padding: 10px 25px;
+    border-radius: 4px;
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 18px;
+}
+#searchBtn{
+    background-color: #4d4284;
+    width: 10%;
+    padding-right: 1%;
+    border-radius: 4px;
+    border: none;
+}
+#searchBtn:hover{
+    cursor: pointer;
+    border: rgb(82, 54, 100) 1px solid;
+}
+#searchBtn #SearchIcon{
+    width: 30px;
+    height: 30px;
+    color: #cdcdcd;
+    position: relative;
+    left: 8%;
+    top: 5%;
+}
+.label{
+    font-weight: bold;
+    color: #5c2d91;
+}
+#cards{
+    width: 95%;
+    height: 100%;
+    display: grid;
+    flex-wrap: wrap;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 19px;
+}
+.jobCard{
+    width: 100%;
+    height: 730px;
+    box-sizing: border-box;
+    padding: 10px;
+    display: block;
+    position: relative;
+    border-radius: 8px;
+    background-color: rgb(163 151 171);
+    transition: box-shadow 0.3s ease-out;
+    transition: scale 0.5s ease-out;
+}
+.jobCard h3, p{
+    margin: 7px;
+}
+.jobCard:hover{
+    scale: 1.01;
+    position: relative;
+    bottom:  5px;
+    box-shadow: 0px 0px 4px 3px #676278;
+    background-color: rgb(201, 192, 207);    
+}             
+.searchResult{
+    padding: 5px;
+    position:static;
+    height: 100%;
+    margin: 5px;
+    display: block;
+    border-radius: 10px;
+}
+.searchResult h2, #searchResultContainer{
+    width: fit-content;
+}
+.searchResult #resultBorder{
+    height: 100%;
+    border-radius: 5px;
+}
+#searchResultContainer{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+.deleteButton, .editButton{
+    width: 180px;
+    padding: 8px 0;
+    background-color: #5c4ea2;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    font-size: 15px;
+    align-items: center;
+    transition: all 0.5s ease;
+    font-size: 15px;
+    align-items: center;
+    transition: all 0.5s ease;
+}
+.deleteButton:hover, .editButton:hover{
+    cursor: pointer;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+}
+.editDeletecontainer{
+    display: inline-block;
+    width: 96%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    top: 93.5%;
+    gap: 1.5%;
+}
+body::-webkit-scrollbar {
+    width: 15px;
+}
+body::-webkit-scrollbar-track {
+    background-image: linear-gradient(to bottom right, #2e253b ,#676278);
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #2e253b7d;
+    border-radius: 12px;
+}
