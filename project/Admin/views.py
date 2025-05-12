@@ -35,5 +35,5 @@ def EditJob(request, job_id):
     return render(request, 'pages/Index9.html', {'job_id': job_id})
 
 def jobModel(request):
-    jobs = JobData.objects.all()
+    jobs = JobData.objects.all().values('ID', 'Admin', 'CompanyName', 'Title', 'Salary', 'Description', 'Experience', 'Status')
     return JsonResponse(list(jobs), safe=False)

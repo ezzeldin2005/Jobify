@@ -48,7 +48,7 @@
         </div>
 
         <form id="form" action="{% url 'AddJob' username %}" method = "POST">
-
+            {% csrf_token %}
             <div id = "jobCompanyContainer">
                 <input type="text" required name = "jobCompany" id="jobCompany" placeholder="Job Company" readonly>
                 <label id= "cs" for="jobCompany">Job Company</label>

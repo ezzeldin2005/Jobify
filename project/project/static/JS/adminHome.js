@@ -34,7 +34,7 @@ addJobCard = function(job){
 
 window.onload = function () {
     let username = document.getElementById('username').dataset.username
-    fetch('AdminHomePage/jobModel')
+    fetch('/AdminHomePage/jobModel')
         .then(response => response.json())
         .then(jobs => {
             for(job of jobs){

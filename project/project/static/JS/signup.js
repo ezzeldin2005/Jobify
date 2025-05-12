@@ -37,7 +37,7 @@ document.getElementById('formInput').addEventListener('submit', function(e) {
     fetch(endpoint)
         .then(response => response.json())
         .then(users => {
-            for (user of users) {
+            for (const user of users) {
                 if (user.Username == username || user.Email == email) {
                     showMessage('Username or email already exists!', 'error');
                     return;
