@@ -6,6 +6,9 @@ document.addEventListener('DOMContentLoaded', function() {
     if (adminCheckbox) {
         adminCheckbox.addEventListener('change', function() {
             companyNameInput.required = this.checked;
+            let box = document.getElementById('companyNameBox');
+            box.style.display = 'block';
+            box.style.marginTop = '5px';
         });
     }
 });
@@ -48,11 +51,9 @@ document.getElementById('formInput').addEventListener('submit', function(e) {
             document.getElementById('formInput').reset();
             showMessage('Registration successful!', 'success');
             setTimeout(() => {
-            window.location.href = isAdmin ? '/AdminHomePage' : '/UserHomePage';
+            window.location.href = isAdmin ? `/AdminHomePage/${username}` : `/UserHomePage${username}`;
         }, 2000);
         })
-
-
 
 
 

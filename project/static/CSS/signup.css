@@ -313,10 +313,6 @@ input{
     display: inline-block;
     font-size: 17px;
 }
-#inputcontainer #formInputs:has(#cbox:checked) #companyNameBox{
-    display: block; 
-    margin-top: 5px;
-}   
 body::-webkit-scrollbar {
     width: 15px;
 }
