@@ -9,16 +9,13 @@ addJobCard = function(job){
     let status = document.createElement('p');
 
     jobCard.className = 'jobCard';
-    
-    jobTitle.innerHTML = '<span class="label">Title: </span><br>' + job['title'];
-    jobId.innerHTML = '<span class="label">Job ID: </span><br>' + job['id'];
-    companyName.innerHTML = '<span class="label">Company: </span><br>' + job['company'];
-    experiance.innerHTML = '<span class="label">Years of Experiance: </span><br>' + job['yearsOfExperiance'];
-    Salary.innerHTML = '<span class="label">Salary: </span><br>' + job['salary'];
-    status.innerHTML = '<span class="label">Status: </span><br>' + job['status'];
-    jobDescription.innerHTML = '<span class="label">Job description: </span><br>' + job['description'];
-
-    console.log('hello');
+    jobTitle.innerHTML = '<span class="label">Title: </span><br>' + job.Title;
+    jobId.innerHTML = '<span class="label">Job ID: </span><br>' + job.ID;
+    companyName.innerHTML = '<span class="label">Company: </span><br>' + job.CompanyName;
+    experiance.innerHTML = '<span class="label">Years of Experience: </span><br>' + job.Experience;
+    Salary.innerHTML = '<span class="label">Salary: </span><br>' + job.Salary;
+    status.innerHTML = '<span class="label">Status: </span><br>' + job.Status;
+    jobDescription.innerHTML = '<span class="label">Job description: </span><br>' + job.description;
 
     jobCard.appendChild(jobTitle);
     jobCard.appendChild(jobId);
@@ -36,13 +33,15 @@ addJobCard = function(job){
 /* Start display all jobs onload */
 
 window.onload = function () {
-    const jobs = JSON.parse(localStorage.getItem("jobs")) || [];
-    for (let i = 0; i < jobs.length; i++) {
-        addJobCard(jobs[i]);
-    };
-};
+    let username = document.getElementById('username').dataset.username
+    fetch('AdminHomePage/jobModel')
+        .then(response => response.json())
+        .then(jobs => {
+            for(job of jobs){
+                if(job.Admin == username){
+                    addJobCard(job);
+                }
+            }
+        })
 
-document.getElementById('Logout').addEventListener('click', function(e) {
-    localStorage.removeItem('currentUserEmail');
-    localStorage.removeItem('currentUserId');
-});
+};

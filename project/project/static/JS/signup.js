@@ -51,11 +51,9 @@ document.getElementById('formInput').addEventListener('submit', function(e) {
             document.getElementById('formInput').reset();
             showMessage('Registration successful!', 'success');
             setTimeout(() => {
-            window.location.href = isAdmin ? '/AdminHomePage' : '/UserHomePage';
+            window.location.href = isAdmin ? `/AdminHomePage/${username}` : `/UserHomePage${username}`;
         }, 2000);
         })
-
-
 
 
 

@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
 </head>
 <body>
+<div id="username" data-username="{{ username }}"></div>
 <div class ="header1">
     <div class="logocon">
         <a id="Logo" href="{% url 'HomePage' %}"><img src="{% static 'CSS/Images/image-removebg-preview.png' %}"></a>
@@ -17,19 +18,19 @@
         <li>
             <div id="homeiconContainer">
                 <span class="material-symbols-outlined">home</span>
-                <a href="/AdminHomePage">Home</a>
+                <a href="{% url  'AdminHomePage'  username %}">Home</a>
             </div>
         </li>
         <li>
             <div id="AddiconContainer">
                 <span class="material-symbols-outlined">add</span>
-                <a href="AddJob">Add New Job</a>
+                <a href="{% url 'AddJob' username %}">Add New Job</a>
             </div>
         </li>
         <li>
             <div id="editiconContainer">
                 <span class="material-symbols-outlined">edit</span>
-                <a href="EditJob">Edit Job</a>
+                <a href="{% url 'SearchJob' username%}">Edit Job</a>
             </div>
         </li>
     </ul>
@@ -46,10 +47,10 @@
             <p>Looking to post a new job? Just fill in the details below and hit 'Add Job'!</p>
         </div>
 
-        <form id="form">
+        <form id="form" action="{% url 'AddJob' %}" method = "POST">
 
             <div id = "jobCompanyContainer">
-                <input type="text" required name = "jobCompany" id="jobCompany" placeholder="Job Company">
+                <input type="text" required name = "jobCompany" id="jobCompany" placeholder="Job Company" readonly>
                 <label for="jobCompany">Job Company</label>
             </div>
 
@@ -69,7 +70,7 @@
                     <label for="jobSalary">Job Salary</label>
                 </div>
                 <div>
-                    <input type="number" required min="0" name="jobExperiance" id = "jobExperiance" placeholder="Years of Experiance">
+                    <input type="number" required min="0" name="jobExperience" id = "jobExperiance" placeholder="Years of Experiance">
                     <label for="jobExperiance">Years of Experiance</label>
                 </div>
             </div>

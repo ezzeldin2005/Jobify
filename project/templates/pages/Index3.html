@@ -10,6 +10,7 @@
 </head>
 
 <body>
+<div id="username" data-username="{{ username }}"></div>
 <div class ="header1">
     <div class="logocon">
         <a id="Logo" href="{% url 'HomePage' %}"><img src="{% static 'CSS/Images/image-removebg-preview.png' %}" alt=""></a>
@@ -18,19 +19,19 @@
         <li>
             <div id="homeiconContainer">
                 <span class="material-symbols-outlined">home</span>
-                <a href="/AdminHomePage">Home</a>
+                <a href="{% url  'AdminHomePage'  username %}">Home</a>
             </div>
         </li>
         <li>
             <div id="AddiconContainer">
                 <span class="material-symbols-outlined">add</span>
-                <a href="AddJob">Add New Job</a>
+                <a href="{% url 'AddJob' username %}">Add New Job</a>
             </div>
         </li>
         <li>
             <div id="editiconContainer">
                 <span class="material-symbols-outlined">edit</span>
-                <a href="EditJob">Edit Job</a>
+                <a href="{% url 'SearchJob' username%}">Edit Job</a>
             </div>
         </li>
     </ul>

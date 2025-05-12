@@ -44,5 +44,5 @@ def userModel(request):
     return JsonResponse(list(user_data), safe=False)
 
 def adminModel(request):
-    admin_data = AdminData.objects.all().values('Username', 'Email')
+    admin_data = AdminData.objects.all().values('Username', 'Email', 'CompanyName')
     return JsonResponse(list(admin_data), safe=False)

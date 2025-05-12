@@ -14,25 +14,25 @@
             <a id="Logo" href="/"><img src="{% static 'CSS/Images/image-removebg-preview.png' %}" alt=""></a>
         </div>
         <ul id="navbar">
-            <li>
-                <div id="homeiconContainer">
-                    <span class="material-symbols-outlined">home</span>
-                    <a href="/AdminHomePage">Home</a>
-                </div>
-            </li>
-            <li>
-                <div id="AddiconContainer">
-                    <span class="material-symbols-outlined">add</span>
-                    <a href="AddJob">Add New Job</a>
-                </div>
-            </li>
-            <li>
-                <div id="editiconContainer">
-                    <span class="material-symbols-outlined">edit</span>
-                    <a href="EditJob">Edit Job</a>
-                </div>
-            </li>
-        </ul>
+        <li>
+            <div id="homeiconContainer">
+                <span class="material-symbols-outlined">home</span>
+                <a href="{% url  'AdminHomePage'  username %}">Home</a>
+            </div>
+        </li>
+        <li>
+            <div id="AddiconContainer">
+                <span class="material-symbols-outlined">add</span>
+                <a href="{% url 'AddJob' username %}">Add New Job</a>
+            </div>
+        </li>
+        <li>
+            <div id="editiconContainer">
+                <span class="material-symbols-outlined">edit</span>
+                <a href="{% url 'SearchJob' username%}">Edit Job</a>
+            </div>
+        </li>
+    </ul>
         <a id="Logout" href = "/"><span class="material-symbols-outlined">logout</span></a>
         
     </div>
