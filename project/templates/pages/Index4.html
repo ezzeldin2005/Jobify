@@ -47,11 +47,11 @@
             <p>Looking to post a new job? Just fill in the details below and hit 'Add Job'!</p>
         </div>
 
-        <form id="form" action="{% url 'AddJob' %}" method = "POST">
+        <form id="form" action="{% url 'AddJob' username %}" method = "POST">
 
             <div id = "jobCompanyContainer">
                 <input type="text" required name = "jobCompany" id="jobCompany" placeholder="Job Company" readonly>
-                <label for="jobCompany">Job Company</label>
+                <label id= "cs" for="jobCompany">Job Company</label>
             </div>
 
             <div id = "jobIDContainer">

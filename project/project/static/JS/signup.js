@@ -1,22 +1,20 @@
 document.addEventListener('DOMContentLoaded', function() {
     const adminCheckbox = document.getElementById('cbox');
     const companyNameInput = document.getElementById('companyName');
+    let box = document.getElementById('companyNameBox');
 
     // Toggle requirement based on checkbox
-    if (adminCheckbox) {
-        adminCheckbox.addEventListener('change', function() {
+    adminCheckbox.addEventListener('change', function() {
+        if (this.checked) {
             companyNameInput.required = this.checked;
-            let box = document.getElementById('companyNameBox');
             box.style.display = 'block';
             box.style.marginTop = '5px';
-        });
-    }
+        }
+        else{
+            box.style.display = 'none';
+        }
+    });
 });
-
-// Function to get the current user's email
-function getCurrentUserEmail() {
-    return localStorage.getItem('currentUserEmail');
-}
 
 document.getElementById('formInput').addEventListener('submit', function(e) {
     e.preventDefault();
@@ -25,10 +23,7 @@ document.getElementById('formInput').addEventListener('submit', function(e) {
     const email = document.getElementById('email').value.trim();
     const password = document.getElementById('password').value;
     const confirmPass = document.getElementById('cPassword').value;
-    const companyName = document.getElementById('companyName').value.trim();
     const isAdmin = document.getElementById('cbox').checked;
-    const message = document.getElementById('message');
-
 
     // Password validation
     if (password !== confirmPass) {
@@ -36,7 +31,8 @@ document.getElementById('formInput').addEventListener('submit', function(e) {
         return;
     }
     // Check if user exists
-     const endpoint = isAdmin ? '/adminModel/' : '/userModel/';
+    const endpoint = isAdmin ? '/adminModel/' : '/userModel/';
+    const formData = new FormData(this);
 
     fetch(endpoint)
         .then(response => response.json())
@@ -44,18 +40,19 @@ document.getElementById('formInput').addEventListener('submit', function(e) {
             for (user of users) {
                 if (user.Username == username || user.Email == email) {
                     showMessage('Username or email already exists!', 'error');
-                    document.getElementById('formInput').reset();
                     return;
                 }
             }
+            fetch('/Signup/', {method: 'post', body: formData})
+                .then(response => response.json())
+                .then(data => console.log(data))
+
             document.getElementById('formInput').reset();
             showMessage('Registration successful!', 'success');
             setTimeout(() => {
-            window.location.href = isAdmin ? `/AdminHomePage/${username}` : `/UserHomePage${username}`;
+            window.location.href = isAdmin ? `/AdminHomePage/${username}` : `/UserHomePage/${username}`;
         }, 2000);
         })
-
-
 
 });
 

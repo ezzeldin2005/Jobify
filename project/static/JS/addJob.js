@@ -20,9 +20,12 @@ document.getElementById("form").addEventListener("submit", function(e){
         })
 })
 
-document.addEventListener("load", function(e){
+document.addEventListener('DOMContentLoaded', function(){
+
     let username = document.getElementById('username').dataset.username
-    fetch('adminModel/')
+    document.getElementById('cs').textContent = username;
+
+    fetch('/adminModel/')
         .then(response => response.json())
         .then(admins => {
             for (admin of admins){
@@ -33,5 +36,6 @@ document.addEventListener("load", function(e){
             }
         })
 })
+
 
 
