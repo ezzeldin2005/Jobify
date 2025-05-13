@@ -29,37 +29,47 @@ let addJobCard = function(job){
 
     // Check if the user applied for this job before or not
     fetch(`/UserHomePage/AppliedJob/`)
-    .then(response => response.json() )
-    .then( jobs =>
-        {
-            console.log(username)
-            for(Job of jobs){ 
-                if (Job.ID === job.ID && Job.User === username) {
+        .then(response => response.json() )
+        .then( jobs =>
+            {
+                let isApplied = false
+                for(const Job of jobs){
+                    if (Job.job_ID === job.ID && Job.User === username) {
+                        isApplied = true
+                    }
+
+
+                }
+
+                if(isApplied){
                     applyButton.innerHTML = 'Applied';
                     applyButton.className = 'applied';
                     applyButton.disabled = true;
-                    console.log("a7a")
                 }
                 else{
-                    console.log("a7a")
                     applyButton.innerHTML = 'Apply';
-                    applyButton.addEventListener('click', () => openApplyPopup(job));
+                    applyButton.addEventListener('click', () => {
+                        fetch(`/UserHomePage/AppliedJob/`, {method:"POST", body: JSON.stringify({ID: job.ID, Username:username})})
+                            .then(response => response.json())
+                            .then(message => {
+                                applyButton.innerHTML = 'Applied';
+                                applyButton.className = 'applied';
+                                applyButton.disabled = true;})
+                    });
                 }
-        }
-        })
-    
+                buttonContainer.appendChild(applyButton);
+                jobCard.appendChild(jobTitle);
+                jobCard.appendChild(jobId);
+                jobCard.appendChild(companyName);
+                jobCard.appendChild(experiance);
+                jobCard.appendChild(Salary);
+                jobCard.appendChild(status);
+                jobCard.appendChild(jobDescription);
+                jobCard.appendChild(buttonContainer);
 
-    buttonContainer.appendChild(applyButton);
-    jobCard.appendChild(jobTitle);
-    jobCard.appendChild(jobId);
-    jobCard.appendChild(companyName);
-    jobCard.appendChild(experiance);
-    jobCard.appendChild(Salary);
-    jobCard.appendChild(status);
-    jobCard.appendChild(jobDescription);
-    jobCard.appendChild(buttonContainer);
+                document.getElementById('cards').appendChild(jobCard);
+            })
 
-    document.getElementById('cards').appendChild(jobCard);
 }
 
 
@@ -180,18 +190,18 @@ document.addEventListener('DOMContentLoaded',function () {
 
 
 /* Start apply for a job */
-function openApplyPopup(job) {
+/*function openApplyPopup(job) {
     currentJobToApply = job;
     document.querySelector('#applyPopup').style.display = 'flex';
-    document.querySelector('#applyPopup h2').textContent = 'Apply to ' + job.company;
+    document.querySelector('#applyPopup h2').textContent = 'Apply to ' + job.CompanyName;
     document.querySelector('#email').value = email;
     document.querySelector('#phoneNumber').value = profile.phoneNumber;
     document.querySelector('#profilePic').src = profile.profileImageURL;
     document.querySelector('.name').innerText = user.username;
-}
+}*/
 
 // Submit for apply
-document.getElementById('applyBtn').addEventListener('click', function (e){
+/*document.getElementById('applyBtn').addEventListener('click', function (e){
     e.preventDefault();
 
     const form = document.getElementById('applyForm');
@@ -251,9 +261,4 @@ document.getElementById('file-input').addEventListener('change', function() {
 
 // finally, the end of the apply
 
-// Logout
-document.getElementById('Logout').addEventListener('click', function(e) {
-    localStorage.removeItem('currentUserEmail');
-    localStorage.removeItem('currentUserId');
-
-});
+*/

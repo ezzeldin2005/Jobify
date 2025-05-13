@@ -21,8 +21,10 @@ document.getElementById("form").addEventListener("submit", function(e){
             document.getElementById('message').textContent = 'Job added successfully!';
             document.getElementById('message').style.color = 'green';
             document.getElementById('message').style.marginTop = '2px';
-            document.getElementById('form').reset()
-            document.getElementById("jobCompany").value = formData.jobCompany;
+            setTimeout(() => {
+                window.location.href = `/AdminHomePage/AddJob/${username}/`
+            }, 1000);
+
 
         })
 })

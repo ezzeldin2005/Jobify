@@ -1,6 +1,8 @@
 from django.shortcuts import render
+from django.views.decorators.csrf import csrf_exempt
 from .models import AppliedJobs
 from django.http import JsonResponse
+import json
 # from django.contrib.auth.decorators import login_required
 
 # Create your views here.
@@ -16,9 +18,16 @@ def Search(request, username):
 def Profile(request, username):
     return render(request, 'pages/Index7.html',{'username': username})
 
+@csrf_exempt
 def AppliedJob(request):
-    try:
-        jobs = AppliedJobs.objects.all().values('ID', 'User')
-        return JsonResponse(list(jobs), safe=False) 
-    except AppliedJobs.DoesNotExist:
-        return JsonResponse({'error': 'Job not found a7a7a7a7a7'}, status=404)
+    if request.method == "POST":
+        body = json.loads(request.body)
+        data = AppliedJobs(
+            job_ID = body.get('ID'),
+            User = body.get('Username'),
+        )
+        data.save()
+        return JsonResponse({'status': 'success'})
+    else:
+        jobs = AppliedJobs.objects.all().values('job_ID', 'User')
+        return JsonResponse(list(jobs), safe=False)
