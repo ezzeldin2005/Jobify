@@ -2,6 +2,7 @@ let users, user, profiles, profile, email, appliedJobs;
 let currentJobToApply = null;
 
 let addJobCard = function(job){
+    const username = document.getElementById('username').dataset.username
     let jobCard = document.createElement('div');
     let jobTitle =  document.createElement('h3');
     let jobId =  document.createElement('h3');
@@ -16,26 +17,37 @@ let addJobCard = function(job){
     jobCard.className = 'jobCard';
     buttonContainer.id = 'applyButtoncontainer';
     applyButton.className = 'applyButton';
-    applyButton.id = `applyButton${job['id']}`;
+    applyButton.id = `applyButton${job.ID}`;
 
-    jobTitle.innerHTML = '<span class="label">Title: </span><br>' + job['title'];
-    jobId.innerHTML = '<span class="label">Job ID: </span><br>' + job['id'];
-    companyName.innerHTML = '<span class="label">Company: </span><br>' + job['company'];
-    experiance.innerHTML = '<span class="label">Years of Experiance: </span><br>' + job['yearsOfExperiance'];
-    Salary.innerHTML = '<span class="label">Salary: </span><br>' + job['salary'];
-    status.innerHTML = '<span class="label">Status: </span><br>' + job['status'];
-    jobDescription.innerHTML = '<span class="label">Job description: </span><br>' + job['description'];
+    jobTitle.innerHTML = '<span class="label">Title: </span><br>' + job.Title;
+    jobId.innerHTML = '<span class="label">Job ID: </span><br>' + job.ID;
+    companyName.innerHTML = '<span class="label">Company: </span><br>' + job.CompanyName;
+    experiance.innerHTML = '<span class="label">Years of Experiance: </span><br>' + job.Experience;
+    Salary.innerHTML = '<span class="label">Salary: </span><br>' + job.Salary;
+    status.innerHTML = '<span class="label">Status: </span><br>' + job.Status;
+    jobDescription.innerHTML = '<span class="label">Job description: </span><br>' + job.Description;
 
     // Check if the user applied for this job before or not
-    if (appliedJobs.some(j => j.jobID === job['id'])) {
-        applyButton.innerHTML = 'Applied';
-        applyButton.className = 'applied';
-        applyButton.disabled = true;
-    }
-    else{
-        applyButton.innerHTML = 'Apply';
-        applyButton.addEventListener('click', () => openApplyPopup(job));
-    }
+    fetch(`/UserHomePage/AppliedJob/`)
+    .then(response => response.json() )
+    .then( jobs =>
+        {
+            console.log(username)
+            for(Job of jobs){ 
+                if (Job.ID === job.ID && Job.User === username) {
+                    applyButton.innerHTML = 'Applied';
+                    applyButton.className = 'applied';
+                    applyButton.disabled = true;
+                    console.log("a7a")
+                }
+                else{
+                    console.log("a7a")
+                    applyButton.innerHTML = 'Apply';
+                    applyButton.addEventListener('click', () => openApplyPopup(job));
+                }
+        }
+        })
+    
 
     buttonContainer.appendChild(applyButton);
     jobCard.appendChild(jobTitle);
@@ -51,28 +63,19 @@ let addJobCard = function(job){
 }
 
 
-// Get the current user's email
-function getCurrentUserEmail() {
-    return localStorage.getItem('currentUserEmail');
-}
-
 
 /* Start display all jobs onload */
 
 window.onload = function () {
-    const jobs = JSON.parse(localStorage.getItem("jobs")) || [];
-    users = JSON.parse(localStorage.getItem("users")) || [];
-    profiles = JSON.parse(localStorage.getItem('profiles')) || [];
-    appliedJobs = JSON.parse(localStorage.getItem('appliedJobs')) || [];
-    email = getCurrentUserEmail();
-    user = users.find(u => u.email === email);
-    profile = profiles.find(p => p.email === email);
-
-    for (let i = 0; i < jobs.length; i++) {
-        addJobCard(jobs[i]);
-    }
-}
-
+    let username = document.getElementById('username').dataset.username
+    fetch('/AdminHomePage/jobModel/')
+        .then(response=>response.json())
+        .then(jobs=>{
+            for (const job of jobs) {
+                addJobCard(job);
+            };
+        })
+};
 /* End display all jobs onload */
 
 /* Start Drop down menu */
@@ -103,64 +106,75 @@ select.onclick = function () {
 
 /* Start search for results onclick */
 
+
 document.getElementById('searchBtn').addEventListener('click', function(){
+    let username = document.getElementById('username').dataset.username
     document.getElementById('cards').innerHTML = '';
     let inputValue = text.innerHTML;
     let searchValue = document.getElementById('searchInput').value;
-    const jobs = JSON.parse(localStorage.getItem("jobs")) || [];
+    fetch('/AdminHomePage/jobModel/')
+        .then(response=>response.json())
+        .then(jobs => {
+            if (inputValue == 'By Title'){
+                let regex = new RegExp(`.*${searchValue}.*`, 'i');
+                for (const job of jobs){
+                    if (regex.test(job.Title) ){
+                        addJobCard(job);
 
-    if (inputValue == 'By Title'){
-        let regex = new RegExp(`.*${searchValue}.*`, 'i');
-        for (i = 0; i < jobs.length; i++){
-            if (regex.test(jobs[i]['title'])){
-                addJobCard(jobs[i]);
-
+                    }
+                }
             }
-        }
-    }
-
-    else{
-        let regex = new RegExp(`.*${searchValue}.*`, 'i');
-        for (i = 0; i < jobs.length; i++){
-            if (regex.test(jobs[i]['yearsOfExperiance'])){
-                addJobCard(jobs[i]);
+            else{
+                let regex = new RegExp(`.*${searchValue}.*`, 'i');
+                for (const job of jobs){
+                    if (regex.test(job.Experience)){
+                        addJobCard(job);
+                    }
+                }
             }
-        }
-    }
+        })
+
 
 })
+
 
 
 /* End search for results 'onclick' */
 
 
 /* Start search for results 'typing' */
+document.addEventListener('DOMContentLoaded',function () {
 
-document.getElementById('searchInput').addEventListener('input', function(){
+    document.getElementById('searchInput').addEventListener('input', function(){
     document.getElementById('cards').innerHTML = '';
+
     let inputValue = text.innerHTML;
     let searchValue = document.getElementById('searchInput').value;
-    const jobs = JSON.parse(localStorage.getItem("jobs")) || [];
+    fetch('/AdminHomePage/jobModel/')
+        .then(response=>response.json())
+        .then(jobs => {
+            if (inputValue == 'By Title'){
+                let regex = new RegExp(`.*${searchValue}.*`, 'i');
+                for (const job of jobs){
+                    if (regex.test(job.Title) ){
+                        addJobCard(job);
 
-    if (inputValue == 'By Title'){
-        let regex = new RegExp(`.*${searchValue}.*`, 'i');
-        for (i = 0; i < jobs.length; i++){
-            if (regex.test(jobs[i]['title'])){
-                addJobCard(jobs[i]);
-
+                    }
+                }
             }
-        }
-    }
-
-    else{
-        let regex = new RegExp(`.*${searchValue}.*`, 'i');
-        for (i = 0; i < jobs.length; i++){
-            if (regex.test(jobs[i]['yearsOfExperiance'])){
-                addJobCard(jobs[i]);
+            else{
+                let regex = new RegExp(`.*${searchValue}.*`, 'i');
+                for (const job of jobs){
+                    if (regex.test(job.Experience) ){
+                        addJobCard(job);
+                    }
+                }
             }
-        }
-    }
+        })
 })
+
+})
+
 
 /* End search for results 'typing' */
 
