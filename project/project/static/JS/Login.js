@@ -1,47 +1,39 @@
 document.getElementById('formInputs').addEventListener('submit', function(e) {
     e.preventDefault();
 
-    // Function to get the current user's email
-    function getCurrentUserEmail() {
-        return localStorage.getItem('currentUserEmail');
-    }
-
-    const curEmail = getCurrentUserEmail();
-    if (!curEmail) {
-        console.error('No user email found in localStorage');
-    }
-
     const email = document.getElementById('Email').value.trim();
     const password = document.getElementById('password').value;
     const messageElement = document.getElementById('message');
 
-    // Check if user exists
-    const users = JSON.parse(localStorage.getItem('users')) || [];
+    //get user and admin data
+    Promise.all([
+        fetch('/userModel/').then(response => response.json()),
+        fetch('/adminModel/').then(response => response.json())
+    ])
+    .then(([users, admins]) => {
+            // find a match in both models
+            const user = users.find(user => user.Email === email && user.Password === password);
+            const admin = admins.find(admin => admin.Email === email && admin.Password === password);
 
-    // Find user by email
-    const user = users.find(user => user.email === email);
+            if(user){
+                showMessage('Login successful!', 'success');
+                // Redirect to user home page
+                setTimeout(() => {
+                    window.location.href = `/UserHomePage/${user.Username}`;
+                }, 2000);
+            }
+            else if (admin) {
+                showMessage('Login successful!', 'success');
 
-    if (!user) {
-        showMessage('Email does not exist', 'error');
-        return;
-    }
-
-    // Now check password
-    if (user.password !== password){
-        showMessage('Invalid password!', 'error');
-        return;
-    }
-
-    showMessage('Login successful!', 'success');
-
-    // Store the logged-in user's email and ID in localStorage
-    localStorage.setItem('currentUserEmail', user.email);
-
-
-    // Redirect based on role after 2 seconds
-    setTimeout(() => {
-        window.location.href = user.role === 'admin' ? '/AdminHomePage' : '/UserHomePage';
-    }, 2000);
+                // Redirect to admin home page
+                setTimeout(() => {
+                    window.location.href = `/AdminHomePage/${admin.Username}`;
+                }, 2000);
+            } else {
+                showMessage('Invalid email or password!', 'error');
+            }
+        }
+    )
 
 
 });

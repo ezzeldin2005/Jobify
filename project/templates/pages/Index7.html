@@ -11,6 +11,7 @@
     <script src="https://kit.fontawesome.com/e882ac110d.js" crossorigin="anonymous"></script>
 </head>
 <body>
+<div id="username" data-username="{{ username }}" style="margin: 0px"></div>
 <div class ="header1">
     <div class="logocon">
         <a id="Logo" href="/"><img src="{% static 'CSS/Images/image-removebg-preview.png' %}" alt=""></a>
@@ -19,19 +20,19 @@
         <li>
             <div id="homeiconContainer">
                 <span class="material-symbols-outlined">home</span>
-                <a href="/UserHomePage">Home</a>
+                <a href="{% url  'UserHomePage'  username %}">Home</a>
             </div>
         </li>
         <li>
             <div id="searchiconContainer">
                 <span class="material-symbols-outlined">search</span>
-                <a href="Search">Search</a>
+                <a href="{% url  'Search'  username %}">Search</a>
             </div>
         </li>
         <li>
             <div id="profileiconContainer">
                 <span class="material-symbols-outlined">person</span>
-                <a href="Profile">Profile</a>
+                <a href="{% url  'Profile'  username %}">Profile</a>
             </div>
         </li>
     </ul>

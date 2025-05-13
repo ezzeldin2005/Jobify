@@ -1,3 +1,4 @@
+from django.db import transaction
 from django.shortcuts import render
 from .models import UserData, AdminData
 from django.http import JsonResponse
@@ -40,10 +41,10 @@ def Index2(request):
 
 
 def userModel(request):
-    user_data = UserData.objects.all().values('Username', 'Email')
+    user_data = UserData.objects.all().values('Username', 'Email', 'Password')
     return JsonResponse(list(user_data), safe=False)
 
 
 def adminModel(request):
-    admin_data = AdminData.objects.all().values('Username', 'Email', 'CompanyName')
+    admin_data = AdminData.objects.all().values('Username', 'Email', 'CompanyName', 'Password')
     return JsonResponse(list(admin_data), safe=False)

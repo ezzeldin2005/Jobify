@@ -15,7 +15,7 @@ addJobCard = function(job){
     experiance.innerHTML = '<span class="label">Years of Experience: </span><br>' + job.Experience;
     Salary.innerHTML = '<span class="label">Salary: </span><br>' + job.Salary;
     status.innerHTML = '<span class="label">Status: </span><br>' + job.Status;
-    jobDescription.innerHTML = '<span class="label">Job description: </span><br>' + job.Description;
+    jobDescription.innerHTML = '<span class="label">Job description: </span><br>' + job.description;
 
     jobCard.appendChild(jobTitle);
     jobCard.appendChild(jobId);
