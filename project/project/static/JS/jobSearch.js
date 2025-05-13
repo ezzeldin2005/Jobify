@@ -37,8 +37,6 @@ let addJobCard = function(job){
                     if (Job.job_ID === job.ID && Job.User === username) {
                         isApplied = true
                     }
-
-
                 }
 
                 if(isApplied){
