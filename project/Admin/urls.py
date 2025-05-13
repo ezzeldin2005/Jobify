@@ -9,5 +9,5 @@ urlpatterns = [
     path('SearchJob/<str:username>/', views.SearchJob, name = 'SearchJob'),
     path('EditJob/<int:job_id>/', views.EditJob, name = 'EditJob'),
     path('DeleteJob/<int:job_id>/', views.DeleteJob, name = 'DeleteJob'),
-
+    path('UpdateJob/<int:job_id>/', views.UpdateJob, name = 'UpdateJob'),
 ]

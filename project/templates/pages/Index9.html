@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
 </head>
 <body>
+    <div id="id" data-job_id="{{ job_id }}"></div>
 <div class ="header1">
     <div class="logocon">
         <a id="Logo" href="/"><img src="{% static 'CSS/Images/image-removebg-preview.png' %}" alt=""></a>
@@ -17,19 +18,19 @@
         <li>
             <div id="homeiconContainer">
                 <span class="material-symbols-outlined">home</span>
-                <a href="/AdminHomePage">Home</a>
+                <a id='home' href="/AdminHomePage">Home</a>
             </div>
         </li>
         <li>
             <div id="AddiconContainer">
                 <span class="material-symbols-outlined">add</span>
-                <a href="AddJob">Add New Job</a>
+                <a id="addjob" href="/AddJob">Add New Job</a>
             </div>
         </li>
         <li>
             <div id="editiconContainer">
                 <span class="material-symbols-outlined">edit</span>
-                <a href="EditJob">Edit Job</a>
+                <a id="editjob" href="/EditJob">Edit Job</a>
             </div>
         </li>
     </ul>
@@ -47,9 +48,9 @@
         </div>
 
         <form method="post" id = 'form'>
-
+            {% csrf_token %}
             <div id = "jobCompanyContainer">
-                <input type="text" required name = "jobCompany" id="jobCompany" placeholder="Job Company">
+                <input type="text" readonly name = "jobCompany" id="jobCompany" placeholder="Job Company">
                 <label for="jobCompany">Job Company</label>
             </div>
 
@@ -69,8 +70,8 @@
                     <label for="jobSalary">Job Salary</label>
                 </div>
                 <div>
-                    <input type="text" required min="0" name="jobExperiance" id = "jobExperiance" placeholder="Years of Experiance">
-                    <label for="jobExperiance">Years of Experiance</label>
+                    <input type="text" required min="0" name="jobExperience" id = "jobExperience" placeholder="Years of Experience">
+                    <label for="jobExperience">Years of Experience</label>
                 </div>
             </div>
 
@@ -99,7 +100,6 @@
         </form>
     </div>
 </div>
-</div>
-<script src="{% static 'JS/editJob.js' %}?v=1"></script>
+<script src="{% static 'JS/editJob.js' %}?v=7"></script>
 </body>
 </html>

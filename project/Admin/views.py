@@ -1,7 +1,8 @@
 from django.shortcuts import render
-# from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
 from .models import JobData
+from django.views.decorators.csrf import csrf_exempt
+import json
 
 # Create your views here.
 # @login_required
@@ -43,3 +44,30 @@ def DeleteJob(request, job_id):
     jobToDelete = JobData.objects.get(ID=job_id)
     jobToDelete.delete()
     return JsonResponse({'status': 'success'})
+
+@csrf_exempt
+def UpdateJob(request, job_id):
+    if request.method == 'PUT':
+        try:
+            job = JobData.objects.get(ID=job_id)
+            data = json.loads(request.body)
+            job.CompanyName = data['company']
+            job.Title = data['title']
+            job.Salary = data['salary']
+            job.Experience = data['Experience']
+            job.Description = data['description']
+            job.Status = data['status']
+            job.save()
+            return JsonResponse({'message': 'Job updated successfully'})
+        except JobData.DoesNotExist:
+            return JsonResponse({'error': 'Job not found'}, status=404)
+    return JsonResponse({'error': 'Invalid request method'}, status=400)
+
+
+
+
+def getJobsdata(request):
+    if request.method == 'GET':
+        jobs = JobData.objects.all().values('ID', 'Admin', 'CompanyName', 'Title', 'Salary', 'Description', 'Experience', 'Status')
+        return JsonResponse(list(jobs), safe=False)
+    return JsonResponse({'error': 'Invalid request method'}, status=400)
