@@ -22,6 +22,8 @@ document.getElementById("form").addEventListener("submit", function(e){
             document.getElementById('message').style.color = 'green';
             document.getElementById('message').style.marginTop = '2px';
             document.getElementById('form').reset()
+            document.getElementById("jobCompany").value = formData.jobCompany;
+
         })
 })
 

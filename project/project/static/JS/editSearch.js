@@ -16,13 +16,13 @@ let addJobCard = function(job){
     editButton.className = 'editButton';
     deleteButton.className = 'deleteButton';
 
-    jobTitle.innerHTML = '<span class="label">Title: </span><br>' + job['title'];
-    jobId.innerHTML = '<span class="label">Job ID: </span><br>' + job['id'];
-    companyName.innerHTML = '<span class="label">Company: </span><br>' + job['company'];
-    experiance.innerHTML = '<span class="label">Years of Experiance: </span><br>' + job['yearsOfExperiance'];
-    Salary.innerHTML = '<span class="label">Salary: </span><br>' + job['salary'];
-    status.innerHTML = '<span class="label">Status: </span><br>' + job['status'];
-    jobDescription.innerHTML = '<span class="label">Job description: </span><br>' + job['description'];
+    jobTitle.innerHTML = '<span class="label">Title: </span><br>' + job.Title;
+    jobId.innerHTML = '<span class="label">Job ID: </span><br>' + job.ID;
+    companyName.innerHTML = '<span class="label">Company: </span><br>' + job.CompanyName;
+    experiance.innerHTML = '<span class="label">Years of Experiance: </span><br>' + job.Experience;
+    Salary.innerHTML = '<span class="label">Salary: </span><br>' + job.Salary;
+    status.innerHTML = '<span class="label">Status: </span><br>' + job.Status;
+    jobDescription.innerHTML = '<span class="label">Job description: </span><br>' + job.Description;
     editButton.innerHTML = 'Edit';
     deleteButton.innerHTML = 'Delete';
 
@@ -40,14 +40,13 @@ let addJobCard = function(job){
     deleteButton.onclick = function () {
         if (confirm('Are you sure you want to delete this job posting?')) {
             jobCard.remove();
-            let jobs = JSON.parse(localStorage.getItem("jobs")) || [];
-            jobs = jobs.filter(item => item["id"] !== job["id"]);
-            localStorage.setItem("jobs", JSON.stringify(jobs));
+            fetch(`/AdminHomePage/DeleteJob/${job.ID}/`)
+                .then(response => response.json())
+                .then(status => console.log(status.status))
         }
     };
     editButton.onclick = function () {
-        window.location.href = 'index9.html';
-        localStorage.editId = job['id'];
+        window.location.href = `/AdminHomePage/EditJob/${job.ID}/`;
     };
 
     document.getElementById('cards').appendChild(jobCard);
@@ -58,10 +57,15 @@ let addJobCard = function(job){
 /* Start display all jobs onload */
 
 window.onload = function () {
-    const jobs = JSON.parse(localStorage.getItem("jobs")) || [];
-    for (let i = 0; i < jobs.length; i++) {
-        addJobCard(jobs[i]);
-    };
+    let username = document.getElementById('username').dataset.username
+    fetch('/AdminHomePage/jobModel/')
+        .then(response=>response.json())
+        .then(jobs=>{
+            for (const job of jobs) {
+                if(job.Admin == username)
+                addJobCard(job);
+            };
+        })
 };
 
 /* End display all jobs onload */
@@ -95,29 +99,34 @@ select.onclick = function () {
 /* Start search for results onclick */
 
 document.getElementById('searchBtn').addEventListener('click', function(){
+    let username = document.getElementById('username').dataset.username
     document.getElementById('cards').innerHTML = '';
     let inputValue = text.innerHTML;
     let searchValue = document.getElementById('searchInput').value;
-    const jobs = JSON.parse(localStorage.getItem("jobs")) || [];
+    fetch('/AdminHomePage/jobModel/')
+        .then(response=>response.json())
+        .then(jobs => {
+            if (inputValue == 'By Title'){
+                let regex = new RegExp(`.*${searchValue}.*`, 'i');
+                for (const job of jobs){
+                    if (regex.test(job.Title) && job.Admin == username){
+                        addJobCard(job);
 
-    if (inputValue == 'By Title'){
-        let regex = new RegExp(`.*${searchValue}.*`, 'i');
-        for (i = 0; i < jobs.length; i++){
-            if (regex.test(jobs[i]['title'])){
-                addJobCard(jobs[i]);
-
+                    }
+                }
             }
-        }
-    }
 
-    else{
-        let regex = new RegExp(`.*${searchValue}.*`, 'i');
-        for (i = 0; i < jobs.length; i++){
-            if (regex.test(jobs[i]['yearsOfExperiance'])){
-                addJobCard(jobs[i]);
+            else{
+                let regex = new RegExp(`.*${searchValue}.*`, 'i');
+                for (const job of jobs){
+                    if (regex.test(jobs.Experience) && job.Admin == username){
+                        addJobCard(job);
+                    }
+                }
             }
-        }
-    }
+        })
+
+
 })
 
 /* End search for results 'onclick' */
@@ -129,34 +138,27 @@ document.getElementById('searchInput').addEventListener('input', function(){
     document.getElementById('cards').innerHTML = '';
     let inputValue = text.innerHTML;
     let searchValue = document.getElementById('searchInput').value;
-    const jobs = JSON.parse(localStorage.getItem("jobs")) || [];
+    fetch('/AdminHomePage/jobModel/')
+        .then(response=>response.json())
+        .then(jobs => {
+            if (inputValue == 'By Title'){
+                let regex = new RegExp(`.*${searchValue}.*`, 'i');
+                for (const job of jobs){
+                    if (regex.test(job.Title) && job.Admin == username){
+                        addJobCard(job);
 
-    if (inputValue == 'By Title'){
-        let regex = new RegExp(`.*${searchValue}.*`, 'i');
-        for (i = 0; i < jobs.length; i++){
-            if (regex.test(jobs[i]['title'])){
-                addJobCard(jobs[i]);
-
+                    }
+                }
             }
-        }
-    }
 
-    else{
-        let regex = new RegExp(`.*${searchValue}.*`, 'i');
-        for (i = 0; i < jobs.length; i++){
-            if (regex.test(jobs[i]['yearsOfExperiance'])){
-                addJobCard(jobs[i]);
+            else{
+                let regex = new RegExp(`.*${searchValue}.*`, 'i');
+                for (const job of jobs){
+                    if (regex.test(jobs.Experience) && job.Admin == username){
+                        addJobCard(job);
+                    }
+                }
             }
-        }
-    }
+        })
 })
 
-
-/* End search for results 'typing' */
-
-document.getElementById('Logout').addEventListener('click', function(e) {
-    
-    localStorage.removeItem('currentUserEmail');
-    localStorage.removeItem('currentUserId');
-
-});

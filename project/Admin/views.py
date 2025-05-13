@@ -23,6 +23,7 @@ def AddJob(request, username):
         )
 
         data.save()
+        return JsonResponse({'status': 'success'})
 
     else:
         return render(request, 'pages/Index4.html', {'username': username})
@@ -37,3 +38,8 @@ def EditJob(request, job_id):
 def jobModel(request):
     jobs = JobData.objects.all().values('ID', 'Admin', 'CompanyName', 'Title', 'Salary', 'Description', 'Experience', 'Status')
     return JsonResponse(list(jobs), safe=False)
+
+def DeleteJob(request, job_id):
+    jobToDelete = JobData.objects.get(ID=job_id)
+    jobToDelete.delete()
+    return JsonResponse({'status': 'success'})
