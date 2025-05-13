@@ -1,6 +1,4 @@
 from django.db import models
-from Home.models import AdminData
-
 # Create your models here.
 class JobData(models.Model):
     ID = models.IntegerField(primary_key=True)
