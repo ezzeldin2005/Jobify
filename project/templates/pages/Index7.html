@@ -58,7 +58,7 @@
                 <div class="imgContainer">
                     <img src="" alt="profile image" id="imgPro">
                 </div>
-                <h2 id="username"></h2>
+                <h2 id="myName" style="margin-top: 80px; font-weight: 600; font-size: 22px; margin-bottom: 15px;"></h2>
                 <p class="details" id="job"></p>
                 <p class="details" id="email"></p>
                 <p id="About"></p>
@@ -90,6 +90,41 @@
         </div>
     </div>
 </div>
-<script src="{% static 'JS/userProfile.js' %}?v=1"></script>
+
+<div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+        <div class="modal-header">
+            <span class="close-btn" id="closeModalBtn">&times;</span>
+            <h2 style="color: white; padding: 10px">Edit intro</h2>
+        </div>
+        <div class="modal-body">
+            <div class="required-note">* Indicates required</div>
+                <form method="post" id="editForm">              <!--I should give the inputs values-->
+                {% csrf_token %}
+                <label for="userName" >User Name*</label>
+                <input type="text" id="userName" name="userName" required readonly>
+
+                <label for="Email" >Email*</label>
+                <input type="email" id="Email" name="email" required readonly>
+
+                <label for="jobTitle" >Job Title</label>
+                <input type="text" id="jobTitle" name="jobTitle">
+
+                <label for="phone">phone number</label>
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{11}">
+
+                <label for="about">About</label>
+                <textarea name="about" id="about" style="resize: none; height: 150px; font-size: 16px; padding: 10px;"></textarea>
+            </form>
+        </div>
+
+        <div class="modal-footer">
+            <button id="saveBtn" class="save-btn">Save</button>
+        </div>
+    </div>
+</div>
+
+
+<script src="{% static 'JS/userProfile.js' %}?v=3"></script>
 </body>
 </html>
